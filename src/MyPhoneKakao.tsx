@@ -20,6 +20,7 @@ export function MyPhoneKakao({
   const [picker, setPicker] = useState(false);
   const [draft, setDraft] = useState<(typeof FIRST_REPLIES)[number] | null>(null);
   const messages = items.filter((item) => item.title === title);
+  const [readIds, setReadIds] = useState<string[]>([]);
   return (
     <div className="chat-content" aria-label={title + " 聊天"}>
       <div className="chat-time">今天</div>
@@ -27,7 +28,7 @@ export function MyPhoneKakao({
         <button
           key={item.id}
           className={`message-row ${item.outgoing ? "outgoing" : ""}`}
-          onClick={() => onRead(item.id)}
+          onClick={() => { onRead(item.id); setReadIds((v) => v.includes(item.id) ? v : [...v, item.id]); }}
         >
           <span className="avatar">{item.sender.slice(0, 1)}</span>
           <span className="bubble" style={{ whiteSpace: "pre-line" }}>
@@ -65,7 +66,7 @@ export function MyPhoneKakao({
           </div>
         </div>
       )}
-      <button type="button" onClick={onBack} aria-label="返回聊天列表">返回聊天列表</button>
+
     </div>
   );
 }
