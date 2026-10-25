@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "《未公开恋人》· My Phone 开发版。闺蜜提醒解锁 X 绯闻；阅读炡禹开场消息且看过绯闻后触发首通来电。玩家手动发送与通话分支仍待实现。",
-  "revision": 8,
+  "revision": 9,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -246,7 +246,8 @@
     "x_rumor_seen": false,
     "first_call_triggered": false,
     "first_call_declined": false,
-    "first_call_answered": false
+    "first_call_answered": false,
+    "first_call_queued": false
   },
   "events": [
     {
@@ -330,9 +331,20 @@
           "key": "first_call_triggered",
           "op": "eq",
           "value": false
+        },
+        {
+          "key": "first_call_queued",
+          "op": "eq",
+          "value": false
         }
       ],
-      "actions": [],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "first_call_queued",
+          "value": true
+        }
+      ],
       "next": [
         "ul-first-call-delay"
       ]
@@ -358,9 +370,20 @@
           "key": "first_call_triggered",
           "op": "eq",
           "value": false
+        },
+        {
+          "key": "first_call_queued",
+          "op": "eq",
+          "value": false
         }
       ],
-      "actions": [],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "first_call_queued",
+          "value": true
+        }
+      ],
       "next": [
         "ul-first-call-delay"
       ]
