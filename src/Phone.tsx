@@ -162,7 +162,6 @@ function PhoneRuntime({
   const gestureConsumed = useRef(false);
   const [pinError, setPinError] = useState("");
   const [pinFailures, setPinFailures] = useState(0);
-  const [endingDismissed, setEndingDismissed] = useState(false);
   const [folder, setFolder] = useState("");
   const [panel, setPanel] = useState("");
   const [own, setOwn] = useState(() => initialRuntime(work));
@@ -618,7 +617,7 @@ function PhoneRuntime({
               ))}
             </div>
           )}
-          {!creator && s.endings.length > 0 && !locked && !endingDismissed && (
+          {!creator && s.endings.length > 0 && !locked && s.ui?.["my-phone"]?.endingDismissed !== true && (
             <div className="story-overlay ending" role="dialog" aria-label="故事结局">
               {work.id === "my-phone-unlisted-love" ? (
                 <>
@@ -626,7 +625,10 @@ function PhoneRuntime({
                   <h2>不再隐藏</h2>
                   <p>숨기지 않을게. 이제는 우리 둘 다.</p>
                   <p>从今以后，不再让我们的爱成为秘密。</p>
-                  <button onClick={() => setEndingDismissed(true)}>
+                  <button onClick={() => {
+                    const current = runtimeRef.current;
+                    update({ ...current, ui: { ...current.ui, "my-phone": { ...current.ui?.["my-phone"], endingDismissed: true } } });
+                  }}>
                     继续使用 My Phone
                   </button>
                 </>
@@ -640,7 +642,6 @@ function PhoneRuntime({
               <button
                 onClick={() => {
                   update(dispatch(work, initialRuntime(work), "start"));
-                  setEndingDismissed(false);
                   setApp("");
                   setLocked(true);
                 }}
