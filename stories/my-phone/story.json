@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "《未公开恋人》· My Phone 开发版。首轮三选一回复需要玩家点击发送；发送后触发首次来电。完整剧情及照片仍待接入。",
-  "revision": 12,
+  "revision": 13,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -163,6 +163,166 @@
           "senderId": "jeongwoo",
           "time": "22:53",
           "hidden": true
+        },
+        {
+          "id": "jw-aftercall-1",
+          "title": "",
+          "body": "자기야...\n亲爱的……",
+          "senderId": "jeongwoo",
+          "time": "23:00",
+          "hidden": true
+        },
+        {
+          "id": "jw-aftercall-2",
+          "title": "",
+          "body": "나 진짜 다른 사람 만난 거 아니야\n我真的没有和别人交往。",
+          "senderId": "jeongwoo",
+          "time": "23:01",
+          "hidden": true
+        },
+        {
+          "id": "jw-aftercall-3",
+          "title": "",
+          "body": "숙소에 있다고 거짓말한 건 내가 잘못했어\n我骗你说自己在宿舍，是我错了。",
+          "senderId": "jeongwoo",
+          "time": "23:02",
+          "hidden": true
+        },
+        {
+          "id": "jw-aftercall-4",
+          "title": "",
+          "body": "제발 혼자 울지 마...\n求你不要一个人哭……",
+          "senderId": "jeongwoo",
+          "time": "23:03",
+          "hidden": true
+        },
+        {
+          "id": "jw-aftercall-5",
+          "title": "",
+          "body": "나 지금 네가 너무 걱정돼\n我现在真的很担心你。",
+          "senderId": "jeongwoo",
+          "time": "23:04",
+          "hidden": true
+        },
+        {
+          "id": "jw-aftercall-6",
+          "title": "",
+          "body": "우리 헤어지는 거 아니지...?ㅠㅠ\n我们不会分手的，对吧……？ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:05",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage6-1",
+          "title": "",
+          "body": "...자기야ㅠㅠ\n……亲爱的ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:00",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage6-2",
+          "title": "",
+          "body": "나 때문에 많이 외로웠지...\n因为我，你一直很孤单吧……",
+          "senderId": "jeongwoo",
+          "time": "23:01",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage6-3",
+          "title": "",
+          "body": "그래도 나 너랑 계속 만나고 싶어\n可我还是想继续和你在一起。",
+          "senderId": "jeongwoo",
+          "time": "23:02",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage7-1",
+          "title": "",
+          "body": "오늘 사실 아직 공개하면 안 되는 개인 일정이 있었어...\n今天其实有个暂时不能公开的行程……",
+          "senderId": "jeongwoo",
+          "time": "23:00",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage7-2",
+          "title": "",
+          "body": "서윤 선배님도 그 일정 때문에 같이 있었던 거야. 진짜 다른 사이 아니야ㅠㅠ\n瑞允前辈也是因为那个行程才在一起的，真的没有其他关系ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:01",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage7-3",
+          "title": "",
+          "body": "근데 숙소라고 거짓말한 건 내가 잘못했어... 미안해 자기야\n但我骗你说在宿舍是我不对……对不起，亲爱的。",
+          "senderId": "jeongwoo",
+          "time": "23:02",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage8-1",
+          "title": "",
+          "body": "...자기야ㅠㅠ\n……亲爱的ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:00",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage8-2",
+          "title": "",
+          "body": "나도 너랑 손잡고 밖에서 데이트하고 싶어.\n我也想牵着你的手在外面约会。",
+          "senderId": "jeongwoo",
+          "time": "23:01",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage8-3",
+          "title": "",
+          "body": "근데 지금 당장 공개하겠다고 쉽게 약속할 수가 없어서... 그게 더 미안해ㅠㅠ\n可我没办法轻易承诺现在就公开……这让我更愧疚ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:02",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage8-4",
+          "title": "",
+          "body": "우리 헤어지는 건 아니지...?ㅠㅠ\n我们不会分手吧……？ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:03",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage9-1",
+          "title": "",
+          "body": "자기야 잠깐만ㅠㅠ\n亲爱的，等一下ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:00",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage9-2",
+          "title": "",
+          "body": "내가 잘못했어. 진짜 다 고칠게\n是我错了，我真的会改。",
+          "senderId": "jeongwoo",
+          "time": "23:01",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage9-3",
+          "title": "",
+          "body": "우리 거의 3년이잖아...\n我们都快交往三年了啊……",
+          "senderId": "jeongwoo",
+          "time": "23:02",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage9-4",
+          "title": "",
+          "body": "제발 한 번만 더 생각해 줘... 나 너 못 보내ㅠㅠ\n求你再考虑一次……我不能失去你ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:03",
+          "hidden": true
         }
       ]
     },
@@ -206,7 +366,16 @@
         "owner",
         "jihoon"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "member-jihoon-01",
+          "title": "",
+          "body": "야 안안아, 일단 얘기 좀 들어 봐\n呀安安，先听他解释一下。",
+          "senderId": "jihoon",
+          "time": "23:04",
+          "hidden": true
+        }
+      ]
     },
     {
       "id": "kakao-jaehyuk",
@@ -216,7 +385,16 @@
         "owner",
         "jaehyuk"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "member-jaehyuk-01",
+          "title": "",
+          "body": "안안, 괜찮아? 정우가 걱정 많이 해...\n安安，还好吗？炡禹很担心你……",
+          "senderId": "jaehyuk",
+          "time": "23:04",
+          "hidden": true
+        }
+      ]
     },
     {
       "id": "kakao-junghwan",
@@ -226,7 +404,16 @@
         "owner",
         "junghwan"
       ],
-      "messages": []
+      "messages": [
+        {
+          "id": "member-junghwan-01",
+          "title": "",
+          "body": "누나... 저 진짜 믿어 주면 안 돼요?ㅠㅠ\n姐姐……能不能相信我一次？ㅠㅠ",
+          "senderId": "junghwan",
+          "time": "23:04",
+          "hidden": true
+        }
+      ]
     }
   ],
   "content": {
@@ -294,7 +481,14 @@
     "stage4_sent": false,
     "stage2_responses_ready": false,
     "stage3_responses_ready": false,
-    "stage4_responses_ready": false
+    "stage4_responses_ready": false,
+    "first_call_finished": false,
+    "stage6_responses_ready": false,
+    "stage7_responses_ready": false,
+    "stage8_responses_ready": false,
+    "stage9_responses_ready": false,
+    "second_call_triggered": false,
+    "public_statement_seen": false
   },
   "events": [
     {
@@ -773,6 +967,643 @@
       "next": [
         "ul-first-call-delay"
       ]
+    },
+    {
+      "id": "ul-first-call-finished",
+      "label": "第一通电话结束",
+      "type": "event",
+      "event": "callEnded",
+      "target": "kakao-jeongwoo",
+      "conditions": [
+        {
+          "key": "first_call_answered",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "first_call_finished",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 6
+        }
+      ],
+      "next": [
+        "ul-aftercall-delay"
+      ]
+    },
+    {
+      "id": "ul-aftercall-delay",
+      "label": "首次通话后挽留及队友消息",
+      "type": "delay",
+      "delayMs": 1600,
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "jw-aftercall-1",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-aftercall-2",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-aftercall-3",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-aftercall-4",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-aftercall-5",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-aftercall-6",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "member-jaehyuk-01",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "member-jihoon-01",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "member-junghwan-01",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "kakao",
+          "value": "쩡쩡❤️ · 자기야..."
+        },
+        {
+          "type": "variable",
+          "key": "stage6_responses_ready",
+          "value": true
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-stage6-name",
+      "label": "第 6 阶段：name",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage6-name",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 6
+        },
+        {
+          "key": "stage6_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 7
+        },
+        {
+          "type": "variable",
+          "key": "stage6_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-stage6-delay"
+      ]
+    },
+    {
+      "id": "ul-stage6-members",
+      "label": "第 6 阶段：members",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage6-members",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 6
+        },
+        {
+          "key": "stage6_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 7
+        },
+        {
+          "type": "variable",
+          "key": "stage6_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-stage6-delay"
+      ]
+    },
+    {
+      "id": "ul-stage6-tired",
+      "label": "第 6 阶段：tired",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage6-tired",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 6
+        },
+        {
+          "key": "stage6_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 7
+        },
+        {
+          "type": "variable",
+          "key": "stage6_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-stage6-delay"
+      ]
+    },
+    {
+      "id": "ul-stage6-delay",
+      "label": "第 6 阶段回复",
+      "type": "delay",
+      "delayMs": 1600,
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "jw-stage6-1",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage6-2",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage6-3",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "stage7_responses_ready",
+          "value": true
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-stage7-where",
+      "label": "第 7 阶段：where",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage7-where",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 7
+        },
+        {
+          "key": "stage7_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 8
+        },
+        {
+          "type": "variable",
+          "key": "stage7_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-stage7-delay"
+      ]
+    },
+    {
+      "id": "ul-stage7-explain",
+      "label": "第 7 阶段：explain",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage7-explain",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 7
+        },
+        {
+          "key": "stage7_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 8
+        },
+        {
+          "type": "variable",
+          "key": "stage7_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-stage7-delay"
+      ]
+    },
+    {
+      "id": "ul-stage7-truth",
+      "label": "第 7 阶段：truth",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage7-truth",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 7
+        },
+        {
+          "key": "stage7_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 8
+        },
+        {
+          "type": "variable",
+          "key": "stage7_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-stage7-delay"
+      ]
+    },
+    {
+      "id": "ul-stage7-delay",
+      "label": "第 7 阶段回复",
+      "type": "delay",
+      "delayMs": 1600,
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "jw-stage7-1",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage7-2",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage7-3",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "stage8_responses_ready",
+          "value": true
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-stage8-tired",
+      "label": "第 8 阶段：tired",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage8-tired",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 8
+        },
+        {
+          "key": "stage8_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 9
+        },
+        {
+          "type": "variable",
+          "key": "stage8_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-stage8-delay"
+      ]
+    },
+    {
+      "id": "ul-stage8-lie",
+      "label": "第 8 阶段：lie",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage8-lie",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 8
+        },
+        {
+          "key": "stage8_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 9
+        },
+        {
+          "type": "variable",
+          "key": "stage8_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-stage8-delay"
+      ]
+    },
+    {
+      "id": "ul-stage8-trust",
+      "label": "第 8 阶段：trust",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage8-trust",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 8
+        },
+        {
+          "key": "stage8_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 9
+        },
+        {
+          "type": "variable",
+          "key": "stage8_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-stage8-delay"
+      ]
+    },
+    {
+      "id": "ul-stage8-delay",
+      "label": "第 8 阶段回复",
+      "type": "delay",
+      "delayMs": 1600,
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "jw-stage8-1",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage8-2",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage8-3",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage8-4",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "stage9_responses_ready",
+          "value": true
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-stage9-sleep",
+      "label": "第 9 阶段：sleep",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage9-sleep",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 9
+        },
+        {
+          "key": "stage9_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 10
+        },
+        {
+          "type": "variable",
+          "key": "stage9_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-stage9-delay"
+      ]
+    },
+    {
+      "id": "ul-stage9-breakup",
+      "label": "第 9 阶段：breakup",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage9-breakup",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 9
+        },
+        {
+          "key": "stage9_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 10
+        },
+        {
+          "type": "variable",
+          "key": "stage9_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-stage9-delay"
+      ]
+    },
+    {
+      "id": "ul-stage9-stop",
+      "label": "第 9 阶段：stop",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage9-stop",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 9
+        },
+        {
+          "key": "stage9_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 10
+        },
+        {
+          "type": "variable",
+          "key": "stage9_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-stage9-delay"
+      ]
+    },
+    {
+      "id": "ul-stage9-delay",
+      "label": "第 9 阶段回复",
+      "type": "delay",
+      "delayMs": 1600,
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "jw-stage9-1",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage9-2",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage9-3",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage9-4",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "stage10_responses_ready",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "second_call_triggered",
+          "value": true
+        },
+        {
+          "type": "call",
+          "key": "kakao-jeongwoo",
+          "value": "쩡쩡❤️"
+        }
+      ],
+      "next": []
     }
   ],
   "tests": [
