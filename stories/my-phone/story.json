@@ -1,17 +1,19 @@
 {
   "scriptVersion": 1,
-  "id": "my-phone",
+  "id": "my-phone-unlisted-love",
   "title": "My Phone",
-  "description": "《My Phone》互动手机故事开发稿。剧情对白、人物照片与两条结局的事件图将在核对后补充；此稿不作为可发布版本。",
-  "revision": 1,
+  "description": "《未公开恋人》· My Phone。已恢复此前第一阶段确认的 KKT 开场与 X 绯闻信息；后续完整剧情、真实图片及结局仍待逐字整合。",
+  "revision": 4,
   "phone": {
-    "owner": "邵安",
-    "date": "2026-10-26",
-    "time": "14:40",
-    "battery": 94,
-    "network": "5G",
+    "owner": "안안",
+    "date": "2026-10-23",
+    "time": "22:46",
     "passcode": "040928",
-    "wallpaper": "apple-wwdc26"
+    "wallpaper": "apple-wwdc26",
+    "theme": "light",
+    "battery": 86,
+    "network": "5G",
+    "notifications": true
   },
   "installedApps": [
     {
@@ -53,7 +55,13 @@
     "instagram",
     "twitter",
     "threads",
-    "notes"
+    "notes",
+    "contacts",
+    "camera",
+    "clock",
+    "calendar",
+    "safari",
+    "appstore"
   ],
   "contacts": [
     {
@@ -61,7 +69,14 @@
       "name": "쩡쩡❤️",
       "phone": "",
       "avatar": "",
-      "bio": ""
+      "bio": "恋人（虚构故事设定）"
+    },
+    {
+      "id": "jimin",
+      "name": "지민이💗",
+      "phone": "",
+      "avatar": "",
+      "bio": "闺蜜"
     },
     {
       "id": "jihoon",
@@ -83,18 +98,149 @@
       "phone": "",
       "avatar": "",
       "bio": ""
-    },
-    {
-      "id": "jimin",
-      "name": "지민이💗",
-      "phone": "",
-      "avatar": "",
-      "bio": ""
     }
   ],
-  "chats": [],
-  "content": {},
-  "variables": {},
+  "chats": [
+    {
+      "id": "kakao-jeongwoo",
+      "app": "kakao",
+      "title": "쩡쩡❤️",
+      "participants": [
+        "owner",
+        "jeongwoo"
+      ],
+      "messages": [
+        {
+          "id": "jw-2246-01",
+          "title": "",
+          "body": "자기야…\n亲爱的……",
+          "senderId": "jeongwoo",
+          "time": "22:46"
+        },
+        {
+          "id": "jw-2246-02",
+          "title": "",
+          "body": "자기 뭐 해?ㅠㅠ\n亲爱的在干嘛呀？ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "22:46"
+        }
+      ]
+    },
+    {
+      "id": "kakao-jimin",
+      "app": "kakao",
+      "title": "지민이💗",
+      "participants": [
+        "owner",
+        "jimin"
+      ],
+      "messages": [
+        {
+          "id": "jm-2250-01",
+          "title": "",
+          "body": "야 안안아\n呀，安安",
+          "senderId": "jimin",
+          "time": "22:50"
+        },
+        {
+          "id": "jm-2250-02",
+          "title": "",
+          "body": "너 괜찮아...?\n你还好吗……？",
+          "senderId": "jimin",
+          "time": "22:50"
+        },
+        {
+          "id": "jm-2250-03",
+          "title": "",
+          "body": "트위터 봤어?\n你看推特了吗？",
+          "senderId": "jimin",
+          "time": "22:50"
+        }
+      ]
+    },
+    {
+      "id": "kakao-jihoon",
+      "app": "kakao",
+      "title": "박지훈",
+      "participants": [
+        "owner",
+        "jihoon"
+      ],
+      "messages": []
+    },
+    {
+      "id": "kakao-jaehyuk",
+      "app": "kakao",
+      "title": "윤재혁",
+      "participants": [
+        "owner",
+        "jaehyuk"
+      ],
+      "messages": []
+    },
+    {
+      "id": "kakao-junghwan",
+      "app": "kakao",
+      "title": "소정환",
+      "participants": [
+        "owner",
+        "junghwan"
+      ],
+      "messages": []
+    }
+  ],
+  "content": {
+    "twitter": [
+      {
+        "id": "x-rumor-01",
+        "title": "청담동 목격담",
+        "body": "청담동에서 TREASURE 박정우랑 배우 한서윤 봤다는 목격담이 올라왔대.\n网传有人在清潭洞目击 TREASURE 朴炡禹与演员韩瑞允。",
+        "time": "22:45",
+        "sender": "@city_watch",
+        "likes": 0
+      },
+      {
+        "id": "x-rumor-02",
+        "title": "사실 확인 전",
+        "body": "사진만 보고 단정하지 말자. 공식 입장도 아직 없잖아.\n别只凭照片下结论，目前还没有正式说明。",
+        "time": "22:47",
+        "sender": "@careful_voice",
+        "likes": 0
+      },
+      {
+        "id": "x-rumor-03",
+        "title": "팬들 반응",
+        "body": "정우 오늘 숙소에 있는 줄 알았는데… 이게 무슨 일이야?\n我以为炡禹今天在宿舍……这到底怎么回事？",
+        "time": "22:49",
+        "sender": "@night_feed",
+        "likes": 0
+      }
+    ],
+    "instagram": [
+      {
+        "id": "ig-placeholder-01",
+        "title": "사진은 공개 전 별도 확인",
+        "body": "실제 인물 사진은 공개 사용 허락을 확인한 뒤 추가합니다.\n真人照片将在公开使用授权确认后添加。",
+        "time": "22:40",
+        "sender": "@myphone_story",
+        "likes": 0
+      }
+    ],
+    "notes": [
+      {
+        "id": "note-about-01",
+        "title": "My Phone · 开发说明",
+        "body": "本版本为第一阶段数据稿。后续分支、完整对话、图片和结局尚未导入；此说明不是游戏剧情。",
+        "time": "22:46",
+        "sender": "系统",
+        "likes": 0
+      }
+    ]
+  },
+  "variables": {
+    "story_stage": 1,
+    "photo_publication_approved": false
+  },
   "events": [],
   "tests": []
 }
