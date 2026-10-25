@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "My Phone ·《未公开恋人》互动手机故事。KakaoTalk 手动回复、绯闻、两次来电、公开声明、Instagram 私信与 ENDING 01。开发版不包含未经授权的真人照片。",
-  "revision": 19,
+  "revision": 20,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -2862,6 +2862,55 @@
         "x-jeongwoo-public",
         "jw-apology-1",
         "jw-reconcile-1"
+      ]
+    },
+    {
+      "name": "首通来电可连续拒接两次并再次重拨",
+      "steps": [
+        {
+          "event": "sentMessage",
+          "target": "stage2-photo"
+        },
+        {
+          "advanceMs": 1800
+        },
+        {
+          "event": "sentMessage",
+          "target": "stage3-actress"
+        },
+        {
+          "advanceMs": 1800
+        },
+        {
+          "event": "sentMessage",
+          "target": "stage4-stop"
+        },
+        {
+          "advanceMs": 3000
+        },
+        {
+          "event": "callDeclined",
+          "target": "kakao-jeongwoo"
+        },
+        {
+          "advanceMs": 5000
+        },
+        {
+          "event": "callDeclined",
+          "target": "kakao-jeongwoo"
+        },
+        {
+          "advanceMs": 5000
+        },
+        {
+          "event": "devCheckpoint",
+          "target": "stage1"
+        }
+      ],
+      "ending": "DEV_STAGE1_CHECKPOINT",
+      "expectUnlocked": [
+        "jw-stage2-a",
+        "jw-stage3-a"
       ]
     }
   ]
