@@ -1179,6 +1179,9 @@ function AppContent({
             chats.map((t) => {
               const list = shown.filter((i) => i.title === t),
                 last = list[list.length - 1];
+              const unread = work.id === "my-phone-unlisted-love" && !creator
+                ? list.filter((i) => !i.outgoing && !state.read.includes(i.id)).length
+                : 0;
               return (
                 <button
                   className="contact-row"
@@ -1197,7 +1200,17 @@ function AppContent({
                     <strong>{t}</strong>
                     <p>{last.body}</p>
                   </span>
-                  <small>{last.time.slice(-5)}</small>
+                  <span style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: 5 }}>
+                    <small>{last.time.slice(-5)}</small>
+                    {unread > 0 && (
+                      <span aria-label={`未读 ${unread} 条`} style={{
+                        minWidth: 19, height: 19, borderRadius: 12,
+                        background: "#ef424d", color: "#fff",
+                        fontSize: 11, fontWeight: 700, padding: "2px 5px",
+                        textAlign: "center", lineHeight: "15px"
+                      }}>{unread > 99 ? "99+" : unread}</span>
+                    )}
+                  </span>
                 </button>
               );
             })
