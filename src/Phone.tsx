@@ -34,6 +34,7 @@ import "./ios/status-bar.css";
 import { WeChatSkin, WhatsAppSkin } from "./AppSkins";
 import { RichText } from "./RichText";
 import { MyPhoneKakao } from "./MyPhoneKakao";
+import { MyPhoneInstagram } from "./MyPhoneInstagram";
 import { MyPhoneCallSubtitles } from "./MyPhoneCallSubtitles";
 import {
   useEffect,
@@ -1036,6 +1037,8 @@ function AppContent({
       )}
     </div>
   ) : null;
+  if (work.id === "my-phone-unlisted-love" && app.id === "instagram" && !creator)
+    return <MyPhoneInstagram items={shown} onRead={onRead} onBack={onBack} />;
   if (Skin)
     return (
       <>
