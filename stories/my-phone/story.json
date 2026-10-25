@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "《未公开恋人》· My Phone 开发版。首轮三选一回复需要玩家点击发送；发送后触发首次来电。完整剧情及照片仍待接入。",
-  "revision": 11,
+  "revision": 12,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -123,6 +123,46 @@
           "body": "자기 뭐 해?ㅠㅠ\n亲爱的在干嘛呀？ㅠㅠ",
           "senderId": "jeongwoo",
           "time": "22:46"
+        },
+        {
+          "id": "jw-stage2-a",
+          "title": "",
+          "body": "자기야... 왜 그래?ㅠㅠ\n亲爱的……怎么了？ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "22:52",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage2-b",
+          "title": "",
+          "body": "나 진짜 너한테 할 말 있어...\n我真的有话想跟你说……",
+          "senderId": "jeongwoo",
+          "time": "22:52",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage3-a",
+          "title": "",
+          "body": "...자기야ㅠㅠ\n……亲爱的ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "22:53",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage3-b",
+          "title": "",
+          "body": "그 사진... 나도 방금 봤어\n那张照片……我也刚刚看到了。",
+          "senderId": "jeongwoo",
+          "time": "22:53",
+          "hidden": true
+        },
+        {
+          "id": "jw-stage3-c",
+          "title": "",
+          "body": "나 진짜 바람피운 거 아니야ㅠㅠ\n我真的没有出轨ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "22:53",
+          "hidden": true
         }
       ]
     },
@@ -241,7 +281,7 @@
     ]
   },
   "variables": {
-    "story_stage": 1,
+    "story_stage": 2,
     "photo_publication_approved": false,
     "x_rumor_seen": false,
     "first_call_triggered": false,
@@ -249,7 +289,12 @@
     "first_call_answered": false,
     "first_call_queued": false,
     "first_reply_sent": false,
-    "first_reply_choice": ""
+    "first_reply_choice": "",
+    "stage3_sent": false,
+    "stage4_sent": false,
+    "stage2_responses_ready": false,
+    "stage3_responses_ready": false,
+    "stage4_responses_ready": false
   },
   "events": [
     {
@@ -402,108 +447,6 @@
       "next": []
     },
     {
-      "id": "ul-first-reply-where",
-      "label": "询问炡禹的位置",
-      "type": "event",
-      "event": "sentMessage",
-      "target": "where",
-      "conditions": [
-        {
-          "key": "first_reply_sent",
-          "op": "eq",
-          "value": false
-        }
-      ],
-      "actions": [
-        {
-          "type": "variable",
-          "key": "first_reply_sent",
-          "value": true
-        },
-        {
-          "type": "variable",
-          "key": "first_reply_choice",
-          "value": "where"
-        },
-        {
-          "type": "variable",
-          "key": "first_call_queued",
-          "value": true
-        }
-      ],
-      "next": [
-        "ul-first-call-delay"
-      ]
-    },
-    {
-      "id": "ul-first-reply-photo",
-      "label": "询问网上照片",
-      "type": "event",
-      "event": "sentMessage",
-      "target": "photo",
-      "conditions": [
-        {
-          "key": "first_reply_sent",
-          "op": "eq",
-          "value": false
-        }
-      ],
-      "actions": [
-        {
-          "type": "variable",
-          "key": "first_reply_sent",
-          "value": true
-        },
-        {
-          "type": "variable",
-          "key": "first_reply_choice",
-          "value": "photo"
-        },
-        {
-          "type": "variable",
-          "key": "first_call_queued",
-          "value": true
-        }
-      ],
-      "next": [
-        "ul-first-call-delay"
-      ]
-    },
-    {
-      "id": "ul-first-reply-lie",
-      "label": "质问炡禹是否说谎",
-      "type": "event",
-      "event": "sentMessage",
-      "target": "lie",
-      "conditions": [
-        {
-          "key": "first_reply_sent",
-          "op": "eq",
-          "value": false
-        }
-      ],
-      "actions": [
-        {
-          "type": "variable",
-          "key": "first_reply_sent",
-          "value": true
-        },
-        {
-          "type": "variable",
-          "key": "first_reply_choice",
-          "value": "lie"
-        },
-        {
-          "type": "variable",
-          "key": "first_call_queued",
-          "value": true
-        }
-      ],
-      "next": [
-        "ul-first-call-delay"
-      ]
-    },
-    {
       "id": "ul-stage1-test-checkpoint",
       "label": "开发测试专用：第一阶段事件已触发",
       "type": "event",
@@ -529,11 +472,312 @@
         }
       ],
       "next": []
+    },
+    {
+      "id": "ul-first-reply-where",
+      "label": "询问炡禹的位置",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage2-where",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 2
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "first_reply_sent",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "first_reply_choice",
+          "value": "where"
+        },
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 3
+        }
+      ],
+      "next": [
+        "ul-stage2-response-delay"
+      ]
+    },
+    {
+      "id": "ul-first-reply-photo",
+      "label": "询问网上照片",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage2-photo",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 2
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "first_reply_sent",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "first_reply_choice",
+          "value": "photo"
+        },
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 3
+        }
+      ],
+      "next": [
+        "ul-stage2-response-delay"
+      ]
+    },
+    {
+      "id": "ul-first-reply-lie",
+      "label": "质问炡禹是否说谎",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage2-lie",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 2
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "first_reply_sent",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "first_reply_choice",
+          "value": "lie"
+        },
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 3
+        }
+      ],
+      "next": [
+        "ul-stage2-response-delay"
+      ]
+    },
+    {
+      "id": "ul-stage2-response-delay",
+      "label": "炡禹回复第一轮追问",
+      "type": "delay",
+      "delayMs": 1800,
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "jw-stage2-a",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage2-b",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "stage2_responses_ready",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "kakao",
+          "value": "쩡쩡❤️ · 자기야... 왜 그래?ㅠㅠ"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-stage3-dorm",
+      "label": "追问宿舍谎言",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage3-dorm",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 3
+        },
+        {
+          "key": "stage2_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "stage3_sent",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 4
+        }
+      ],
+      "next": [
+        "ul-stage3-response-delay"
+      ]
+    },
+    {
+      "id": "ul-stage3-actress",
+      "label": "询问韩瑞允关系",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage3-actress",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 3
+        },
+        {
+          "key": "stage2_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "stage3_sent",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 4
+        }
+      ],
+      "next": [
+        "ul-stage3-response-delay"
+      ]
+    },
+    {
+      "id": "ul-stage3-explain",
+      "label": "要求解释",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage3-explain",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 3
+        },
+        {
+          "key": "stage2_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "stage3_sent",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 4
+        }
+      ],
+      "next": [
+        "ul-stage3-response-delay"
+      ]
+    },
+    {
+      "id": "ul-stage3-response-delay",
+      "label": "炡禹解释照片",
+      "type": "delay",
+      "delayMs": 1800,
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "jw-stage3-a",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage3-b",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-stage3-c",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "stage3_responses_ready",
+          "value": true
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-stage4-stop",
+      "label": "玩家暂时不想听解释",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage4-stop",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 4
+        },
+        {
+          "key": "stage3_responses_ready",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "stage4_sent",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 5
+        },
+        {
+          "type": "variable",
+          "key": "first_call_queued",
+          "value": true
+        }
+      ],
+      "next": [
+        "ul-first-call-delay"
+      ]
     }
   ],
   "tests": [
     {
-      "name": "第一阶段：查看闺蜜提醒、阅读绯闻、亲自发送回复、接到来电",
+      "name": "第一阶段：三轮手动回复、来电、拒接重拨",
       "steps": [
         {
           "event": "read",
@@ -545,29 +789,21 @@
         },
         {
           "event": "sentMessage",
-          "target": "where"
+          "target": "stage2-where"
         },
         {
-          "advanceMs": 3000
+          "advanceMs": 1800
         },
-        {
-          "event": "devCheckpoint",
-          "target": "stage1"
-        }
-      ],
-      "ending": "DEV_STAGE1_CHECKPOINT",
-      "expectUnlocked": [
-        "x-rumor-01",
-        "x-rumor-02",
-        "x-rumor-03"
-      ]
-    },
-    {
-      "name": "第一阶段：拒接后五秒重拨",
-      "steps": [
         {
           "event": "sentMessage",
-          "target": "photo"
+          "target": "stage3-dorm"
+        },
+        {
+          "advanceMs": 1800
+        },
+        {
+          "event": "sentMessage",
+          "target": "stage4-stop"
         },
         {
           "advanceMs": 3000
@@ -585,7 +821,16 @@
         }
       ],
       "ending": "DEV_STAGE1_CHECKPOINT",
-      "expectUnlocked": []
+      "expectUnlocked": [
+        "x-rumor-01",
+        "x-rumor-02",
+        "x-rumor-03",
+        "jw-stage2-a",
+        "jw-stage2-b",
+        "jw-stage3-a",
+        "jw-stage3-b",
+        "jw-stage3-c"
+      ]
     }
   ]
 }
