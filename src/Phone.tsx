@@ -34,6 +34,7 @@ import "./ios/status-bar.css";
 import { WeChatSkin, WhatsAppSkin } from "./AppSkins";
 import { RichText } from "./RichText";
 import { MyPhoneKakao } from "./MyPhoneKakao";
+import { MyPhoneCallSubtitles } from "./MyPhoneCallSubtitles";
 import {
   useEffect,
   useState,
@@ -646,6 +647,9 @@ function PhoneRuntime({
                     <p>这是一通虚构来电。</p>
                   );
                 })()}
+              {work.id === "my-phone-unlisted-love" && s.incomingCall.status === "answered" && (
+                <MyPhoneCallSubtitles second={s.variables.second_call_triggered === true} />
+              )}
               <div className="incoming-actions">
                 <button
                   className="decline-call"
