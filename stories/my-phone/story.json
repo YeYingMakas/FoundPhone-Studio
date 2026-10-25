@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "《未公开恋人》· My Phone 开发版。首轮三选一回复需要玩家点击发送；发送后触发首次来电。完整剧情及照片仍待接入。",
-  "revision": 10,
+  "revision": 11,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -502,7 +502,90 @@
       "next": [
         "ul-first-call-delay"
       ]
+    },
+    {
+      "id": "ul-stage1-test-checkpoint",
+      "label": "开发测试专用：第一阶段事件已触发",
+      "type": "event",
+      "event": "devCheckpoint",
+      "target": "stage1",
+      "conditions": [
+        {
+          "key": "first_call_triggered",
+          "op": "eq",
+          "value": true
+        },
+        {
+          "key": "first_reply_sent",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "ending",
+          "key": "",
+          "value": "DEV_STAGE1_CHECKPOINT"
+        }
+      ],
+      "next": []
     }
   ],
-  "tests": []
+  "tests": [
+    {
+      "name": "第一阶段：查看闺蜜提醒、阅读绯闻、亲自发送回复、接到来电",
+      "steps": [
+        {
+          "event": "read",
+          "target": "jm-2250-03"
+        },
+        {
+          "event": "openApp",
+          "target": "twitter"
+        },
+        {
+          "event": "sentMessage",
+          "target": "where"
+        },
+        {
+          "advanceMs": 3000
+        },
+        {
+          "event": "devCheckpoint",
+          "target": "stage1"
+        }
+      ],
+      "ending": "DEV_STAGE1_CHECKPOINT",
+      "expectUnlocked": [
+        "x-rumor-01",
+        "x-rumor-02",
+        "x-rumor-03"
+      ]
+    },
+    {
+      "name": "第一阶段：拒接后五秒重拨",
+      "steps": [
+        {
+          "event": "sentMessage",
+          "target": "photo"
+        },
+        {
+          "advanceMs": 3000
+        },
+        {
+          "event": "callDeclined",
+          "target": "kakao-jeongwoo"
+        },
+        {
+          "advanceMs": 5000
+        },
+        {
+          "event": "devCheckpoint",
+          "target": "stage1"
+        }
+      ],
+      "ending": "DEV_STAGE1_CHECKPOINT",
+      "expectUnlocked": []
+    }
+  ]
 }
