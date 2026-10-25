@@ -33,6 +33,7 @@ import "./ios/reference.css";
 import "./ios/status-bar.css";
 import { WeChatSkin, WhatsAppSkin } from "./AppSkins";
 import { RichText } from "./RichText";
+import { MyPhoneKakao } from "./MyPhoneKakao";
 import {
   useEffect,
   useState,
@@ -453,6 +454,22 @@ function PhoneRuntime({
                   creator={creator}
                   state={s}
                   onRead={(id) => event("read", id)}
+                  onStorySend={(id, body, title) => {
+                    const current = runtimeRef.current;
+                    const existing = current.messages.kakao ?? [];
+                    if (existing.some((m) => m.id === `myphone-reply-${id}`)) return;
+                    const next = dispatch(work, {
+                      ...current,
+                      messages: { ...current.messages, kakao: [...existing, {
+                        id: `myphone-reply-${id}`, title, body,
+                        richText: "", meta: {}, time: `${current.date ?? work.phone.date} ${current.time}`,
+                        sender: work.phone.owner, avatar: "", kind: "text", media: "",
+                        hidden: false, unlock: "", password: "", folder: "", favorite: false,
+                        outgoing: true, read: true, likes: 0, comments: [],
+                      }] },
+                    }, "sentMessage", id);
+                    update(next);
+                  }}
                   onEdit={(item) => onEdit?.(app, item)}
                   onAdd={() => onAdd?.(app)}
                   onBack={() => setApp("")}
@@ -866,6 +883,7 @@ function AppContent({
   onBack,
   onSettings,
   onUi,
+  onStorySend,
   work,
 }: {
   app: AppPlugin;
@@ -879,6 +897,7 @@ function AppContent({
   onBack: () => void;
   onSettings?: () => void;
   onUi?: (key: string, value: UiValue) => void;
+  onStorySend?: (id: string, body: string, title: string) => void;
   work: Work;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
@@ -1072,6 +1091,10 @@ function AppContent({
         />
       ) : detail ? (
         detailView
+      ) : app.id === "kakao" && thread && work.id === "my-phone" && !creator ? (
+        <MyPhoneKakao title={thread} items={shown} onRead={onRead} onBack={() => setThread("")}
+          canReply={thread === "쩡쩡❤️" && !state.variables.first_reply_sent}
+          onSend={(id, body, title) => onStorySend?.(id, body, title)} />
       ) : app.engine === "messaging" && thread ? (
         <div className="chat-content">
           <div className="chat-time">2026 年 9 月 1 日</div>
