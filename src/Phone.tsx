@@ -162,6 +162,7 @@ function PhoneRuntime({
   const gestureConsumed = useRef(false);
   const [pinError, setPinError] = useState("");
   const [pinFailures, setPinFailures] = useState(0);
+  const [endingDismissed, setEndingDismissed] = useState(false);
   const [folder, setFolder] = useState("");
   const [panel, setPanel] = useState("");
   const [own, setOwn] = useState(() => initialRuntime(work));
@@ -617,14 +618,29 @@ function PhoneRuntime({
               ))}
             </div>
           )}
-          {!creator && s.endings.length > 0 && !locked && (
-            <div className="story-overlay ending">
-              <span className="eyebrow">ENDING · {s.endings.length}</span>
-              <h2>故事在这里停泊。</h2>
-              <p>{s.endings[s.endings.length - 1]}</p>
+          {!creator && s.endings.length > 0 && !locked && !endingDismissed && (
+            <div className="story-overlay ending" role="dialog" aria-label="故事结局">
+              {work.id === "my-phone-unlisted-love" ? (
+                <>
+                  <span className="eyebrow">UNLISTED LOVE · ENDING 01</span>
+                  <h2>不再隐藏</h2>
+                  <p>숨기지 않을게. 이제는 우리 둘 다.</p>
+                  <p>从今以后，不再让我们的爱成为秘密。</p>
+                  <button onClick={() => setEndingDismissed(true)}>
+                    继续使用 My Phone
+                  </button>
+                </>
+              ) : (
+                <>
+                  <span className="eyebrow">ENDING · {s.endings.length}</span>
+                  <h2>故事在这里停泊。</h2>
+                  <p>{s.endings[s.endings.length - 1]}</p>
+                </>
+              )}
               <button
                 onClick={() => {
                   update(dispatch(work, initialRuntime(work), "start"));
+                  setEndingDismissed(false);
                   setApp("");
                   setLocked(true);
                 }}
