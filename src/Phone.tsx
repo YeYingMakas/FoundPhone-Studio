@@ -1095,7 +1095,12 @@ function AppContent({
         detailView
       ) : app.id === "kakao" && thread && work.id === "my-phone-unlisted-love" && !creator ? (
         <MyPhoneKakao title={thread} items={shown} onRead={onRead} onBack={() => setThread("")}
-          canReply={thread === "쩡쩡❤️" && !state.variables.first_reply_sent}
+          stage={Number(state.variables.story_stage ?? 2)}
+          canReply={thread === "쩡쩡❤️" && (
+            Number(state.variables.story_stage) === 2 ||
+            (Number(state.variables.story_stage) === 3 && state.variables.stage2_responses_ready === true) ||
+            (Number(state.variables.story_stage) === 4 && state.variables.stage3_responses_ready === true)
+          )}
           onSend={(id, body, title) => onStorySend?.(id, body, title)} />
       ) : app.engine === "messaging" && thread ? (
         <div className="chat-content">
