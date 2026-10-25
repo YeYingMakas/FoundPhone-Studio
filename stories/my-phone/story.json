@@ -1,0 +1,100 @@
+{
+  "scriptVersion": 1,
+  "id": "my-phone",
+  "title": "My Phone",
+  "description": "《My Phone》互动手机故事开发稿。剧情对白、人物照片与两条结局的事件图将在核对后补充；此稿不作为可发布版本。",
+  "revision": 1,
+  "phone": {
+    "owner": "邵安",
+    "date": "2026-10-26",
+    "time": "14:40",
+    "battery": 94,
+    "network": "5G",
+    "passcode": "040928",
+    "wallpaper": "apple-wwdc26"
+  },
+  "installedApps": [
+    {
+      "id": "phone",
+      "name": "电话",
+      "installed": true,
+      "visible": true,
+      "dock": true,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "kakao",
+      "name": "KakaoTalk",
+      "installed": true,
+      "visible": true,
+      "dock": true,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "photos",
+      "name": "照片",
+      "installed": true,
+      "visible": true,
+      "dock": true,
+      "folder": "",
+      "icon": ""
+    },
+    {
+      "id": "settings",
+      "name": "设置",
+      "installed": true,
+      "visible": true,
+      "dock": true,
+      "folder": "",
+      "icon": ""
+    },
+    "instagram",
+    "twitter",
+    "threads",
+    "notes"
+  ],
+  "contacts": [
+    {
+      "id": "jeongwoo",
+      "name": "쩡쩡❤️",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "jihoon",
+      "name": "박지훈",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "jaehyuk",
+      "name": "윤재혁",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "junghwan",
+      "name": "소정환",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    },
+    {
+      "id": "jimin",
+      "name": "지민이💗",
+      "phone": "",
+      "avatar": "",
+      "bio": ""
+    }
+  ],
+  "chats": [],
+  "content": {},
+  "variables": {},
+  "events": [],
+  "tests": []
+}
