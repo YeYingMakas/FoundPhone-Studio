@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "My Phone ·《未公开恋人》互动手机故事。KakaoTalk 手动回复、绯闻、两次来电、公开声明、Instagram 私信与 ENDING 01。开发版不包含未经授权的真人照片。",
-  "revision": 18,
+  "revision": 19,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -1086,6 +1086,11 @@
           "key": "first_call_declined",
           "op": "eq",
           "value": false
+        },
+        {
+          "key": "first_call_answered",
+          "op": "eq",
+          "value": false
         }
       ],
       "actions": [
@@ -1097,7 +1102,8 @@
       ],
       "next": [
         "ul-first-call-retry-delay"
-      ]
+      ],
+      "once": false
     },
     {
       "id": "ul-first-call-retry-delay",
@@ -1109,9 +1115,15 @@
           "type": "call",
           "key": "kakao-jeongwoo",
           "value": "쩡쩡❤️"
+        },
+        {
+          "type": "variable",
+          "key": "first_call_declined",
+          "value": false
         }
       ],
-      "next": []
+      "next": [],
+      "once": false
     },
     {
       "id": "ul-first-call-answered",
