@@ -1101,6 +1101,8 @@ function AppContent({
             (Number(state.variables.story_stage) === 3 && state.variables.stage2_responses_ready === true) ||
             (Number(state.variables.story_stage) === 4 && state.variables.stage3_responses_ready === true) ||
             ([6, 7, 8, 9].includes(Number(state.variables.story_stage)) &&
+              state.variables[`stage${state.variables.story_stage}_responses_ready`] === true) ||
+            ([14, 15].includes(Number(state.variables.story_stage)) &&
               state.variables[`stage${state.variables.story_stage}_responses_ready`] === true)
           )}
           onSend={(id, body, title) => onStorySend?.(id, body, title)} />
