@@ -16,7 +16,10 @@
     "story:validate": "node scripts/story.mjs validate",
     "story:build": "node scripts/story.mjs build",
     "story:preview": "npm run dev",
-    "story:test": "node scripts/story.mjs test"
+    "story:test": "node scripts/story.mjs test",
+    "my-phone:validate": "node scripts/story.mjs validate stories/my-phone/story.json",
+    "my-phone:test": "node scripts/story.mjs test stories/my-phone/story.json",
+    "my-phone:build": "node scripts/story.mjs build stories/my-phone/story.json && tsc -b && vite build --config vite.runtime.config.ts && node scripts/package-runtime.mjs"
   },
   "dependencies": {
     "@tiptap/react": "^3.0.0",
