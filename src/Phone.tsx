@@ -726,8 +726,15 @@ function PhoneRuntime({
             <button
               className="device-banner"
               onClick={() => {
+                const targetApp = notificationContent(banner, work.apps).appId;
                 setBanner("");
-                setPanel("notification");
+                if (work.id === "my-phone-unlisted-love" &&
+                    work.apps.some((a) => a.id === targetApp && a.installed)) {
+                  setPanel("");
+                  open(targetApp);
+                } else {
+                  setPanel("notification");
+                }
               }}
             >
               <AppIcon
