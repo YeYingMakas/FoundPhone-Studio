@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "《未公开恋人》· My Phone 开发版。闺蜜提醒解锁 X 绯闻；阅读炡禹开场消息且看过绯闻后触发首通来电。玩家手动发送与通话分支仍待实现。",
-  "revision": 6,
+  "revision": 7,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -323,6 +323,11 @@
           "key": "x_rumor_seen",
           "op": "eq",
           "value": true
+        },
+        {
+          "key": "first_call_triggered",
+          "op": "eq",
+          "value": false
         }
       ],
       "actions": [],
@@ -346,6 +351,11 @@
           "key": "read:jm-2250-03",
           "op": "eq",
           "value": true
+        },
+        {
+          "key": "first_call_triggered",
+          "op": "eq",
+          "value": false
         }
       ],
       "actions": [],
