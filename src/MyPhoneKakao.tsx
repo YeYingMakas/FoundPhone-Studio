@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { Item } from "./schema";
+import "./my-phone-kakao.css";
 
 type Reply = { id: string; ko: string; zh: string };
 const REPLIES: Record<number, Reply[]> = {
@@ -88,7 +89,7 @@ export function MyPhoneKakao({
   const enabled = canReply && options.length > 0;
   const selected = draft && options.some((o) => o.id === draft.id) ? draft : null;
   return (
-    <div className="chat-content" aria-label={title + " 聊天"}>
+    <div className="chat-content my-phone-kakao" aria-label={title + " 聊天"}>
       <div className="chat-time">今天</div>
       {messages.filter((item) => revealed.has(item.id)).map((item) => (
         <button
@@ -96,10 +97,15 @@ export function MyPhoneKakao({
           className={`message-row ${item.outgoing ? "outgoing" : ""}`}
           onClick={() => onRead(item.id)}
         >
-          <span className="avatar">{item.sender.slice(0, 1)}</span>
-          <span className="bubble" style={{ whiteSpace: "pre-line" }}>
-            {item.body}
-            <small>{item.time.slice(-5)}</small>
+          {!item.outgoing && <span className="avatar">{item.sender.slice(0, 1)}</span>}
+          <span className="my-phone-bubble-wrap">
+            {!item.outgoing && <strong className="my-phone-sender">{item.sender}</strong>}
+            <span className="bubble">
+              {item.body.split("\\n").map((line, index) => (
+                <span key={index} className={index === 0 ? "my-phone-ko" : "my-phone-zh"}>{line}</span>
+              ))}
+            </span>
+            <small className="my-phone-timestamp">{item.time.slice(-5)}</small>
           </span>
         </button>
       ))}
