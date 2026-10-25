@@ -2,8 +2,8 @@
   "scriptVersion": 1,
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
-  "description": "《未公开恋人》· My Phone。已恢复此前第一阶段确认的 KKT 开场与 X 绯闻信息；后续完整剧情、真实图片及结局仍待逐字整合。",
-  "revision": 4,
+  "description": "《未公开恋人》· My Phone，基于原始剧情恢复的开发版本。已接入闺蜜消息→X 绯闻动态的事件解锁；其余剧情及图片仍在开发。",
+  "revision": 5,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -197,7 +197,8 @@
         "body": "청담동에서 TREASURE 박정우랑 배우 한서윤 봤다는 목격담이 올라왔대.\n网传有人在清潭洞目击 TREASURE 朴炡禹与演员韩瑞允。",
         "time": "22:45",
         "sender": "@city_watch",
-        "likes": 0
+        "likes": 0,
+        "hidden": true
       },
       {
         "id": "x-rumor-02",
@@ -205,7 +206,8 @@
         "body": "사진만 보고 단정하지 말자. 공식 입장도 아직 없잖아.\n别只凭照片下结论，目前还没有正式说明。",
         "time": "22:47",
         "sender": "@careful_voice",
-        "likes": 0
+        "likes": 0,
+        "hidden": true
       },
       {
         "id": "x-rumor-03",
@@ -213,7 +215,8 @@
         "body": "정우 오늘 숙소에 있는 줄 알았는데… 이게 무슨 일이야?\n我以为炡禹今天在宿舍……这到底怎么回事？",
         "time": "22:49",
         "sender": "@night_feed",
-        "likes": 0
+        "likes": 0,
+        "hidden": true
       }
     ],
     "instagram": [
@@ -239,8 +242,75 @@
   },
   "variables": {
     "story_stage": 1,
-    "photo_publication_approved": false
+    "photo_publication_approved": false,
+    "x_rumor_seen": false
   },
-  "events": [],
+  "events": [
+    {
+      "id": "ul-start",
+      "label": "未公开恋人开场",
+      "type": "start",
+      "actions": [
+        {
+          "type": "notification",
+          "key": "kakao",
+          "value": "쩡쩡❤️ · 자기야…"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-friend-alert",
+      "label": "阅读闺蜜热搜提醒后解锁 X 绯闻",
+      "type": "event",
+      "event": "read",
+      "target": "jm-2250-03",
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "x-rumor-01",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "x-rumor-02",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "x-rumor-03",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "twitter",
+          "value": "X · 朴炡禹与韩瑞允同行的消息正在传播"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-open-x",
+      "label": "首次查看 X 热搜",
+      "type": "event",
+      "event": "openApp",
+      "target": "twitter",
+      "conditions": [
+        {
+          "key": "read:jm-2250-03",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "x_rumor_seen",
+          "value": true
+        }
+      ],
+      "next": []
+    }
+  ],
   "tests": []
 }
