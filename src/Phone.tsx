@@ -1091,7 +1091,7 @@ function AppContent({
         />
       ) : detail ? (
         detailView
-      ) : app.id === "kakao" && thread && work.id === "my-phone" && !creator ? (
+      ) : app.id === "kakao" && thread && work.id === "my-phone-unlisted-love" && !creator ? (
         <MyPhoneKakao title={thread} items={shown} onRead={onRead} onBack={() => setThread("")}
           canReply={thread === "쩡쩡❤️" && !state.variables.first_reply_sent}
           onSend={(id, body, title) => onStorySend?.(id, body, title)} />
