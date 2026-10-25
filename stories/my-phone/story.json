@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "My Phone ·《未公开恋人》互动手机故事。KakaoTalk 手动回复、绯闻、两次来电、公开声明、Instagram 私信与 ENDING 01。开发版不包含未经授权的真人照片。",
-  "revision": 16,
+  "revision": 18,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -1474,6 +1474,11 @@
           "key": "first_call_answered",
           "op": "eq",
           "value": true
+        },
+        {
+          "key": "first_call_finished",
+          "op": "eq",
+          "value": false
         }
       ],
       "actions": [
@@ -2111,6 +2116,11 @@
           "key": "second_call_triggered",
           "op": "eq",
           "value": true
+        },
+        {
+          "key": "public_statement_unlocked",
+          "op": "eq",
+          "value": false
         }
       ],
       "actions": [
@@ -2179,6 +2189,11 @@
           "key": "public_statement_unlocked",
           "op": "eq",
           "value": true
+        },
+        {
+          "key": "public_statement_seen",
+          "op": "eq",
+          "value": false
         }
       ],
       "actions": [
@@ -2396,6 +2411,11 @@
           "key": "public_statement_seen",
           "op": "eq",
           "value": true
+        },
+        {
+          "key": "apology_unlocked",
+          "op": "eq",
+          "value": false
         }
       ],
       "actions": [
@@ -2549,6 +2569,11 @@
           "type": "notification",
           "key": "kakao",
           "value": "쩡쩡❤️ · 미안해ㅠㅠ"
+        },
+        {
+          "type": "variable",
+          "key": "stage15_responses_ready",
+          "value": true
         }
       ],
       "next": []
