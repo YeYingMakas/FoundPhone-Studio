@@ -101,7 +101,7 @@ export function MyPhoneKakao({
           <span className="my-phone-bubble-wrap">
             {!item.outgoing && <strong className="my-phone-sender">{item.sender}</strong>}
             <span className="bubble">
-              {item.body.split("\\n").map((line, index) => (
+              {item.body.split("\n").map((line, index) => (
                 <span key={index} className={index === 0 ? "my-phone-ko" : "my-phone-zh"}>{line}</span>
               ))}
             </span>
