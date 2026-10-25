@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "My Phone ·《未公开恋人》互动手机故事。KakaoTalk 手动回复、绯闻、两次来电、公开声明、Instagram 私信与 ENDING 01。开发版不包含未经授权的真人照片。",
-  "revision": 21,
+  "revision": 22,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -941,6 +941,846 @@
         "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
         "time": "23:25",
         "sender": "@fan_036",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-037",
+        "title": "DM 요청 37",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:26",
+        "sender": "@fan_037",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-038",
+        "title": "DM 요청 38",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:26",
+        "sender": "@fan_038",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-039",
+        "title": "DM 요청 39",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:26",
+        "sender": "@fan_039",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-040",
+        "title": "DM 요청 40",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:26",
+        "sender": "@fan_040",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-041",
+        "title": "DM 요청 41",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:26",
+        "sender": "@fan_041",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-042",
+        "title": "DM 요청 42",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:26",
+        "sender": "@fan_042",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-043",
+        "title": "DM 요청 43",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:26",
+        "sender": "@fan_043",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-044",
+        "title": "DM 요청 44",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:26",
+        "sender": "@fan_044",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-045",
+        "title": "DM 요청 45",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:26",
+        "sender": "@fan_045",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-046",
+        "title": "DM 요청 46",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:26",
+        "sender": "@fan_046",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-047",
+        "title": "DM 요청 47",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:26",
+        "sender": "@fan_047",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-048",
+        "title": "DM 요청 48",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:26",
+        "sender": "@fan_048",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-049",
+        "title": "DM 요청 49",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:27",
+        "sender": "@fan_049",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-050",
+        "title": "DM 요청 50",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:27",
+        "sender": "@fan_050",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-051",
+        "title": "DM 요청 51",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:27",
+        "sender": "@fan_051",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-052",
+        "title": "DM 요청 52",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:27",
+        "sender": "@fan_052",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-053",
+        "title": "DM 요청 53",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:27",
+        "sender": "@fan_053",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-054",
+        "title": "DM 요청 54",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:27",
+        "sender": "@fan_054",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-055",
+        "title": "DM 요청 55",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:27",
+        "sender": "@fan_055",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-056",
+        "title": "DM 요청 56",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:27",
+        "sender": "@fan_056",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-057",
+        "title": "DM 요청 57",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:27",
+        "sender": "@fan_057",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-058",
+        "title": "DM 요청 58",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:27",
+        "sender": "@fan_058",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-059",
+        "title": "DM 요청 59",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:27",
+        "sender": "@fan_059",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-060",
+        "title": "DM 요청 60",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:27",
+        "sender": "@fan_060",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-061",
+        "title": "DM 요청 61",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:27",
+        "sender": "@fan_061",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-062",
+        "title": "DM 요청 62",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:27",
+        "sender": "@fan_062",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-063",
+        "title": "DM 요청 63",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:27",
+        "sender": "@fan_063",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-064",
+        "title": "DM 요청 64",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:27",
+        "sender": "@fan_064",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-065",
+        "title": "DM 요청 65",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:27",
+        "sender": "@fan_065",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-066",
+        "title": "DM 요청 66",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:27",
+        "sender": "@fan_066",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-067",
+        "title": "DM 요청 67",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:27",
+        "sender": "@fan_067",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-068",
+        "title": "DM 요청 68",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:27",
+        "sender": "@fan_068",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-069",
+        "title": "DM 요청 69",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:27",
+        "sender": "@fan_069",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-070",
+        "title": "DM 요청 70",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:27",
+        "sender": "@fan_070",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-071",
+        "title": "DM 요청 71",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:27",
+        "sender": "@fan_071",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-072",
+        "title": "DM 요청 72",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:27",
+        "sender": "@fan_072",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-073",
+        "title": "DM 요청 73",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:28",
+        "sender": "@fan_073",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-074",
+        "title": "DM 요청 74",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:28",
+        "sender": "@fan_074",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-075",
+        "title": "DM 요청 75",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:28",
+        "sender": "@fan_075",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-076",
+        "title": "DM 요청 76",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:28",
+        "sender": "@fan_076",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-077",
+        "title": "DM 요청 77",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:28",
+        "sender": "@fan_077",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-078",
+        "title": "DM 요청 78",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:28",
+        "sender": "@fan_078",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-079",
+        "title": "DM 요청 79",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:28",
+        "sender": "@fan_079",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-080",
+        "title": "DM 요청 80",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:28",
+        "sender": "@fan_080",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-081",
+        "title": "DM 요청 81",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:28",
+        "sender": "@fan_081",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-082",
+        "title": "DM 요청 82",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:28",
+        "sender": "@fan_082",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-083",
+        "title": "DM 요청 83",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:28",
+        "sender": "@fan_083",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-084",
+        "title": "DM 요청 84",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:28",
+        "sender": "@fan_084",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-085",
+        "title": "DM 요청 85",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:28",
+        "sender": "@fan_085",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-086",
+        "title": "DM 요청 86",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:28",
+        "sender": "@fan_086",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-087",
+        "title": "DM 요청 87",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:28",
+        "sender": "@fan_087",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-088",
+        "title": "DM 요청 88",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:28",
+        "sender": "@fan_088",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-089",
+        "title": "DM 요청 89",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:28",
+        "sender": "@fan_089",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-090",
+        "title": "DM 요청 90",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:28",
+        "sender": "@fan_090",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-091",
+        "title": "DM 요청 91",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:28",
+        "sender": "@fan_091",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-092",
+        "title": "DM 요청 92",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:28",
+        "sender": "@fan_092",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-093",
+        "title": "DM 요청 93",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:28",
+        "sender": "@fan_093",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-094",
+        "title": "DM 요청 94",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:28",
+        "sender": "@fan_094",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-095",
+        "title": "DM 요청 95",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:28",
+        "sender": "@fan_095",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-096",
+        "title": "DM 요청 96",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:28",
+        "sender": "@fan_096",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-097",
+        "title": "DM 요청 97",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:29",
+        "sender": "@fan_097",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-098",
+        "title": "DM 요청 98",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:29",
+        "sender": "@fan_098",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-099",
+        "title": "DM 요청 99",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:29",
+        "sender": "@fan_099",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-100",
+        "title": "DM 요청 100",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:29",
+        "sender": "@fan_100",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-101",
+        "title": "DM 요청 101",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:29",
+        "sender": "@fan_101",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-102",
+        "title": "DM 요청 102",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:29",
+        "sender": "@fan_102",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-103",
+        "title": "DM 요청 103",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:29",
+        "sender": "@fan_103",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-104",
+        "title": "DM 요청 104",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:29",
+        "sender": "@fan_104",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-105",
+        "title": "DM 요청 105",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:29",
+        "sender": "@fan_105",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-106",
+        "title": "DM 요청 106",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:29",
+        "sender": "@fan_106",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-107",
+        "title": "DM 요청 107",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:29",
+        "sender": "@fan_107",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-108",
+        "title": "DM 요청 108",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:29",
+        "sender": "@fan_108",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-109",
+        "title": "DM 요청 109",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:29",
+        "sender": "@fan_109",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-110",
+        "title": "DM 요청 110",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:29",
+        "sender": "@fan_110",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-111",
+        "title": "DM 요청 111",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:29",
+        "sender": "@fan_111",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-112",
+        "title": "DM 요청 112",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:29",
+        "sender": "@fan_112",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-113",
+        "title": "DM 요청 113",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:29",
+        "sender": "@fan_113",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-114",
+        "title": "DM 요청 114",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:29",
+        "sender": "@fan_114",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-115",
+        "title": "DM 요청 115",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:29",
+        "sender": "@fan_115",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-116",
+        "title": "DM 요청 116",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:29",
+        "sender": "@fan_116",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-117",
+        "title": "DM 요청 117",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:29",
+        "sender": "@fan_117",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-118",
+        "title": "DM 요청 118",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:29",
+        "sender": "@fan_118",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-119",
+        "title": "DM 요청 119",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:29",
+        "sender": "@fan_119",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-120",
+        "title": "DM 요청 120",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:29",
+        "sender": "@fan_120",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -2410,6 +3250,426 @@
           "value": true
         },
         {
+          "type": "unlock",
+          "key": "ig-dm-037",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-038",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-039",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-040",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-041",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-042",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-043",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-044",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-045",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-046",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-047",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-048",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-049",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-050",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-051",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-052",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-053",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-054",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-055",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-056",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-057",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-058",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-059",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-060",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-061",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-062",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-063",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-064",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-065",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-066",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-067",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-068",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-069",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-070",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-071",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-072",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-073",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-074",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-075",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-076",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-077",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-078",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-079",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-080",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-081",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-082",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-083",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-084",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-085",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-086",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-087",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-088",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-089",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-090",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-091",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-092",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-093",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-094",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-095",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-096",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-097",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-098",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-099",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-100",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-101",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-102",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-103",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-104",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-105",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-106",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-107",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-108",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-109",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-110",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-111",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-112",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-113",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-114",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-115",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-116",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-117",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-118",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-119",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-120",
+          "value": true
+        },
+        {
           "type": "notification",
           "key": "instagram",
           "value": "Instagram · 새로운 메시지 요청"
@@ -2431,8 +3691,8 @@
       "id": "ul-first-dm",
       "label": "第一次打开公开后的 Instagram",
       "type": "event",
-      "event": "openApp",
-      "target": "instagram",
+      "event": "read",
+      "target": "ig-dm-001",
       "conditions": [
         {
           "key": "public_statement_seen",
@@ -2864,6 +4124,10 @@
         {
           "event": "openApp",
           "target": "instagram"
+        },
+        {
+          "event": "read",
+          "target": "ig-dm-001"
         },
         {
           "event": "sentMessage",
