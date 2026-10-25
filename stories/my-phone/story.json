@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "《未公开恋人》· My Phone 开发版。首轮三选一回复需要玩家点击发送；发送后触发首次来电。完整剧情及照片仍待接入。",
-  "revision": 13,
+  "revision": 14,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -323,6 +323,86 @@
           "senderId": "jeongwoo",
           "time": "23:03",
           "hidden": true
+        },
+        {
+          "id": "jw-apology-1",
+          "title": "",
+          "body": "자기야... 글 봤어?ㅠㅠ\n亲爱的……看到那篇文章了吗？ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:28",
+          "hidden": true
+        },
+        {
+          "id": "jw-apology-2",
+          "title": "",
+          "body": "너한테 먼저 물어봤어야 했는데... 미안해\n我应该先问你的……对不起。",
+          "senderId": "jeongwoo",
+          "time": "23:28",
+          "hidden": true
+        },
+        {
+          "id": "jw-apology-3",
+          "title": "",
+          "body": "너랑 상의도 안 하고 마음대로 공개한 거 진짜 미안해ㅠㅠ\n没和你商量就擅自公开，真的对不起ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:28",
+          "hidden": true
+        },
+        {
+          "id": "jw-apology-4",
+          "title": "",
+          "body": "네가 나 못 믿겠다고 하니까 너무 무서웠어\n你说不能再相信我时，我真的很害怕。",
+          "senderId": "jeongwoo",
+          "time": "23:28",
+          "hidden": true
+        },
+        {
+          "id": "jw-apology-5",
+          "title": "",
+          "body": "나 진짜 너랑 헤어지기 싫어ㅠㅠ\n我真的不想和你分手ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:28",
+          "hidden": true
+        },
+        {
+          "id": "jw-apology-6",
+          "title": "",
+          "body": "나 한 번만 용서해 주면 안 돼...?\n能不能再原谅我一次……？",
+          "senderId": "jeongwoo",
+          "time": "23:28",
+          "hidden": true
+        },
+        {
+          "id": "jw-reconcile-1",
+          "title": "",
+          "body": "자기야... 진짜?ㅠㅠ\n亲爱的……真的吗？ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:33",
+          "hidden": true
+        },
+        {
+          "id": "jw-reconcile-2",
+          "title": "",
+          "body": "다시는 거짓말 안 할게\n我再也不会说谎了。",
+          "senderId": "jeongwoo",
+          "time": "23:33",
+          "hidden": true
+        },
+        {
+          "id": "jw-reconcile-3",
+          "title": "",
+          "body": "사랑해 자기야... 진짜 많이 사랑해ㅠㅠ\n我爱你，亲爱的……真的很爱你ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:33",
+          "hidden": true
+        },
+        {
+          "id": "jw-reconcile-4",
+          "title": "",
+          "body": "우리 헤어지지 말자ㅠㅠ\n我们不要分手ㅠㅠ",
+          "senderId": "jeongwoo",
+          "time": "23:33",
+          "hidden": true
         }
       ]
     },
@@ -355,6 +435,46 @@
           "body": "트위터 봤어?\n你看推特了吗？",
           "senderId": "jimin",
           "time": "22:50"
+        },
+        {
+          "id": "jm-public-1",
+          "title": "",
+          "body": "야 안안아!!!!!\n呀安安！！！！！",
+          "senderId": "jimin",
+          "time": "23:24",
+          "hidden": true
+        },
+        {
+          "id": "jm-public-2",
+          "title": "",
+          "body": "박정우 미쳤어????\n朴炡禹疯了吗？？？？",
+          "senderId": "jimin",
+          "time": "23:24",
+          "hidden": true
+        },
+        {
+          "id": "jm-public-3",
+          "title": "",
+          "body": "갑자기 연애 공개하는 글을 올렸는데????\n他突然发文公开恋爱了？？？？",
+          "senderId": "jimin",
+          "time": "23:24",
+          "hidden": true
+        },
+        {
+          "id": "jm-public-4",
+          "title": "",
+          "body": "너네 대체 무슨 얘기 했어????\n你们到底聊了什么？？？？",
+          "senderId": "jimin",
+          "time": "23:24",
+          "hidden": true
+        },
+        {
+          "id": "jm-public-5",
+          "title": "",
+          "body": "야 빨리 트위터 들어가 봐 지금 난리 났어\n呀快去看 X，现在闹翻天了！",
+          "senderId": "jimin",
+          "time": "23:24",
+          "hidden": true
         }
       ]
     },
@@ -444,6 +564,16 @@
         "sender": "@night_feed",
         "likes": 0,
         "hidden": true
+      },
+      {
+        "id": "x-jeongwoo-public",
+        "title": "박정우 · 공식 입장",
+        "body": "안녕하세요. 트레저 정우입니다.\n\n오늘 올라온 사진과 이야기 때문에 많이 놀라셨을 것 같아요.\n\n먼저 오늘 사진에 함께 나온 분과는 개인적인 관계가 아니라는 점을 말씀드리고 싶습니다. 아직 공개되지 않은 일정 때문에 함께 있었던 것이고, 오해하실 만한 관계는 절대 아닙니다.\n\n그리고 이 기회에 꼭 말씀드리고 싶은 게 있습니다.\n\n사실 저는 오랫동안 만나 온 사람이 있습니다.\n\n거의 3년 동안 저를 믿고 기다려 준 사람이고, 제가 정말 많이 사랑하는 사람입니다.\n\n그동안 여러 가지 이유로 저희 관계를 공개하지 못했습니다. 그 과정에서 그 사람에게 너무 많은 걸 참게 했고, 많이 외롭게 만들었습니다.\n\n오늘도 제가 제대로 설명하지 못하고 거짓말까지 해서 상처를 줬습니다.\n\n제가 지켜 주고 있다고 생각했는데, 돌이켜 보면 혼자서 너무 많은 걸 감당하게 했던 것 같습니다.\n\n더 이상 그 사람을 없는 사람처럼 숨기고 싶지 않습니다.\n\n이 글을 올린다고 해서 제가 했던 잘못이 없어지는 건 아니라는 것도 알고 있습니다.\n\n저를 응원해 주시는 분들께 갑작스럽게 이런 말씀을 드리게 되어 죄송합니다.\n\n그리고 제가 사랑하는 사람에게도 정말 미안합니다.\n\n앞으로는 제 선택에 책임지고, 더 솔직한 사람이 되겠습니다.\n\n감사합니다.\n\n—— 中文翻译 ——\n大家好，我是 TREASURE 的炡禹。\n\n今天的照片和传闻应该让大家非常惊讶。首先，照片中与我同行的人并非私人关系，而是因为尚未公开的工作行程。\n\n我还想借这个机会告诉大家一件事。其实，我有一个交往了很久的人。她相信我、等待我将近三年，也是我非常爱的人。\n\n因为种种原因，我们一直无法公开关系。我让她承受了太多，也让她感到孤独。今天我又因为没能好好解释、甚至撒谎而伤害了她。\n\n我曾以为自己是在保护她，但现在才发现，我让她独自承担了太多。\n\n我不想再像她不存在一样隐藏她。公开不代表我的错误就能被抹去。对于一直支持我的人，以及我深爱的人，我都感到非常抱歉。\n\n今后我会为自己的选择负责，成为更加坦诚的人。谢谢。",
+        "time": "23:24",
+        "sender": "@TREASURE",
+        "likes": 0,
+        "hidden": true,
+        "kind": "post"
       }
     ],
     "instagram": [
@@ -454,6 +584,366 @@
         "time": "22:40",
         "sender": "@myphone_story",
         "likes": 0
+      },
+      {
+        "id": "ig-dm-001",
+        "title": "DM 요청 1",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:25",
+        "sender": "@fan_001",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-002",
+        "title": "DM 요청 2",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:25",
+        "sender": "@fan_002",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-003",
+        "title": "DM 요청 3",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:25",
+        "sender": "@fan_003",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-004",
+        "title": "DM 요청 4",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:25",
+        "sender": "@fan_004",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-005",
+        "title": "DM 요청 5",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:25",
+        "sender": "@fan_005",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-006",
+        "title": "DM 요청 6",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:25",
+        "sender": "@fan_006",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-007",
+        "title": "DM 요청 7",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:25",
+        "sender": "@fan_007",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-008",
+        "title": "DM 요청 8",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:25",
+        "sender": "@fan_008",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-009",
+        "title": "DM 요청 9",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:25",
+        "sender": "@fan_009",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-010",
+        "title": "DM 요청 10",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:25",
+        "sender": "@fan_010",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-011",
+        "title": "DM 요청 11",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:25",
+        "sender": "@fan_011",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-012",
+        "title": "DM 요청 12",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:25",
+        "sender": "@fan_012",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-013",
+        "title": "DM 요청 13",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:25",
+        "sender": "@fan_013",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-014",
+        "title": "DM 요청 14",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:25",
+        "sender": "@fan_014",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-015",
+        "title": "DM 요청 15",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:25",
+        "sender": "@fan_015",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-016",
+        "title": "DM 요청 16",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:25",
+        "sender": "@fan_016",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-017",
+        "title": "DM 요청 17",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:25",
+        "sender": "@fan_017",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-018",
+        "title": "DM 요청 18",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:25",
+        "sender": "@fan_018",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-019",
+        "title": "DM 요청 19",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:25",
+        "sender": "@fan_019",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-020",
+        "title": "DM 요청 20",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:25",
+        "sender": "@fan_020",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-021",
+        "title": "DM 요청 21",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:25",
+        "sender": "@fan_021",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-022",
+        "title": "DM 요청 22",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:25",
+        "sender": "@fan_022",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-023",
+        "title": "DM 요청 23",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:25",
+        "sender": "@fan_023",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-024",
+        "title": "DM 요청 24",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:25",
+        "sender": "@fan_024",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-025",
+        "title": "DM 요청 25",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:25",
+        "sender": "@fan_025",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-026",
+        "title": "DM 요청 26",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:25",
+        "sender": "@fan_026",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-027",
+        "title": "DM 요청 27",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:25",
+        "sender": "@fan_027",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-028",
+        "title": "DM 요청 28",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:25",
+        "sender": "@fan_028",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-029",
+        "title": "DM 요청 29",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:25",
+        "sender": "@fan_029",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-030",
+        "title": "DM 요청 30",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:25",
+        "sender": "@fan_030",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-031",
+        "title": "DM 요청 31",
+        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "time": "23:25",
+        "sender": "@fan_031",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-032",
+        "title": "DM 요청 32",
+        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "time": "23:25",
+        "sender": "@fan_032",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-033",
+        "title": "DM 요청 33",
+        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "time": "23:25",
+        "sender": "@fan_033",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-034",
+        "title": "DM 요청 34",
+        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "time": "23:25",
+        "sender": "@fan_034",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-035",
+        "title": "DM 요청 35",
+        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "time": "23:25",
+        "sender": "@fan_035",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
+      },
+      {
+        "id": "ig-dm-036",
+        "title": "DM 요청 36",
+        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "time": "23:25",
+        "sender": "@fan_036",
+        "likes": 0,
+        "hidden": true,
+        "kind": "text"
       }
     ],
     "notes": [
@@ -488,7 +978,12 @@
     "stage8_responses_ready": false,
     "stage9_responses_ready": false,
     "second_call_triggered": false,
-    "public_statement_seen": false
+    "public_statement_seen": false,
+    "public_statement_unlocked": false,
+    "apology_unlocked": false,
+    "stage14_responses_ready": false,
+    "stage15_responses_ready": false,
+    "ending_unlocked": false
   },
   "events": [
     {
@@ -1601,6 +2096,575 @@
           "type": "call",
           "key": "kakao-jeongwoo",
           "value": "쩡쩡❤️"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-second-call-ended",
+      "label": "第二通电话结束",
+      "type": "event",
+      "event": "callEnded",
+      "target": "kakao-jeongwoo",
+      "conditions": [
+        {
+          "key": "second_call_triggered",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 10
+        }
+      ],
+      "next": [
+        "ul-public-delay"
+      ]
+    },
+    {
+      "id": "ul-public-delay",
+      "label": "闺蜜发来炡禹公开声明消息",
+      "type": "delay",
+      "delayMs": 2000,
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "jm-public-1",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jm-public-2",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jm-public-3",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jm-public-4",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jm-public-5",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "kakao",
+          "value": "지민이💗 · 박정우 미쳤어????"
+        },
+        {
+          "type": "variable",
+          "key": "public_statement_unlocked",
+          "value": true
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-public-x",
+      "label": "查看公开声明",
+      "type": "event",
+      "event": "openApp",
+      "target": "twitter",
+      "conditions": [
+        {
+          "key": "public_statement_unlocked",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "x-jeongwoo-public",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-001",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-002",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-003",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-004",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-005",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-006",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-007",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-008",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-009",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-010",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-011",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-012",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-013",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-014",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-015",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-016",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-017",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-018",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-019",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-020",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-021",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-022",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-023",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-024",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-025",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-026",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-027",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-028",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-029",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-030",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-031",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-032",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-033",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-034",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-035",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "ig-dm-036",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "instagram",
+          "value": "Instagram · 새로운 메시지 요청"
+        },
+        {
+          "type": "variable",
+          "key": "public_statement_seen",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 13
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-first-dm",
+      "label": "第一次打开公开后的 Instagram",
+      "type": "event",
+      "event": "openApp",
+      "target": "instagram",
+      "conditions": [
+        {
+          "key": "public_statement_seen",
+          "op": "eq",
+          "value": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "jw-apology-1",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-apology-2",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-apology-3",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-apology-4",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-apology-5",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-apology-6",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "apology_unlocked",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 14
+        },
+        {
+          "type": "variable",
+          "key": "stage14_responses_ready",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "kakao",
+          "value": "쩡쩡❤️ · 자기야... 글 봤어?ㅠㅠ"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-stage14-angry",
+      "label": "公开后的回应 angry",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage14-angry",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 14
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 15
+        },
+        {
+          "type": "variable",
+          "key": "stage15_responses_ready",
+          "value": true
+        }
+      ],
+      "next": [
+        "ul-stage14-response-delay"
+      ]
+    },
+    {
+      "id": "ul-stage14-shock",
+      "label": "公开后的回应 shock",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage14-shock",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 14
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 15
+        },
+        {
+          "type": "variable",
+          "key": "stage15_responses_ready",
+          "value": true
+        }
+      ],
+      "next": [
+        "ul-stage14-response-delay"
+      ]
+    },
+    {
+      "id": "ul-stage14-love",
+      "label": "公开后的回应 love",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage14-love",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 14
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 16
+        },
+        {
+          "type": "variable",
+          "key": "stage15_responses_ready",
+          "value": false
+        }
+      ],
+      "next": [
+        "ul-ending-delay"
+      ]
+    },
+    {
+      "id": "ul-stage14-response-delay",
+      "label": "炡禹回应公开争执",
+      "type": "delay",
+      "delayMs": 1200,
+      "actions": [
+        {
+          "type": "notification",
+          "key": "kakao",
+          "value": "쩡쩡❤️ · 미안해ㅠㅠ"
+        }
+      ],
+      "next": []
+    },
+    {
+      "id": "ul-stage15-promise",
+      "label": "最后和解 promise",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage15-promise",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 15
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 16
+        }
+      ],
+      "next": [
+        "ul-ending-delay"
+      ]
+    },
+    {
+      "id": "ul-stage15-miss",
+      "label": "最后和解 miss",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage15-miss",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 15
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 16
+        }
+      ],
+      "next": [
+        "ul-ending-delay"
+      ]
+    },
+    {
+      "id": "ul-stage15-honest",
+      "label": "最后和解 honest",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "stage15-honest",
+      "conditions": [
+        {
+          "key": "story_stage",
+          "op": "eq",
+          "value": 15
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "story_stage",
+          "value": 16
+        }
+      ],
+      "next": [
+        "ul-ending-delay"
+      ]
+    },
+    {
+      "id": "ul-ending-delay",
+      "label": "ENDING 01 不再隐藏",
+      "type": "delay",
+      "delayMs": 2000,
+      "actions": [
+        {
+          "type": "unlock",
+          "key": "jw-reconcile-1",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-reconcile-2",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-reconcile-3",
+          "value": true
+        },
+        {
+          "type": "unlock",
+          "key": "jw-reconcile-4",
+          "value": true
+        },
+        {
+          "type": "ending",
+          "key": "",
+          "value": "ENDING 01 不再隐藏"
+        },
+        {
+          "type": "variable",
+          "key": "ending_unlocked",
+          "value": true
+        },
+        {
+          "type": "notification",
+          "key": "kakao",
+          "value": "UNLISTED LOVE · ENDING 01 不再隐藏"
         }
       ],
       "next": []
