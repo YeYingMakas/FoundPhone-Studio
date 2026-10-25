@@ -161,6 +161,7 @@ function PhoneRuntime({
   );
   const gestureConsumed = useRef(false);
   const [pinError, setPinError] = useState("");
+  const [pinFailures, setPinFailures] = useState(0);
   const [folder, setFolder] = useState("");
   const [panel, setPanel] = useState("");
   const [own, setOwn] = useState(() => initialRuntime(work));
@@ -283,9 +284,15 @@ function PhoneRuntime({
     if (!work.phone.passcode || pin === work.phone.passcode) {
       setLocked(false);
       setPinOpen(false);
+      setPinFailures(0);
+      setPinError("");
       event("password", pin);
     } else {
-      setPinError("密码不正确");
+      const failures = pinFailures + 1;
+      setPinFailures(failures);
+      setPinError(work.id === "my-phone-unlisted-love" && failures >= 3
+        ? "密码提示：蒸蒸生日 ♡"
+        : "密码不正确");
       setPinOpen(true);
     }
   };
@@ -1178,7 +1185,9 @@ function AppContent({
                   key={t}
                   onClick={() => {
                     setThread(t);
-                    onRead(t);
+                    if (work.id === "my-phone-unlisted-love" && !creator) {
+                      list.forEach((message) => onRead(message.id));
+                    } else onRead(t);
                   }}
                 >
                   <span className="avatar" style={{ background: app.color }}>
