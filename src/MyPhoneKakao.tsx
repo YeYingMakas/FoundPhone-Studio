@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Item } from "./schema";
 
 type Reply = { id: string; ko: string; zh: string };
@@ -62,13 +62,33 @@ export function MyPhoneKakao({
   const [picker, setPicker] = useState(false);
   const [draft, setDraft] = useState<Reply | null>(null);
   const messages = items.filter((item) => item.title === title);
+  const knownIds = useRef<Set<string>>(new Set(messages.map((item) => item.id)));
+  const [revealed, setRevealed] = useState<Set<string>>(() => new Set(messages.map((item) => item.id)));
+  const [typing, setTyping] = useState(false);
+  useEffect(() => {
+    const incoming = messages.filter((item) => !knownIds.current.has(item.id));
+    incoming.forEach((item) => knownIds.current.add(item.id));
+    if (!incoming.length) return;
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    if (incoming.some((item) => !item.outgoing)) {
+      timers.push(setTimeout(() => setTyping(true), 1000));
+    }
+    incoming.forEach((item, index) => {
+      timers.push(setTimeout(() => {
+        setRevealed((prev) => new Set([...prev, item.id]));
+        if (index === incoming.length - 1) setTyping(false);
+      }, item.outgoing ? 0 : 3000 + index * 1000));
+    });
+    return () => timers.forEach(clearTimeout);
+  }, [items, title]);
+
   const options = REPLIES[stage] ?? [];
   const enabled = canReply && options.length > 0;
   const selected = draft && options.some((o) => o.id === draft.id) ? draft : null;
   return (
     <div className="chat-content" aria-label={title + " 聊天"}>
       <div className="chat-time">今天</div>
-      {messages.map((item) => (
+      {messages.filter((item) => revealed.has(item.id)).map((item) => (
         <button
           key={item.id}
           className={`message-row ${item.outgoing ? "outgoing" : ""}`}
@@ -81,6 +101,11 @@ export function MyPhoneKakao({
           </span>
         </button>
       ))}
+      {typing && (
+        <div aria-live="polite" style={{ padding: "8px 14px", opacity: 0.65, fontSize: 12 }}>
+          입력 중... · 正在输入…
+        </div>
+      )}
       {enabled && (
         <div className="my-phone-reply" style={{ padding: 12, marginTop: "auto" }}>
           {picker && (
