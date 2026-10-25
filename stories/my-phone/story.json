@@ -2,8 +2,8 @@
   "scriptVersion": 1,
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
-  "description": "《未公开恋人》· My Phone 开发版。闺蜜提醒解锁 X 绯闻；阅读炡禹开场消息且看过绯闻后触发首通来电。玩家手动发送与通话分支仍待实现。",
-  "revision": 9,
+  "description": "《未公开恋人》· My Phone 开发版。首轮三选一回复需要玩家点击发送；发送后触发首次来电。完整剧情及照片仍待接入。",
+  "revision": 10,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -247,7 +247,9 @@
     "first_call_triggered": false,
     "first_call_declined": false,
     "first_call_answered": false,
-    "first_call_queued": false
+    "first_call_queued": false,
+    "first_reply_sent": false,
+    "first_reply_choice": ""
   },
   "events": [
     {
@@ -314,79 +316,6 @@
         }
       ],
       "next": []
-    },
-    {
-      "id": "ul-first-call-on-read",
-      "label": "看过绯闻后阅读炡禹消息",
-      "type": "event",
-      "event": "read",
-      "target": "jw-2246-02",
-      "conditions": [
-        {
-          "key": "x_rumor_seen",
-          "op": "eq",
-          "value": true
-        },
-        {
-          "key": "first_call_triggered",
-          "op": "eq",
-          "value": false
-        },
-        {
-          "key": "first_call_queued",
-          "op": "eq",
-          "value": false
-        }
-      ],
-      "actions": [
-        {
-          "type": "variable",
-          "key": "first_call_queued",
-          "value": true
-        }
-      ],
-      "next": [
-        "ul-first-call-delay"
-      ]
-    },
-    {
-      "id": "ul-first-call-on-x",
-      "label": "读过炡禹消息后查看 X",
-      "type": "event",
-      "event": "openApp",
-      "target": "twitter",
-      "conditions": [
-        {
-          "key": "read:jw-2246-02",
-          "op": "eq",
-          "value": true
-        },
-        {
-          "key": "read:jm-2250-03",
-          "op": "eq",
-          "value": true
-        },
-        {
-          "key": "first_call_triggered",
-          "op": "eq",
-          "value": false
-        },
-        {
-          "key": "first_call_queued",
-          "op": "eq",
-          "value": false
-        }
-      ],
-      "actions": [
-        {
-          "type": "variable",
-          "key": "first_call_queued",
-          "value": true
-        }
-      ],
-      "next": [
-        "ul-first-call-delay"
-      ]
     },
     {
       "id": "ul-first-call-delay",
@@ -471,6 +400,108 @@
         }
       ],
       "next": []
+    },
+    {
+      "id": "ul-first-reply-where",
+      "label": "询问炡禹的位置",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "where",
+      "conditions": [
+        {
+          "key": "first_reply_sent",
+          "op": "eq",
+          "value": false
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "first_reply_sent",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "first_reply_choice",
+          "value": "where"
+        },
+        {
+          "type": "variable",
+          "key": "first_call_queued",
+          "value": true
+        }
+      ],
+      "next": [
+        "ul-first-call-delay"
+      ]
+    },
+    {
+      "id": "ul-first-reply-photo",
+      "label": "询问网上照片",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "photo",
+      "conditions": [
+        {
+          "key": "first_reply_sent",
+          "op": "eq",
+          "value": false
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "first_reply_sent",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "first_reply_choice",
+          "value": "photo"
+        },
+        {
+          "type": "variable",
+          "key": "first_call_queued",
+          "value": true
+        }
+      ],
+      "next": [
+        "ul-first-call-delay"
+      ]
+    },
+    {
+      "id": "ul-first-reply-lie",
+      "label": "质问炡禹是否说谎",
+      "type": "event",
+      "event": "sentMessage",
+      "target": "lie",
+      "conditions": [
+        {
+          "key": "first_reply_sent",
+          "op": "eq",
+          "value": false
+        }
+      ],
+      "actions": [
+        {
+          "type": "variable",
+          "key": "first_reply_sent",
+          "value": true
+        },
+        {
+          "type": "variable",
+          "key": "first_reply_choice",
+          "value": "lie"
+        },
+        {
+          "type": "variable",
+          "key": "first_call_queued",
+          "value": true
+        }
+      ],
+      "next": [
+        "ul-first-call-delay"
+      ]
     }
   ],
   "tests": []
