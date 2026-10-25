@@ -65,6 +65,8 @@ export function MyPhoneKakao({
   const knownIds = useRef<Set<string>>(new Set(messages.map((item) => item.id)));
   const [revealed, setRevealed] = useState<Set<string>>(() => new Set(messages.map((item) => item.id)));
   const [typing, setTyping] = useState(false);
+  const pendingTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  useEffect(() => () => pendingTimers.current.forEach(clearTimeout), []);
   useEffect(() => {
     const incoming = messages.filter((item) => !knownIds.current.has(item.id));
     incoming.forEach((item) => knownIds.current.add(item.id));
@@ -79,7 +81,7 @@ export function MyPhoneKakao({
         if (index === incoming.length - 1) setTyping(false);
       }, item.outgoing ? 0 : 3000 + index * 1000));
     });
-    return () => timers.forEach(clearTimeout);
+    pendingTimers.current.push(...timers);
   }, [items, title]);
 
   const options = REPLIES[stage] ?? [];
