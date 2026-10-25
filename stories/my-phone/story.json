@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "《未公开恋人》· My Phone 开发版。首轮三选一回复需要玩家点击发送；发送后触发首次来电。完整剧情及照片仍待接入。",
-  "revision": 14,
+  "revision": 15,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -2725,6 +2725,106 @@
         "jw-stage3-a",
         "jw-stage3-b",
         "jw-stage3-c"
+      ]
+    },
+    {
+      "name": "完整主线：手动回复、两次来电、公开声明、和解结局",
+      "steps": [
+        {
+          "event": "sentMessage",
+          "target": "stage2-where"
+        },
+        {
+          "advanceMs": 1800
+        },
+        {
+          "event": "sentMessage",
+          "target": "stage3-dorm"
+        },
+        {
+          "advanceMs": 1800
+        },
+        {
+          "event": "sentMessage",
+          "target": "stage4-stop"
+        },
+        {
+          "advanceMs": 3000
+        },
+        {
+          "event": "callAnswered",
+          "target": "kakao-jeongwoo"
+        },
+        {
+          "event": "callEnded",
+          "target": "kakao-jeongwoo"
+        },
+        {
+          "advanceMs": 1600
+        },
+        {
+          "event": "sentMessage",
+          "target": "stage6-name"
+        },
+        {
+          "advanceMs": 1600
+        },
+        {
+          "event": "sentMessage",
+          "target": "stage7-explain"
+        },
+        {
+          "advanceMs": 1600
+        },
+        {
+          "event": "sentMessage",
+          "target": "stage8-lie"
+        },
+        {
+          "advanceMs": 1600
+        },
+        {
+          "event": "sentMessage",
+          "target": "stage9-sleep"
+        },
+        {
+          "advanceMs": 1600
+        },
+        {
+          "event": "callEnded",
+          "target": "kakao-jeongwoo"
+        },
+        {
+          "advanceMs": 2000
+        },
+        {
+          "event": "openApp",
+          "target": "twitter"
+        },
+        {
+          "event": "openApp",
+          "target": "instagram"
+        },
+        {
+          "event": "sentMessage",
+          "target": "stage14-shock"
+        },
+        {
+          "advanceMs": 1200
+        },
+        {
+          "event": "sentMessage",
+          "target": "stage15-promise"
+        },
+        {
+          "advanceMs": 2000
+        }
+      ],
+      "ending": "ENDING 01 不再隐藏",
+      "expectUnlocked": [
+        "x-jeongwoo-public",
+        "jw-apology-01",
+        "jw-reconcile-01"
       ]
     }
   ]
