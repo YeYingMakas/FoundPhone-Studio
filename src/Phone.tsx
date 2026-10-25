@@ -934,7 +934,9 @@ function AppContent({
     else onBack();
   };
   const Skin =
-    app.id === "wechat"
+    work.id === "my-phone-unlisted-love" && app.id === "kakao" && !creator
+      ? null
+      : app.id === "wechat"
       ? WeChatSkin
       : app.id === "whatsapp"
         ? WhatsAppSkin
