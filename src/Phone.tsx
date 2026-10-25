@@ -1132,7 +1132,7 @@ function AppContent({
         <MyPhoneKakao title={thread} items={shown} onRead={onRead} onBack={() => setThread("")}
           stage={Number(state.variables.story_stage ?? 2)}
           canReply={thread === "쩡쩡❤️" && (
-            Number(state.variables.story_stage) === 2 ||
+            (Number(state.variables.story_stage) === 2 && state.variables.x_rumor_seen === true) ||
             (Number(state.variables.story_stage) === 3 && state.variables.stage2_responses_ready === true) ||
             (Number(state.variables.story_stage) === 4 && state.variables.stage3_responses_ready === true) ||
             ([6, 7, 8, 9].includes(Number(state.variables.story_stage)) &&
