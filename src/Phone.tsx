@@ -766,7 +766,11 @@ function PhoneRuntime({
               className="device-banner"
               onClick={() => {
                 setBanner("");
-                setPanel("notification");
+                if (work.id === "unpublished-lover-ep01" && (banner.startsWith("朴炡禹:") || banner.startsWith("闺蜜:"))) {
+                  open("kakao");
+                } else {
+                  setPanel("notification");
+                }
               }}
             >
               <AppIcon
