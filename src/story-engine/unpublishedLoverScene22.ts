@@ -44,7 +44,7 @@ export function advanceScene22(runtime: Runtime): Runtime {
 }
 
 export function scene22AllRead(runtime: Runtime): boolean {
-  const items = (runtime.messages.kakao ?? []).filter((item) => item.meta.conversationId === "chat-junghwan");
+  const items = (runtime.messages.kakao ?? []).filter((item) => item.meta.conversationId === "chat-junghwan" && item.id.startsWith("story-chat-junghwan-junghwan-"));
   return runtime.variables.ep01Scene22Finished === true && items.length === TOTAL && items.every((item) => item.read);
 }
 
