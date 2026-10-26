@@ -9,7 +9,7 @@ export function appendStoryDelivery(
 ): { runtime: Runtime; scene: SceneDelivery } {
   const result = deliverNext(scene, date, time);
   if (!result.item) return { runtime, scene: result.next };
-  const item = { ...result.item, title: scene.conversationId === "chat-jeongwoo" ? "쩡쩡❤️" : scene.conversationId === "chat-friend" ? "闺蜜" : scene.conversationId === "chat-junghwan" ? "苏庭焕" : result.item.title };
+  const item = { ...result.item, title: scene.conversationId === "chat-jeongwoo" ? "쩡쩡❤️" : scene.conversationId === "chat-friend" ? "闺蜜" : scene.conversationId === "chat-junghwan" ? "苏庭焕" : scene.conversationId === "chat-jaehyuk" ? "尹材赫" : scene.conversationId === "chat-jihoon" ? "朴志焄" : result.item.title };
   return {
     scene: result.next,
     runtime: {
