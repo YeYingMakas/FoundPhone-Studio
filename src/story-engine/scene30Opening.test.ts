@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { initialRuntime, type Work } from "../schema";
+import { initialRuntime, type Work, type Runtime } from "../schema";
 import { openInstagramThread, sendInstagramReply } from "./scene29Gate";
 import { advanceScene30Opening } from "./scene30Opening";
 import { makeItem } from "../schema";
@@ -20,7 +20,7 @@ describe("EP01 Instagram chat and scene 30 trigger", () => {
     expect(sent.messages.instagram[1].body).toBe("hello");
   });
   it("starts apologies after two seconds and waits if Kakao is blocked", () => {
-    let runtime = { ...initialRuntime(work), elapsedMs: 1000, variables: { ep01FirstInstagramThreadOpenedAt: 1000, ep01KakaoBlocked: true } };
+    let runtime: Runtime = { ...initialRuntime(work), elapsedMs: 1000, variables: { ep01FirstInstagramThreadOpenedAt: 1000, ep01KakaoBlocked: true } };
     runtime = advanceScene30Opening({ ...runtime, elapsedMs: 3000 });
     expect(runtime.messages.kakao).toBeUndefined();
     expect(runtime.variables.ep01Scene30WaitingForUnblock).toBe(true);
