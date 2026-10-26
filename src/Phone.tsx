@@ -74,6 +74,7 @@ import { advanceScene25Incoming, advanceScene25Dialogue, rejectScene25Incoming, 
 import scene25Data from "../stories/unpublished-lover/data/scene25.json";
 import { advanceScene26, manuallyOpenScene27X } from "./story-engine/unpublishedLoverScene26";
 import scene28Data from "../stories/unpublished-lover/data/scene28.json";
+import { openPublicPost, advanceInstagramDMs } from "./story-engine/scene29Gate";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -251,8 +252,8 @@ function PhoneRuntime({
     if (creator || !ready) return;
     const interval = setInterval(() => {
       const previous = runtimeRef.current;
-      const advanced = advance(work, previous, 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))))) : advanced;
+      const advanced = advance(work, previous, work.id === "unpublished-lover-ep01" ? 200 : 1000);
+      const next = work.id === "unpublished-lover-ep01" ? advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced))))))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -263,7 +264,7 @@ function PhoneRuntime({
         Math.floor((next.elapsedMs ?? 0) / 5000) !==
           Math.floor((previous.elapsedMs ?? 0) / 5000);
       if (changed) update(next);
-    }, 1000);
+    }, work.id === "unpublished-lover-ep01" ? 200 : 1000);
     return () => clearInterval(interval);
   }, [creator, ready, work.id, work.updatedAt]);
   const event = (event: string, target: string) => {
@@ -587,6 +588,11 @@ function PhoneRuntime({
                   onStoryManualOpen={(title) => {
                     const current = runtimeRef.current;
                     const next = markScene23ManualOpen(current, title);
+                    if (next !== current) update(next);
+                  }}
+                  onStoryPostOpen={(id) => {
+                    const current = runtimeRef.current;
+                    const next = openPublicPost(current, id);
                     if (next !== current) update(next);
                   }}
                   onStoryReadThread={(title) => {
@@ -1079,6 +1085,7 @@ function AppContent({
   onStoryReadThread,
   onStoryReturnToList,
   onStoryManualOpen,
+  onStoryPostOpen,
   onStoryBlock,
   onStoryUnblock,
 }: {
@@ -1101,6 +1108,7 @@ function AppContent({
   onStoryReadThread?: (title: string) => void;
   onStoryReturnToList?: () => void;
   onStoryManualOpen?: (title: string) => void;
+  onStoryPostOpen?: (id: string) => void;
   onStoryBlock?: () => void;
   onStoryUnblock?: () => void;
 }) {
@@ -1134,6 +1142,7 @@ function AppContent({
       return;
     }
     setDetail(i);
+    if (app.id === "twitter" && i.id === "scene27-public-post") onStoryPostOpen?.(i.id);
     if (!i.password || unlocks.includes(i.id)) onRead(i.id);
   };
   useEffect(() => {
