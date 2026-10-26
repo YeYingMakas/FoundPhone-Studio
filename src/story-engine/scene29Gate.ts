@@ -48,3 +48,14 @@ export function advanceInstagramDMs(runtime: Runtime): Runtime {
     variables: { ...ready.variables, ep01InstagramDelivered: delivered + 1, ep01InstagramFinished: delivered + 1 === 60 },
   };
 }
+
+export function openInstagramThread(runtime: Runtime, title: string): Runtime {
+  const entries = runtime.messages.instagram ?? [];
+  if (!entries.some((item) => item.title === title)) return runtime;
+  const first = runtime.variables.ep01FirstInstagramThreadOpenedAt === undefined;
+  return {
+    ...runtime,
+    messages: { ...runtime.messages, instagram: entries.map((item) => item.title === title && !item.outgoing ? { ...item, read: true } : item) },
+    variables: first ? { ...runtime.variables, ep01FirstInstagramThreadOpenedAt: runtime.elapsedMs ?? 0 } : runtime.variables,
+  };
+}
