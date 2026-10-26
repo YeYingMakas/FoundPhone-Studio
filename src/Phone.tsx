@@ -67,7 +67,7 @@ import { dispatch, choose, visible, advance } from "./engine";
 import { db } from "./persistence";
 import { appendStoryDelivery, readStoryConversation, readStoryMessage, storyAppUnread } from "./story-engine/unpublishedLoverRuntime";
 import type { SceneDelivery } from "./story-engine/unpublishedLoverDelivery";
-import { advanceScene22 } from "./story-engine/unpublishedLoverScene22";
+import { advanceScene22, markScene22ListReturn, markScene23ManualOpen } from "./story-engine/unpublishedLoverScene22";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -568,6 +568,16 @@ function PhoneRuntime({
                   }}
                   work={work}
                   storyFocusedThread={storyFocusedThread}
+                  onStoryReturnToList={() => {
+                    const current = runtimeRef.current;
+                    const next = markScene22ListReturn(current);
+                    if (next !== current) update(next);
+                  }}
+                  onStoryManualOpen={(title) => {
+                    const current = runtimeRef.current;
+                    const next = markScene23ManualOpen(current, title);
+                    if (next !== current) update(next);
+                  }}
                   onStoryReadThread={(title) => {
                     const current = runtimeRef.current;
                     const next = readStoryConversation(current, "kakao", title);
@@ -1008,6 +1018,8 @@ function AppContent({
   onStorySave,
   onStoryReplay,
   onStoryReadThread,
+  onStoryReturnToList,
+  onStoryManualOpen,
 }: {
   app: AppPlugin;
   name: string;
@@ -1026,6 +1038,8 @@ function AppContent({
   onStorySave?: () => void;
   onStoryReplay?: () => void;
   onStoryReadThread?: (title: string) => void;
+  onStoryReturnToList?: () => void;
+  onStoryManualOpen?: (title: string) => void;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
@@ -1068,7 +1082,7 @@ function AppContent({
   const chats = [...new Set(shown.map((i) => i.title))];
   const back = () => {
     if (detail) setDetail(null);
-    else if (thread) setThread("");
+    else if (thread) { setThread(""); if (app.id === "kakao") onStoryReturnToList?.(); }
     else onBack();
   };
   const Skin =
@@ -1142,12 +1156,13 @@ function AppContent({
     const threadItems = shown.filter((item) => item.title === thread);
     const openThread = (title: string) => {
       setThread(title);
+      onStoryManualOpen?.(title);
       onStoryReadThread?.(title);
     };
     return (
       <div className="ep01-kakao">
         <div className="ep01-kakao-header">
-          {thread ? <button onClick={() => setThread("")} aria-label="返回聊天列表">‹</button> : null}
+          {thread ? <button onClick={() => { setThread(""); onStoryReturnToList?.(); }} aria-label="返回聊天列表">‹</button> : null}
           <strong>{thread || "聊天"}</strong>
         </div>
         {thread ? (
