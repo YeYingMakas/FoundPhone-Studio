@@ -22,3 +22,12 @@ jobs:
       - run: npm run my-phone:build
       - run: npx playwright install --with-deps chrome
       - run: npx playwright test tests/my-phone.spec.ts
+      - name: Upload browser failure artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-phone-browser-failure
+          path: |
+            test-results/
+            playwright-report/
+          if-no-files-found: ignore
