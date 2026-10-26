@@ -55,5 +55,6 @@ export function advanceScene21OpeningReplies(runtime: Runtime): Runtime {
     ...delivered.variables,
     ep01Scene21OpeningRepliesDelivered: index + 1,
     ep01Scene21OpeningFinished: index + 1 === replies.length,
+    ep01Scene21Ready: index + 1 === replies.length,
   } };
 }
