@@ -13,5 +13,15 @@ test("My Phone browser smoke: lock screen and home screen", async ({ page }) => 
   await expect(page.getByRole("button", { name: "轻触解锁" })).toBeVisible();
   await page.getByRole("button", { name: "轻触解锁" }).click();
   await expect(page.getByRole("heading", { name: "输入密码" })).toBeVisible();
+  for (let i = 0; i < 3; i++) {
+    for (const digit of "111111") {
+      await page.getByRole("button", { name: "密码键" + digit }).click();
+    }
+  }
+  await expect(page.getByText("密码提示：蒸蒸生日 ♡")).toBeVisible();
+  for (const digit of "040928") {
+    await page.getByRole("button", { name: "密码键" + digit }).click();
+  }
+  await expect(page.locator(".device-lock")).toHaveCount(0);
   expect(errors).toEqual([]);
 });
