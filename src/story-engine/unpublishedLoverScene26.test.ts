@@ -13,7 +13,7 @@ describe("EP01 friend scene 26 and manual X unlock", () => {
     expect(manuallyOpenScene27X(initial)).toBe(initial);
   });
   it("waits two seconds, delivers six distinct bilingual messages, and never auto-opens X", () => {
-    let runtime = { ...initialRuntime(work), variables: { ep01Scene25Finished: true, ep01Scene25HungUpAt: 10000 } };
+    let runtime: Runtime = { ...initialRuntime(work), variables: { ep01Scene25Finished: true, ep01Scene25HungUpAt: 10000 } };
     runtime = tick(runtime, 11999);
     expect(runtime.messages.kakao).toBeUndefined();
     for (let i = 0; i < 6; i++) {
