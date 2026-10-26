@@ -47,3 +47,15 @@ export function scene22AllRead(runtime: Runtime): boolean {
   const items = (runtime.messages.kakao ?? []).filter((item) => item.meta.conversationId === "chat-junghwan");
   return runtime.variables.ep01Scene22Finished === true && items.length === TOTAL && items.every((item) => item.read);
 }
+
+/** The scene-23 gate requires an explicit return to the chat list after all 15 messages were read. */
+export function markScene22ListReturn(runtime: Runtime): Runtime {
+  if (!scene22AllRead(runtime) || runtime.variables.ep01Scene22ReturnedToList === true) return runtime;
+  return { ...runtime, variables: { ...runtime.variables, ep01Scene22ReturnedToList: true } };
+}
+
+/** Opening Jeongwoo directly from a banner does not satisfy the manual-open requirement. */
+export function markScene23ManualOpen(runtime: Runtime, title: string): Runtime {
+  if (title !== "쩡쩡❤️" || runtime.variables.ep01Scene22ReturnedToList !== true || runtime.variables.ep01Scene23Ready === true) return runtime;
+  return { ...runtime, variables: { ...runtime.variables, ep01Scene23Ready: true } };
+}
