@@ -140,6 +140,7 @@ function PhoneRuntime({
   onRuntime?: (s: Runtime) => void;
 }) {
   const [app, setApp] = useState("");
+  const [storyFocusedThread, setStoryFocusedThread] = useState("");
   const [homeRequest, setHomeRequest] = useState(0);
   const [locked, setLocked] = useState(!creator);
   const [pinOpen, setPinOpen] = useState(false);
@@ -277,6 +278,7 @@ function PhoneRuntime({
   const open = (id: string) => {
     if (!work.apps.some((a) => a.id === id && a.installed)) return;
     setApp(id);
+    setStoryFocusedThread("");
     setKeyboard(false);
     setRecent((v) => [id, ...v.filter((a) => a !== id)].slice(0, 8));
     setFolder("");
@@ -558,6 +560,7 @@ function PhoneRuntime({
                     );
                   }}
                   work={work}
+                  storyFocusedThread={storyFocusedThread}
                   onStorySend={(threadTitle, label, target) => {
                     const current = runtimeRef.current;
                     if (!current.choices.some((choice) => choice.target === target && choice.label === label)) return;
@@ -787,6 +790,7 @@ function PhoneRuntime({
                 setBanner("");
                 if (work.id === "unpublished-lover-ep01" && (banner.startsWith("朴炡禹:") || banner.startsWith("闺蜜:"))) {
                   open("kakao");
+                  setStoryFocusedThread(banner.startsWith("朴炡禹:") ? "쩡쩡❤️" : "闺蜜");
                 } else {
                   setPanel("notification");
                 }
@@ -974,6 +978,7 @@ function AppContent({
   onUi,
   work,
   onStorySend,
+  storyFocusedThread,
 }: {
   app: AppPlugin;
   name: string;
@@ -988,11 +993,15 @@ function AppContent({
   onUi?: (key: string, value: UiValue) => void;
   work: Work;
   onStorySend?: (thread: string, label: string, target: string) => void;
+  storyFocusedThread?: string;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
   const [storyDraft, setStoryDraft] = useState<{ label: string; target: string } | null>(null);
   const [showStoryChoices, setShowStoryChoices] = useState(false);
+  useEffect(() => {
+    if (work.id === "unpublished-lover-ep01" && app.id === "kakao" && storyFocusedThread) setThread(storyFocusedThread);
+  }, [work.id, app.id, storyFocusedThread]);
   const [tab, setTab] = useState(app.tabs[0]);
   const [q, setQ] = useState("");
   const [pw, setPw] = useState("");
