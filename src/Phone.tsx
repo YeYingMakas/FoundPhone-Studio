@@ -464,6 +464,7 @@ function PhoneRuntime({
                   creator={creator}
                   state={s}
                   onRead={(id) => event("read", id)}
+                  onOpenInstagramRequest={() => event("openedInstagramDM", "")}
                   onStorySend={(id, body, title) => {
                     const current = runtimeRef.current;
                     const existing = current.messages.kakao ?? [];
@@ -921,6 +922,7 @@ function AppContent({
   onSettings,
   onUi,
   onStorySend,
+  onOpenInstagramRequest,
   work,
 }: {
   app: AppPlugin;
@@ -935,6 +937,7 @@ function AppContent({
   onSettings?: () => void;
   onUi?: (key: string, value: UiValue) => void;
   onStorySend?: (id: string, body: string, title: string) => void;
+  onOpenInstagramRequest?: () => void;
   work: Work;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
@@ -1041,7 +1044,7 @@ function AppContent({
   if (work.id === "my-phone-unlisted-love" && app.id === "twitter" && !creator)
     return <MyPhoneX items={shown} readIds={state.read} onRead={onRead} onBack={onBack} />;
   if (work.id === "my-phone-unlisted-love" && app.id === "instagram" && !creator)
-    return <MyPhoneInstagram items={shown} readIds={state.read} onRead={onRead} onBack={onBack} />;
+    return <MyPhoneInstagram items={shown} readIds={state.read} onRead={onRead} onOpenRequest={() => onOpenInstagramRequest?.()} onBack={onBack} />;
   if (Skin)
     return (
       <>
