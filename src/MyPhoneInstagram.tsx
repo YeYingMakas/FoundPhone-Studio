@@ -2,10 +2,11 @@ import { useState } from "react";
 import type { Item } from "./schema";
 import "./my-phone-instagram.css";
 
-export function MyPhoneInstagram({ items, readIds, onRead, onBack }: {
+export function MyPhoneInstagram({ items, readIds, onRead, onOpenRequest, onBack }: {
   items: Item[];
   readIds: string[];
   onRead: (id: string) => void;
+  onOpenRequest: () => void;
   onBack: () => void;
 }) {
   const [tab, setTab] = useState<"profile" | "requests">("profile");
@@ -36,7 +37,7 @@ export function MyPhoneInstagram({ items, readIds, onRead, onBack }: {
         <p>消息请求 · Message requests</p>
         <div className="myphone-ig-filter"><input aria-label="搜索私信" placeholder="搜索消息或账号" value={search} onChange={(e) => setSearch(e.target.value)} /><button className={unreadOnly ? "active" : ""} onClick={() => setUnreadOnly((v) => !v)}>{unreadOnly ? "显示全部" : "仅看未读"}</button></div>
         {filteredRequests.length === 0 && <p className="myphone-ig-empty">没有符合条件的消息</p>}
-        {filteredRequests.map((item) => <button key={item.id} className={`myphone-ig-request ${readIds.includes(item.id) ? "is-read" : "is-unread"}`} onClick={() => { setOpened(item); onRead(item.id); if (item.id !== "ig-dm-001") onRead("ig-dm-001"); }}>
+        {filteredRequests.map((item) => <button key={item.id} className={`myphone-ig-request ${readIds.includes(item.id) ? "is-read" : "is-unread"}`} onClick={() => { setOpened(item); onRead(item.id); onOpenRequest(); }}>
           <span className="myphone-ig-avatar">{item.sender.slice(1, 2).toUpperCase()}</span>
           <span><strong>{item.sender}</strong><small>{item.body.split("\n")[0]}</small></span>
           <time>{!readIds.includes(item.id) && <i className="myphone-ig-unread-dot" aria-label="未读" />}{item.time.slice(-5)}</time>
