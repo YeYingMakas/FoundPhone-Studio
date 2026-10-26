@@ -66,6 +66,8 @@ export function MyPhoneKakao({
   const knownIds = useRef<Set<string>>(new Set(messages.map((item) => item.id)));
   const [revealed, setRevealed] = useState<Set<string>>(() => new Set(messages.map((item) => item.id)));
   const [typing, setTyping] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [stayAtBottom, setStayAtBottom] = useState(true);
   const pendingTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
   useEffect(() => () => pendingTimers.current.forEach(clearTimeout), []);
   useEffect(() => {
@@ -85,15 +87,19 @@ export function MyPhoneKakao({
     pendingTimers.current.push(...timers);
   }, [items, title]);
 
+  const visibleMessages = messages.filter((item) => revealed.has(item.id));
+  useEffect(() => {
+    if (stayAtBottom && scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+  }, [visibleMessages.length, typing, stayAtBottom]);
   const options = REPLIES[stage] ?? [];
   const enabled = canReply && options.length > 0;
   const selected = draft && options.some((o) => o.id === draft.id) ? draft : null;
   return (
-    <div className="chat-content my-phone-kakao" aria-label={title + " 聊天"}>
-      <div className="chat-time">今天</div>
-      {messages.filter((item) => revealed.has(item.id)).map((item) => (
+    <div className="chat-content my-phone-kakao" ref={scrollRef} onScroll={(e) => { const el = e.currentTarget; setStayAtBottom(el.scrollHeight - el.scrollTop - el.clientHeight < 90); }} aria-label={title + " 聊天"}>
+      {visibleMessages.map((item, index) => (
+        <div className="my-phone-message-block" key={item.id}>
+          {(index === 0 || visibleMessages[index - 1].time.slice(0, 10) !== item.time.slice(0, 10)) && <div className="chat-time">{/^\\d{4}-\\d{2}-\\d{2}$/.test(item.time.slice(0, 10)) ? item.time.slice(0, 10) : "今天"}</div>}
         <button
-          key={item.id}
           className={`message-row ${item.outgoing ? "outgoing" : ""}`}
           onClick={() => onRead(item.id)}
         >
@@ -108,6 +114,7 @@ export function MyPhoneKakao({
             <small className="my-phone-timestamp">{item.time.slice(-5)}</small>
           </span>
         </button>
+        </div>
       ))}
       {typing && (
         <div aria-live="polite" style={{ padding: "8px 14px", opacity: 0.65, fontSize: 12 }}>
