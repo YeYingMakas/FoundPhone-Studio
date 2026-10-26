@@ -1,5 +1,5 @@
 import { StatusGlyph } from "./ios/StatusGlyph";
-import { ep01FirstCallChoices, sendEp01FirstCallRefusal, advanceEp01FirstCall, answerEp01FirstCall, endEp01FirstCall } from "./story-engine/ep01FirstCall";
+import { ep01FirstCallChoices, sendEp01FirstCallRefusal, advanceEp01FirstCall, answerEp01FirstCall, endEp01FirstCall, rejectEp01FirstCall, advanceEp01FirstCallRetry } from "./story-engine/ep01FirstCall";
 import { ep01SecondChoices, sendEp01SecondChoice, advanceEp01SecondChoice } from "./story-engine/ep01SecondChoices";
 import { ep01OpeningChoices, sendEp01OpeningChoice, advanceEp01OpeningChoice } from "./story-engine/ep01OpeningChoices";
 import { showEp01Sighting, dismissEp01Sighting, advanceEp01Opening } from "./story-engine/ep01Opening";
@@ -267,7 +267,7 @@ function PhoneRuntime({
       // The EP01 clock and incoming messages must not advance behind player setup.
       if (work.id === "unpublished-lover-ep01" && previous.variables.ep01PlayerSetupDone !== true) return;
       const advanced = advance(work, previous, work.id === "unpublished-lover-ep01" ? 200 : 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceEp01FirstCall(advanceEp01SecondChoice(advanceEp01OpeningChoice(advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))))))))))))) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceEp01FirstCallRetry(advanceEp01FirstCall(advanceEp01SecondChoice(advanceEp01OpeningChoice(advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced))))))))))))))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -445,7 +445,10 @@ function PhoneRuntime({
                 <button type="button" onClick={() => update(endEp01FirstCall(runtimeRef.current))}>结束通话</button>
               </div>
             ) : (
-              <button type="button" onClick={() => update(answerEp01FirstCall(runtimeRef.current))}>接听</button>
+              <div>
+                <button type="button" onClick={() => update(answerEp01FirstCall(runtimeRef.current))}>接听</button>
+                <button type="button" onClick={() => update(rejectEp01FirstCall(runtimeRef.current))}>挂断</button>
+              </div>
             )}
           </section>
         </div>
