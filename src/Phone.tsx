@@ -1,4 +1,5 @@
 import { StatusGlyph } from "./ios/StatusGlyph";
+import { completeEp01PlayerSetup } from "./story-engine/ep01PlayerSetup";
 import { SocialDetail, socialDetailApps } from "./skins/SocialDetails";
 import { NativeCalculator } from "./ios/Calculator";
 import { HomeLauncher } from "./launcher/HomeLauncher";
@@ -417,10 +418,8 @@ function PhoneRuntime({
         <div className="ep01-ending-overlay" role="dialog" aria-modal="true" aria-label="开始游戏">
           <form className="ep01-ending-card" onSubmit={(event) => {
             event.preventDefault();
-            const name = ep01PlayerName.trim();
-            const year = Number(ep01BirthYear);
-            if (!name || name.length > 30 || !/^\d{4}$/.test(ep01BirthYear) || year < 1900 || year > 2026) return;
-            update({ ...runtimeRef.current, variables: { ...runtimeRef.current.variables, ep01PlayerName: name, ep01BirthYear: year, ep01PlayerSetupDone: true } });
+            const next = completeEp01PlayerSetup(runtimeRef.current, ep01PlayerName, ep01BirthYear);
+            if (next !== runtimeRef.current) update(next);
           }}>
             <small>iPhone16pro Max</small>
             <h2>开始之前</h2>
