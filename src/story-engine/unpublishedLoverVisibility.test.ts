@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { visible } from "../engine";
-import { initialRuntime, type Work } from "../schema";
+import type { Work } from "../schema";
+import { initialRuntime } from "../engine";
 
 describe("EP01 scene 27 spoiler protection", () => {
   const work = {
