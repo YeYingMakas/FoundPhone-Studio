@@ -26,7 +26,7 @@ export function sendScene24Choice(runtime: Runtime, target: string): Runtime {
 
 export function blockScene24Kakao(runtime: Runtime): Runtime {
   if (runtime.variables.ep01Scene24Branch !== "A" || runtime.variables.ep01KakaoBlocked === true) return runtime;
-  return { ...runtime, variables: { ...runtime.variables, ep01KakaoBlocked: true, ep01Scene24ChoiceAt: now(runtime) } };
+  return { ...runtime, variables: { ...runtime.variables, ep01KakaoBlocked: true, ep01Scene24WasBlocked: true, ep01Scene24ChoiceAt: now(runtime) } };
 }
 
 export function unblockScene24Kakao(runtime: Runtime): Runtime {
@@ -51,7 +51,7 @@ export function advanceScene24(runtime: Runtime): Runtime {
   }
   const branch = runtime.variables.ep01Scene24Branch;
   if (typeof branch !== "string" || !branches.includes(branch as Branch)) return runtime;
-  if (branch === "A" && runtime.variables.ep01KakaoBlocked !== true) return runtime;
+  if (branch === "A" && runtime.variables.ep01Scene24WasBlocked !== true) return runtime;
   const replies = scene24.branches[branch as Branch].replies;
   const delivered = Number(runtime.variables.ep01Scene24ReplyDelivered ?? 0);
   const started = Number(runtime.variables.ep01Scene24ChoiceAt ?? elapsed);
