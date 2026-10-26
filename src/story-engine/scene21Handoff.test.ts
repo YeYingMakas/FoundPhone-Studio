@@ -20,6 +20,7 @@ describe("scene 21 handoff", () => {
     expect(scene21Choices(state)[0].target).toBe("ep01-scene21-second");
     state = sendScene21Choice(state, "ep01-scene21-second");
     expect(state.variables.ep01Scene21SecondSent).toBe(true);
+    expect(state.variables.ep01Scene22StartedAt).toBe(0);
     expect(scene21Choices(state)).toHaveLength(0);
     expect(advanceScene22(state).variables.ep01Scene22StartedAt).toBe(0);
   });
