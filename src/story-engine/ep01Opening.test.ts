@@ -21,7 +21,7 @@ describe("EP01 opening sighting and messages", () => {
       expect(state.messages.kakao).toHaveLength(i + 1);
     }
     expect(state.messages.kakao.map((m) => m.body.split("\n")[0])).toEqual([
-      "자기야 뭐 해?ㅎㅎ", "나 지금 숙소야", "우리 자기 보고 싶다ㅠㅠ",
+      "자기야아", "나 지금 숙소야", "우리 자기 보고 싶다ㅠㅠ",
     ]);
     expect(state.variables.ep01OpeningFinished).toBe(true);
     expect(advanceEp01Opening(state)).toBe(state);
