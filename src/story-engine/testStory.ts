@@ -42,6 +42,13 @@ export function testStory(story: Story, work: Work) {
       if (step.advanceMs !== undefined)
         state = advance(work, state, step.advanceMs);
       if (step.event) state = dispatch(work, state, step.event, step.target);
+      // Full-story checkpoints: no ending before the final reconciliation.
+      if (work.id === "my-phone-unlisted-love" &&
+          t.name.includes("完整主线") &&
+          i < t.steps.length - 1 &&
+          state.endings.length > 0) {
+        errors.push(at + ": 和解完成前不应提前出现结局卡");
+      }
       // Regression guard: opening X must not count as reading the confession.
       // The Instagram DM wave only begins after the player opens the post.
       if (work.id === "my-phone-unlisted-love" && t.name.includes("完整主线")) {
