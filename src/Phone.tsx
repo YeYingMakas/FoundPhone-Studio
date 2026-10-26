@@ -385,7 +385,7 @@ function PhoneRuntime({
     >
       <KeyboardContext.Provider value={setKeyboard}>
         <div
-          className={`phone-screen wallpaper-${work.phone.wallpaper} ${locked ? "is-locked" : ""} ${app ? "in-app" : ""} ${keyboard ? "keyboard-open" : ""}`}
+          className={`phone-screen wallpaper-${work.phone.wallpaper} ${work.id === "unpublished-lover-ep01" ? "ep01-custom-wallpaper" : ""} ${locked ? "is-locked" : ""} ${app ? "in-app" : ""} ${keyboard ? "keyboard-open" : ""}`}
           data-app={app}
           onDragStart={(e) => e.preventDefault()}
           onPointerDown={(e) => {
@@ -1143,7 +1143,12 @@ function AppContent({
               const unread = messages.filter((item) => !item.read && !item.outgoing).length;
               return (
                 <button key={title} className="ep01-kakao-contact" onClick={() => openThread(title)}>
-                  <span className="ep01-kakao-avatar">{title.slice(0, 1)}</span>
+                  <span className="ep01-kakao-avatar">
+                    {({ "쩡쩡❤️": "kakao-jeongwoo.jpeg", "朴炡禹": "kakao-jeongwoo.jpeg", "苏庭焕": "kakao-junghwan.jpeg", "朴志焄": "kakao-jihoon.jpeg", "尹材赫": "kakao-jaehyuk.jpeg", "闺蜜": "kakao-friend.jpeg" } as Record<string, string>)[title] ? (
+                      <img src={"/story-assets/unpublished-lover/" + ({ "쩡쩡❤️": "kakao-jeongwoo.jpeg", "朴炡禹": "kakao-jeongwoo.jpeg", "苏庭焕": "kakao-junghwan.jpeg", "朴志焄": "kakao-jihoon.jpeg", "尹材赫": "kakao-jaehyuk.jpeg", "闺蜜": "kakao-friend.jpeg" } as Record<string, string>)[title]} alt={title + "头像"} onError={(event) => { event.currentTarget.style.display = "none"; }} />
+                    ) : null}
+                    <span>{title.slice(0, 1)}</span>
+                  </span>
                   <span className="ep01-kakao-contact-body"><strong>{title}</strong><small>{last.body.split("\n")[0]}</small></span>
                   <span className="ep01-kakao-contact-side"><small>{last.time.slice(-5)}</small>{unread > 0 && <b>{unread > 99 ? "99+" : unread}</b>}</span>
                 </button>
