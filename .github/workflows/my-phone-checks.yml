@@ -20,6 +20,13 @@ jobs:
       - run: npm run my-phone:test
       - run: npm run typecheck
       - run: npm run my-phone:build
+      - name: Verify standalone build contents
+        run: |
+          test -s dist/index.html
+          test -s dist/work.json
+          test -s dist/LICENSE
+          test -s dist/THIRD_PARTY_LICENSES.txt
+          node -e 'const w=require("./dist/work.json"); if(w.id!=="my-phone-unlisted-love") process.exit(1); console.log("My Phone packaged:",w.title)'
       - run: npx playwright install --with-deps chrome
       - run: npx playwright test tests/my-phone.spec.ts
       - name: Package private playable build
