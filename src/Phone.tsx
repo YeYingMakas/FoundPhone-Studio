@@ -27,6 +27,7 @@ import { getFields } from "./fields";
 import { catalogSkins } from "./skins/catalog";
 import "./skins/skins.css";
 import "./ios18.css";
+import "./runtime/iphone16-wallpapers.css";
 import "./device-system.css";
 import "./ios/tokens.css";
 import "./ios/reference.css";
