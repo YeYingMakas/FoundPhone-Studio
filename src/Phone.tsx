@@ -513,6 +513,7 @@ function PhoneRuntime({
                     custom={a.icon}
                     date={s.date || work.phone.date}
                     time={s.time}
+                    unread={work.id === "unpublished-lover-ep01" ? storyAppUnread(s, a.id) : 0}
                   />
                 )}
                 clearApp={(id) =>
