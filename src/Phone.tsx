@@ -78,6 +78,7 @@ import { openPublicPost, advanceInstagramDMs, openInstagramThread, sendInstagram
 import { advanceScene30Opening } from "./story-engine/scene30Opening";
 import { advanceScene30Replies, scene30Choices, sendScene30Choice } from "./story-engine/scene30Replies";
 import { advanceScene31, dismissScene31 } from "./story-engine/scene31Ending";
+import { scene21Choices, sendScene21Choice } from "./story-engine/scene21Handoff";
 import scene31Data from "../stories/unpublished-lover/data/scene31.json";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
@@ -649,10 +650,11 @@ function PhoneRuntime({
                   }}
                   onStorySend={(threadTitle, label, target) => {
                     const current = runtimeRef.current;
+                    const special21 = threadTitle === "苏庭焕" && scene21Choices(current).some((choice) => choice.target === target && choice.label === label);
                     const special23 = threadTitle === "쩡쩡❤️" && scene23Choices(current).some((choice) => choice.target === target && choice.label === label);
                     const special24 = threadTitle === "쩡쩡❤️" && scene24Choices(current).some((choice) => choice.target === target && choice.label === label);
                     const special30 = threadTitle === "쩡쩡❤️" && scene30Choices(current).some((choice) => choice.target === target && choice.label === label);
-                    const special = special23 || special24 || special30;
+                    const special = special21 || special23 || special24 || special30;
                     if (!special && !current.choices.some((choice) => choice.target === target && choice.label === label)) return;
                     const message = makeItem({
                       title: threadTitle,
@@ -667,7 +669,7 @@ function PhoneRuntime({
                       ...current,
                       messages: { ...current.messages, kakao: [...(current.messages.kakao ?? []), message] },
                     };
-                    update(special23 ? sendScene23Choice(withMessage, target) : special24 ? sendScene24Choice(withMessage, target) : special30 ? sendScene30Choice(withMessage, target) : choose(work, withMessage, target));
+                    update(special21 ? sendScene21Choice(withMessage, target) : special23 ? sendScene23Choice(withMessage, target) : special24 ? sendScene24Choice(withMessage, target) : special30 ? sendScene30Choice(withMessage, target) : choose(work, withMessage, target));
                   }}
                 />
               </AppWindow>
@@ -1313,7 +1315,7 @@ function AppContent({
   if (work.id === "unpublished-lover-ep01" && app.id === "kakao" && !creator) {
     const conversations = [...new Set(["쩡쩡❤️", "闺蜜", "苏庭焕", "朴志焄", "尹材赫", ...shown.map((item) => item.title))];
     const threadItems = shown.filter((item) => item.title === thread);
-    const availableChoices = thread === "쩡쩡❤️" ? [...scene23Choices(state), ...scene24Choices(state), ...scene30Choices(state)] : state.choices;
+    const availableChoices = thread === "쩡쩡❤️" ? [...scene23Choices(state), ...scene24Choices(state), ...scene30Choices(state)] : thread === "苏庭焕" ? scene21Choices(state) : state.choices;
     const openThread = (title: string) => {
       setThread(title);
       onStoryManualOpen?.(title);
