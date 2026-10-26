@@ -1,0 +1,107 @@
+{
+  "id": "unpublished-lover-ep01-trigger-plan",
+  "version": 1,
+  "status": "development",
+  "description": "Non-executable implementation blueprint; events must be wired to FoundPhone-Studio engine before play.",
+  "events": [
+    {
+      "id": "s22",
+      "when": "scene21_player_second_message_sent",
+      "delayMs": 3000,
+      "action": "queue_messages",
+      "target": "kakao:junghwan",
+      "count": 15,
+      "source": "04-scenes-22-to-26.md",
+      "after": "s23"
+    },
+    {
+      "id": "s23",
+      "when": "junghwan_scene22_all_read_and_kakao_chat_list_returned_then_jeongwoo_chat_opened",
+      "action": "present_choice",
+      "count": 3,
+      "source": "04-scenes-22-to-26.md",
+      "after": "s24"
+    },
+    {
+      "id": "s24",
+      "when": "scene23_branch_last_message_delivered",
+      "delayMs": 5000,
+      "action": "queue_jeongwoo_7_messages_then_three_choices",
+      "source": "04-scenes-22-to-26.md",
+      "blockedRoute": "player_must_manually_block_kakao",
+      "after": "s25"
+    },
+    {
+      "id": "s25",
+      "when": "scene24_branch_finished",
+      "delayMs": 5000,
+      "action": "incoming_phone_call",
+      "hangupMessages": 3,
+      "redialUntilAnswered": true,
+      "branches": 9,
+      "blockedKakaoTextsStayUndelivered": true,
+      "closingPlayerText": "나 지금 진짜 너무 지쳤어...",
+      "after": "s26"
+    },
+    {
+      "id": "s26",
+      "when": "scene25_call_ended",
+      "delayMs": 2000,
+      "action": "queue_messages",
+      "target": "kakao:friend",
+      "count": 6,
+      "after": "s27"
+    },
+    {
+      "id": "s27",
+      "when": "player_opens_x_after_scene26",
+      "action": "pin_jeongwoo_public_post_to_top_of_for_you",
+      "source": "story.json:content.twitter[0]",
+      "after": "s28"
+    },
+    {
+      "id": "s28",
+      "when": "player_opens_public_post_detail",
+      "action": "show_30_comments",
+      "source": "05-scenes-27-to-28.md",
+      "after": "s29"
+    },
+    {
+      "id": "s29",
+      "when": "player_reads_post_comments",
+      "delayMs": 2000,
+      "action": "queue_60_instagram_dms",
+      "intervalMs": 600,
+      "uniqueThreads": 60,
+      "allowPlayerFreeReplies": true,
+      "neverAutoReply": true,
+      "after": "s30"
+    },
+    {
+      "id": "s30",
+      "when": "player_opens_any_instagram_dm_thread_first_time",
+      "delayMs": 2000,
+      "action": "queue_13_kakao_apology_messages_then_three_choices",
+      "source": "data/scene30.json",
+      "respectKakaoBlock": true,
+      "after": "s31"
+    },
+    {
+      "id": "s31",
+      "when": "scene30_selected_branch_last_message_delivered",
+      "delayMs": 3000,
+      "action": "show_ending_modal",
+      "source": "data/scene31.json",
+      "persistProgress": true,
+      "allowContinuePhone": true
+    }
+  ],
+  "invariants": [
+    "Do not auto-send player choices",
+    "Do not reveal future content early",
+    "Korean and Chinese kept paired",
+    "Preserve all earlier chats and unread counts",
+    "No photo assets before permission confirmation",
+    "Do not modify main branch"
+  ]
+}
