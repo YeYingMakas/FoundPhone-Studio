@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { Phone } from "../Phone";
+import { PlayerSetup, readPlayerProfile, type PlayerProfile } from "./PlayerSetup";
 import { validateWork, type Work } from "../schema";
 import "../styles.css";
 import "./player.css";
 function StoryPlayer() {
+  const [profile, setProfile] = useState<PlayerProfile | null>(() => readPlayerProfile());
   const [work, setWork] = useState<Work | null>(null),
     [error, setError] = useState("");
   useEffect(() => {
@@ -23,8 +25,7 @@ function StoryPlayer() {
       })
       .then((x) => {
         const w = validateWork(x);
-        document.title =
-          w.title === "捡手机" ? "捡手机" : w.title + " · 捡手机";
+        document.title = w.title;
         setWork(w);
       })
       .catch((e) => {
@@ -35,7 +36,7 @@ function StoryPlayer() {
   return (
     <main className="story-runtime">
       {work ? (
-        <Phone work={work} />
+        profile ? <Phone work={work} /> : <PlayerSetup onComplete={setProfile} />
       ) : (
         <p role="status">{error || "正在打开手机…"}</p>
       )}
