@@ -1,4 +1,5 @@
 import type { Runtime } from "../schema";
+import { appendStoryDelivery } from "./unpublishedLoverRuntime";
 
 // Original source stage 4: the player refuses further discussion, then the
 // first call begins. Call UI is a separate gate; never silently skip it.
@@ -67,7 +68,23 @@ export function advanceEp01FirstCallRetry(runtime: Runtime): Runtime {
   const due = runtime.variables.ep01FirstCallRetryDueAt;
   if (typeof due !== "number" || runtime.variables.ep01FirstCallAnswered === true ||
       runtime.variables.ep01FirstCallEnded === true || (runtime.elapsedMs ?? 0) < due) return runtime;
-  return { ...runtime, variables: {
-    ...runtime.variables, ep01FirstCallRetryDueAt: -1, ep01FirstCallRinging: true,
+  const index = Number(runtime.variables.ep01FirstCallRejectionNoticePending ?? 0);
+  const lines = [
+    { id: "first-call-reject-1", ko: "자기야 전화 좀 받아 줘ㅠㅠ", zh: "宝宝，接一下电话嘛ㅠㅠ" },
+    { id: "first-call-reject-2", ko: "제발 한 번만 내 얘기 들어 줘...", zh: "拜托了，就听我解释一次……" },
+    { id: "first-call-reject-3", ko: "자기야 나 진짜 미안해... 전화 좀 받아 줘 제발ㅠㅠ", zh: "宝宝，我真的对不起你……拜托接一下电话吧ㅠㅠ" },
+  ];
+  const previouslySent = Number(runtime.variables.ep01FirstCallRejectionNoticeSent ?? 0);
+  const delivery = index > previouslySent && index <= lines.length
+    ? appendStoryDelivery(runtime, {
+        app: "kakao", conversationId: "chat-jeongwoo", sender: "朴炡禹",
+        lines: [lines[index - 1]], delivered: 0, blocked: false,
+      }, runtime.date ?? "2026-10-23", runtime.time).runtime
+    : runtime;
+  return { ...delivery, variables: {
+    ...delivery.variables,
+    ep01FirstCallRetryDueAt: -1,
+    ep01FirstCallRinging: true,
+    ep01FirstCallRejectionNoticeSent: Math.max(previouslySent, index),
   } };
 }
