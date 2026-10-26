@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { initialRuntime, type Runtime, type Work } from "../schema";
+import type { Runtime, Work } from "../schema";
+import { initialRuntime } from "../engine";
 import { advanceScene22, scene22AllRead, markScene22ListReturn, markScene23ManualOpen } from "./unpublishedLoverScene22";
 import { readStoryConversation } from "./unpublishedLoverRuntime";
 
