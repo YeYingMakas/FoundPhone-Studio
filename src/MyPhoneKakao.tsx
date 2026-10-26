@@ -75,15 +75,23 @@ export function MyPhoneKakao({
     incoming.forEach((item) => knownIds.current.add(item.id));
     if (!incoming.length) return;
     const timers: ReturnType<typeof setTimeout>[] = [];
-    if (incoming.some((item) => !item.outgoing)) {
-      timers.push(setTimeout(() => setTyping(true), 1000));
-    }
-    incoming.forEach((item, index) => {
-      timers.push(setTimeout(() => {
-        setRevealed((prev) => new Set([...prev, item.id]));
-        if (index === incoming.length - 1) setTyping(false);
-      }, item.outgoing ? 0 : 3000 + index * 1000));
+    const incomingOnly = incoming.filter((item) => !item.outgoing);
+    // Incoming bubbles begin after 3 seconds, then appear one per second.
+    // Player-sent bubbles appear immediately and never cancel the typing cue.
+    incoming.forEach((item) => {
+      if (item.outgoing) {
+        timers.push(setTimeout(() => setRevealed((prev) => new Set([...prev, item.id])), 0));
+      }
     });
+    if (incomingOnly.length) {
+      timers.push(setTimeout(() => setTyping(true), 1000));
+      incomingOnly.forEach((item, index) => {
+        timers.push(setTimeout(() => {
+          setRevealed((prev) => new Set([...prev, item.id]));
+          if (index === incomingOnly.length - 1) setTyping(false);
+        }, 3000 + index * 1000));
+      });
+    }
     pendingTimers.current.push(...timers);
   }, [items, title]);
 
