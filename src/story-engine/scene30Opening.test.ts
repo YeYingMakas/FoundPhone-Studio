@@ -11,6 +11,8 @@ describe("EP01 Instagram chat and scene 30 trigger", () => {
   it("only opens existing conversations and marks that conversation read", () => {
     const runtime = { ...initialRuntime(work), messages: { instagram: [item] }, elapsedMs: 1000 };
     expect(openInstagramThread(runtime, "missing")).toBe(runtime);
+    const unrelated = { ...runtime, messages: { instagram: [makeItem({ title: "ordinary-chat", body: "hello", sender: "friend" })] } };
+    expect(openInstagramThread(unrelated, "ordinary-chat")).toBe(unrelated);
     const opened = openInstagramThread(runtime, item.title);
     expect(opened.messages.instagram[0].read).toBe(true);
     expect(opened.variables.ep01FirstInstagramThreadOpenedAt).toBe(1000);
