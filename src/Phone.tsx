@@ -64,7 +64,7 @@ import {
 } from "./schema";
 import { dispatch, choose, visible, advance } from "./engine";
 import { db } from "./persistence";
-import { readStoryMessage } from "./story-engine/unpublishedLoverRuntime";
+import { readStoryMessage, storyAppUnread } from "./story-engine/unpublishedLoverRuntime";
 export function AppIcon({
   id,
   name,
@@ -72,6 +72,7 @@ export function AppIcon({
   custom = "",
   date,
   time,
+  unread = 0,
 }: {
   id: string;
   name?: string;
@@ -79,6 +80,7 @@ export function AppIcon({
   custom?: string;
   date?: string;
   time?: string;
+  unread?: number;
 }) {
   const a = getApp(id);
   const Icon = a.icon;
@@ -97,6 +99,7 @@ export function AppIcon({
           <Icon size={small ? 21 : 28} strokeWidth={1.65} />
         )}
       </span>
+      {unread > 0 && <span className="story-app-badge">{unread > 99 ? "99+" : unread}</span>}
       {name && <span className="app-name">{name}</span>}
     </span>
   );
