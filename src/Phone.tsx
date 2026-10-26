@@ -77,6 +77,8 @@ import scene28Data from "../stories/unpublished-lover/data/scene28.json";
 import { openPublicPost, advanceInstagramDMs, openInstagramThread, sendInstagramReply } from "./story-engine/scene29Gate";
 import { advanceScene30Opening } from "./story-engine/scene30Opening";
 import { advanceScene30Replies, scene30Choices, sendScene30Choice } from "./story-engine/scene30Replies";
+import { advanceScene31, dismissScene31 } from "./story-engine/scene31Ending";
+import scene31Data from "../stories/unpublished-lover/data/scene31.json";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -255,7 +257,7 @@ function PhoneRuntime({
     const interval = setInterval(() => {
       const previous = runtimeRef.current;
       const advanced = advance(work, previous, work.id === "unpublished-lover-ep01" ? 200 : 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced))))))))) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))))))))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -406,6 +408,19 @@ function PhoneRuntime({
       style={{ "--phone-scale": deviceScale } as CSSProperties}
       className={`phone-shell ios18 ${work.phone.theme === "dark" ? "dark-phone" : ""}`}
     >
+      {work.id === "unpublished-lover-ep01" && s.variables.ep01Scene31Visible === true && (
+        <div className="ep01-ending-overlay" role="dialog" aria-modal="true" aria-label="剧情结局">
+          <section className="ep01-ending-card">
+            <small>ENDING 01 · 未公开恋人</small>
+            <h2>{scene31Data.title}</h2>
+            <h3>{scene31Data.subtitleByBranch[(s.variables.ep01Scene30Branch as "A" | "B" | "C") || "A"]}</h3>
+            <p>{scene31Data.summaryByBranch[(s.variables.ep01Scene30Branch as "A" | "B" | "C") || "A"]}</p>
+            <strong>{scene31Data.footer}</strong>
+            <p>{scene31Data.notice}</p>
+            <button type="button" onClick={() => update(dismissScene31(runtimeRef.current))}>{scene31Data.button}</button>
+          </section>
+        </div>
+      )}
       <KeyboardContext.Provider value={setKeyboard}>
         <div
           className={`phone-screen wallpaper-${work.phone.wallpaper} ${work.id === "unpublished-lover-ep01" ? "ep01-custom-wallpaper" : ""} ${locked ? "is-locked" : ""} ${app ? "in-app" : ""} ${keyboard ? "keyboard-open" : ""}`}
