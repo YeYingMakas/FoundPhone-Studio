@@ -56,6 +56,14 @@ export function testStory(story: Story, work: Work) {
           errors.push(at + ": 仅打开 X 就提前解锁了 Instagram 私信");
         }
         if (step.event === "read" && step.target === "x-jeongwoo-public") {
+          // Opening request #58 must not mark request #1 read; either can
+          // advance the same story event without corrupting unread badges.
+          let alternate = dispatch(work, state, "read", "ig-dm-058");
+          alternate = dispatch(work, alternate, "openedInstagramDM", "");
+          if (!alternate.read.includes("ig-dm-058") || alternate.read.includes("ig-dm-001"))
+            errors.push(at + ": 阅读任意 Instagram 私信时错误修改其他私信的已读状态");
+          if (alternate.variables.apology_unlocked !== true)
+            errors.push(at + ": 阅读非首条 Instagram 私信未触发道歉主线");
           if (state.variables.public_statement_seen !== true)
             errors.push(at + ": 阅读公开声明后未标记为已读");
           if (!state.unlocked.includes("ig-dm-001") || !state.unlocked.includes("ig-dm-120"))
