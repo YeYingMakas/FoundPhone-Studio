@@ -51,7 +51,7 @@ export function advanceInstagramDMs(runtime: Runtime): Runtime {
 
 export function openInstagramThread(runtime: Runtime, title: string): Runtime {
   const entries = runtime.messages.instagram ?? [];
-  if (!entries.some((item) => item.title === title)) return runtime;
+  if (!entries.some((item) => item.title === title && item.meta.source === "ep01-scene29")) return runtime;
   const first = runtime.variables.ep01FirstInstagramThreadOpenedAt === undefined;
   return {
     ...runtime,
