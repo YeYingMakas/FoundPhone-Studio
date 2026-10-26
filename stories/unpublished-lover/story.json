@@ -72,7 +72,9 @@
           "likes": "316000",
           "comments": "128000",
           "reposts": "84000"
-        }
+        },
+        "hidden": true,
+        "unlock": "ep01PublicPostUnlocked"
       }
     ]
   },
