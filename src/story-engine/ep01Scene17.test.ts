@@ -6,7 +6,7 @@ describe("EP01 scene17 three independent contacts", () => {
   it("delivers four bilingual messages per contact with staggered first messages and independent unread state", () => {
     let s: Runtime = initialRuntime(work);
     s = { ...s, variables: { ep01FirstCallEnded: true, ep01Scene15ReplySent: true, ep01Scene16StartedAt: 1000, ep01PlayerName: "安安", ep01BirthYear: 2005 } };
-    expect(advanceEp01Scene17({ ...s, elapsedMs: 999 })).toBe(s);
+    expect(advanceEp01Scene17({ ...s, elapsedMs: 999 }).messages.kakao ?? []).toHaveLength(0);
     for (let now = 1000; now <= 19000; now += 200) {
       s = advanceEp01Scene17({ ...s, elapsedMs: now });
     }
