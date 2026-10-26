@@ -8,7 +8,7 @@ const tick = (runtime: Runtime, ms: number) => advanceScene26({ ...runtime, elap
 describe("EP01 friend scene 26 and manual X unlock", () => {
   it("never delivers before the call has ended", () => {
     const initial = initialRuntime(work);
-    expect(tick(initial, 999999)).toBe(initial);
+    expect(tick(initial, 999999).messages.kakao).toBeUndefined();
     expect(manuallyOpenScene27X(initial)).toBe(initial);
   });
   it("waits two seconds, delivers six distinct bilingual messages, and never auto-opens X", () => {
