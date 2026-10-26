@@ -19,3 +19,34 @@
   line-height: 1;
   pointer-events: none;
 }
+
+.ep01-opening-notice {
+  position: absolute;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 90px 16px 16px;
+  background: rgba(0,0,0,.28);
+}
+.ep01-opening-notice-card {
+  width: 100%;
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(248,248,252,.96);
+  color: #17171b;
+  box-shadow: 0 14px 35px rgba(0,0,0,.18);
+  backdrop-filter: blur(18px);
+}
+.ep01-opening-notice-card strong { font-size: 14px; }
+.ep01-opening-notice-card p { margin: 10px 0 15px; font-size: 14px; }
+.ep01-opening-notice-card button {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  background: #24242b;
+  color: white;
+  font: inherit;
+}
