@@ -165,6 +165,7 @@ function PhoneRuntime({
   );
   const gestureConsumed = useRef(false);
   const [pinError, setPinError] = useState("");
+  const [wrongPinAttempts, setWrongPinAttempts] = useState(0);
   const [folder, setFolder] = useState("");
   const [panel, setPanel] = useState("");
   const [own, setOwn] = useState(() => initialRuntime(work));
@@ -287,9 +288,12 @@ function PhoneRuntime({
     if (!work.phone.passcode || pin === work.phone.passcode) {
       setLocked(false);
       setPinOpen(false);
+      setWrongPinAttempts(0);
       event("password", pin);
     } else {
-      setPinError("密码不正确");
+      const attempts = wrongPinAttempts + 1;
+      setWrongPinAttempts(attempts);
+      setPinError(work.id === "unpublished-lover-ep01" && attempts >= 3 ? "提示：密码是蒸蒸生日" : "密码不正确");
       setPinOpen(true);
     }
   };
