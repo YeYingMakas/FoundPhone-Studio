@@ -147,6 +147,7 @@ function PhoneRuntime({
   const appSnapshots = useRef(new Map<string, HTMLElement>());
   const [banner, setBanner] = useState("");
   const noticesSeen = useRef(0);
+  const pendingBanners = useRef<string[]>([]);
   const [contextApp, setContextApp] = useState("");
   const [deviceScale, setDeviceScale] = useState(0.84);
   const shell = useRef<HTMLDivElement>(null);
@@ -299,6 +300,14 @@ function PhoneRuntime({
   const plugin = getApp(app);
   useEffect(() => {
     const count = s.notifications.length;
+    if (work.id === "unpublished-lover-ep01") {
+      if (count < noticesSeen.current) noticesSeen.current = count;
+      if (count > noticesSeen.current && work.phone.notifications) {
+        pendingBanners.current.push(...s.notifications.slice(noticesSeen.current));
+      }
+      noticesSeen.current = count;
+      return;
+    }
     if (!locked && work.phone.notifications && count > noticesSeen.current) {
       setBanner(s.notifications.at(-1) || "");
       const timer = setTimeout(() => setBanner(""), 4500);
@@ -306,7 +315,17 @@ function PhoneRuntime({
       return () => clearTimeout(timer);
     }
     noticesSeen.current = count;
-  }, [s.notifications.length, locked, work.phone.notifications]);
+  }, [s.notifications.length, locked, work.phone.notifications, work.id]);
+  useEffect(() => {
+    if (work.id !== "unpublished-lover-ep01" || locked || !work.phone.notifications) return;
+    if (banner || pendingBanners.current.length === 0) return;
+    setBanner(pendingBanners.current.shift() || "");
+  }, [banner, locked, work.id, work.phone.notifications, s.notifications.length]);
+  useEffect(() => {
+    if (work.id !== "unpublished-lover-ep01" || !banner) return;
+    const timer = setTimeout(() => setBanner(""), 2000);
+    return () => clearTimeout(timer);
+  }, [banner, work.id]);
   const dismissNotice = (index: number) =>
     update({
       ...runtimeRef.current,
