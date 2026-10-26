@@ -320,26 +320,8 @@ function PhoneRuntime({
     event("openApp", id);
   };
   useEffect(() => {
-    if (work.id !== "unpublished-lover-ep01" || creator || locked || !ready || !s.variables.ep01XNoticeDismissed) return;
-    const timer = setTimeout(() => {
-      const current = runtimeRef.current;
-      if (current.variables.ep01OpeningDelivered) return;
-      const jeongwoo: SceneDelivery = {
-        app: "kakao",
-        conversationId: "chat-jeongwoo",
-        sender: "朴炡禹",
-        lines: [{ id: "opening-01", ko: "자기야아", zh: "亲爱的呀" }],
-        delivered: 0,
-        blocked: false,
-      };
-      const next = appendStoryDelivery(current, jeongwoo, current.date || "2026-10-23", current.time);
-      update({ ...next.runtime, variables: { ...next.runtime.variables, ep01OpeningDelivered: true } });
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, [work.id, creator, locked, ready, s.variables.ep01XNoticeDismissed]);
-  useEffect(() => {
     if (work.id !== "unpublished-lover-ep01" || creator || locked || !ready) return;
-    if (!s.variables.ep01OpeningDelivered || s.variables.ep01FriendOpeningDelivered) return;
+    if (s.variables.ep01OpeningFinished !== true || s.variables.ep01FriendOpeningDelivered) return;
     const timer = setTimeout(() => {
       const current = runtimeRef.current;
       if (current.variables.ep01FriendOpeningDelivered) return;
@@ -355,7 +337,7 @@ function PhoneRuntime({
       update({ ...next.runtime, variables: { ...next.runtime.variables, ep01FriendOpeningDelivered: true } });
     }, 1000);
     return () => clearTimeout(timer);
-  }, [work.id, creator, locked, ready, s.variables.ep01OpeningDelivered, s.variables.ep01FriendOpeningDelivered]);
+  }, [work.id, creator, locked, ready, s.variables.ep01OpeningFinished, s.variables.ep01FriendOpeningDelivered]);
   const installedApps = work.apps.filter((a) => a.installed);
   const apps = installedApps.filter((a) => a.visible);
   const unlock = (pin = "") => {
@@ -578,15 +560,6 @@ function PhoneRuntime({
               </span>
             </button>
           </div>
-          {work.id === "unpublished-lover-ep01" && !creator && ready && !locked && !s.variables.ep01XNoticeDismissed && !s.variables.ep01OpeningDelivered && (
-            <div className="ep01-opening-notice" role="dialog" aria-modal="true" aria-label="X 通知">
-              <div className="ep01-opening-notice-card">
-                <strong>X · 通知</strong>
-                <p>你有一条新的 X 通知。</p>
-                <button type="button" onClick={() => update({ ...runtimeRef.current, variables: { ...runtimeRef.current.variables, ep01XNoticeDismissed: true } })}>关闭</button>
-              </div>
-            </div>
-          )}
           <AnimatePresence mode="wait">
             {locked && !(quickCamera && app === "camera") ? (
               <DeviceLock
