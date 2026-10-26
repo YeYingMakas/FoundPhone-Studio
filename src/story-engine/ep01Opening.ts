@@ -6,7 +6,7 @@ import type { SceneDelivery } from "./unpublishedLoverDelivery";
 // The sighting-post wording is not available in the approved source, so this
 // gate deliberately does not invent a screenshot or substitute post text.
 const opening = [
-  { id: "opening-jeongwoo-1", ko: "자기야아", zh: "宝宝在干嘛？ㅎㅎ" },
+  { id: "opening-jeongwoo-1", ko: "자기야아", zh: "宝宝呀——" },
   { id: "opening-jeongwoo-2", ko: "나 지금 숙소야", zh: "我现在在宿舍。" },
   { id: "opening-jeongwoo-3", ko: "우리 자기 보고 싶다ㅠㅠ", zh: "好想我家宝宝ㅠㅠ" },
 ];
