@@ -1,10 +1,10 @@
 /* iPhone16 pro Max: lock image 1 and home image 2. Upload the two files to public/wallpapers/. */
 .ios18 .phone-screen.wallpaper-iphone16-custom,
 .phone-screen.wallpaper-iphone16-custom {
-  background: #151d24 url("/wallpapers/iphone16-home.jpg") center center / cover no-repeat;
+  background: #151d24 url(var(--iphone-home-wallpaper)) center center / cover no-repeat;
 }
 .ios18 .phone-screen.wallpaper-iphone16-custom .device-lock,
 .phone-screen.wallpaper-iphone16-custom .device-lock {
-  background: #10242a url("/wallpapers/iphone16-lock.jpg") center center / cover no-repeat;
+  background: #10242a url(var(--iphone-lock-wallpaper)) center center / cover no-repeat;
 }
 .phone-screen.wallpaper-iphone16-custom .wallpaper-orb { display: none; }
