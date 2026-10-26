@@ -135,3 +135,12 @@
 .ep01-instagram-compose { display:flex; gap:8px; padding:10px; border-top:1px solid rgba(128,128,128,.15); }
 .ep01-instagram-compose input { flex:1; min-width:0; border-radius:22px; padding:9px 13px; border:1px solid rgba(128,128,128,.3); }
 .ep01-instagram-compose button { border:0; border-radius:18px; padding:7px 12px; background:#4b79e8; color:white; }
+
+.ep01-ending-overlay { position:absolute; inset:0; z-index:999; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(8,10,19,.78); backdrop-filter:blur(12px); }
+.ep01-ending-card { width:100%; max-height:88%; overflow:auto; padding:23px 18px; border-radius:22px; background:#fdfbfa; color:#23212a; box-shadow:0 18px 50px rgba(0,0,0,.35); text-align:center; }
+.ep01-ending-card small { letter-spacing:.16em; font-size:10px; opacity:.6; }
+.ep01-ending-card h2 { font-size:26px; margin:15px 0 8px; }
+.ep01-ending-card h3 { font-size:14px; margin:0 0 18px; font-weight:500; color:#756675; }
+.ep01-ending-card p { font-size:12px; line-height:1.9; text-align:left; margin:15px 0; }
+.ep01-ending-card strong { display:block; letter-spacing:.15em; margin:20px 0; font-size:12px; }
+.ep01-ending-card button { border:0; background:#23212a; color:#fff; border-radius:20px; padding:12px 18px; width:100%; }
