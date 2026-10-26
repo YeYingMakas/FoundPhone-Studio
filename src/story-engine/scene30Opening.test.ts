@@ -5,7 +5,7 @@ import { advanceScene30Opening } from "./scene30Opening";
 import { makeItem } from "../schema";
 
 const work = { id: "unpublished-lover-ep01", updatedAt: 1, phone: { date: "2026-10-23", time: "22:00" }, variables: {} } as Work;
-const item = makeItem({ title: "instagram_user_01", body: "안녕하세요\n你好", sender: "instagram_user_01", read: false, outgoing: false });
+const item = makeItem({ title: "instagram_user_01", body: "안녕하세요\n你好", sender: "instagram_user_01", read: false, outgoing: false, meta: { source: "ep01-scene29" } });
 
 describe("EP01 Instagram chat and scene 30 trigger", () => {
   it("only opens existing conversations and marks that conversation read", () => {
@@ -24,6 +24,7 @@ describe("EP01 Instagram chat and scene 30 trigger", () => {
     runtime = advanceScene30Opening({ ...runtime, elapsedMs: 3000 });
     expect(runtime.messages.kakao).toBeUndefined();
     expect(runtime.variables.ep01Scene30WaitingForUnblock).toBe(true);
+    expect(advanceScene30Opening(runtime)).toBe(runtime);
     runtime = advanceScene30Opening({ ...runtime, elapsedMs: 3200, variables: { ...runtime.variables, ep01KakaoBlocked: false } });
     expect(runtime.messages.kakao).toHaveLength(1);
   });
