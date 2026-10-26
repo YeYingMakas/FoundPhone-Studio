@@ -75,6 +75,7 @@ import scene25Data from "../stories/unpublished-lover/data/scene25.json";
 import { advanceScene26, manuallyOpenScene27X } from "./story-engine/unpublishedLoverScene26";
 import scene28Data from "../stories/unpublished-lover/data/scene28.json";
 import { openPublicPost, advanceInstagramDMs, openInstagramThread, sendInstagramReply } from "./story-engine/scene29Gate";
+import { advanceScene30Opening } from "./story-engine/scene30Opening";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -253,7 +254,7 @@ function PhoneRuntime({
     const interval = setInterval(() => {
       const previous = runtimeRef.current;
       const advanced = advance(work, previous, work.id === "unpublished-lover-ep01" ? 200 : 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced))))))) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))))))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
