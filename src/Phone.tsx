@@ -1246,6 +1246,52 @@ function AppContent({
       )}
     </div>
   ) : null;
+  if (work.id === "unpublished-lover-ep01" && app.id === "instagram" && !creator) {
+    const dmItems = shown.filter((item) => item.meta.source?.startsWith("ep01-scene29"));
+    const dmThreads = [...new Set(dmItems.map((item) => item.title))];
+    const current = dmItems.filter((item) => item.title === thread);
+    return (
+      <div className="ep01-instagram">
+        <header className="ep01-instagram-header">
+          {thread ? <button type="button" onClick={() => { setThread(""); setInstagramDraft(""); }}>‹</button> : null}
+          <strong>{thread || "Instagram · 消息"}</strong>
+        </header>
+        {thread ? (
+          <>
+            <div className="ep01-instagram-chat">
+              {current.map((item) => (
+                <div key={item.id} className={item.outgoing ? "ep01-instagram-bubble mine" : "ep01-instagram-bubble"}>
+                  {item.body.split("\n").map((line, index) => <p key={index}>{line}</p>)}
+                </div>
+              ))}
+            </div>
+            <form className="ep01-instagram-compose" onSubmit={(event) => {
+              event.preventDefault();
+              if (!instagramDraft.trim()) return;
+              onStoryInstagramSend?.(thread, instagramDraft);
+              setInstagramDraft("");
+            }}>
+              <input aria-label="输入私信" placeholder="发送消息……" value={instagramDraft} onChange={(event) => setInstagramDraft(event.target.value)} />
+              <button type="submit" disabled={!instagramDraft.trim()}>发送</button>
+            </form>
+          </>
+        ) : (
+          <div className="ep01-instagram-list">
+            {dmThreads.map((title) => {
+              const messages = dmItems.filter((item) => item.title === title);
+              const last = messages[messages.length - 1];
+              const unread = messages.filter((item) => !item.read && !item.outgoing).length;
+              return <button type="button" key={title} className="ep01-instagram-contact" onClick={() => { setThread(title); onStoryInstagramOpen?.(title); }}>
+                <span className="ep01-instagram-contact-avatar">{title.slice(-2)}</span>
+                <span className="ep01-instagram-contact-text"><strong>{title}</strong><small>{last?.body.split("\n")[0]}</small></span>
+                {unread > 0 ? <span className="ep01-instagram-unread">{unread > 99 ? "99+" : unread}</span> : null}
+              </button>;
+            })}
+          </div>
+        )}
+      </div>
+    );
+  }
   if (work.id === "unpublished-lover-ep01" && app.id === "kakao" && !creator) {
     const conversations = [...new Set(["쩡쩡❤️", "闺蜜", "苏庭焕", "朴志焄", "尹材赫", ...shown.map((item) => item.title))];
     const threadItems = shown.filter((item) => item.title === thread);
