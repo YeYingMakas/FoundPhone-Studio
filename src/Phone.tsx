@@ -65,6 +65,7 @@ import {
 import { dispatch, choose, visible, advance } from "./engine";
 import { db } from "./persistence";
 import { readStoryMessage, storyAppUnread } from "./story-engine/unpublishedLoverRuntime";
+import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
   name,
