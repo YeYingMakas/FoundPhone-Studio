@@ -26,6 +26,8 @@ test("My Phone browser smoke: lock screen and home screen", async ({ page }) => 
   await expect(page.getByRole("button", { name: "打开KakaoTalk", exact: true })).toBeVisible();
   await page.getByRole("button", { name: "打开KakaoTalk", exact: true }).click();
   await expect(page.locator(".app-screen:not([inert])")).toBeVisible();
+  await page.locator(".contact-row").filter({ hasText: "지민이💗" }).click();
+  await expect(page.getByRole("button", { name: "返回聊天列表" })).toBeVisible();
   await page.getByRole("button", { name: "返回桌面", exact: true }).click();
   await expect(page.getByRole("button", { name: "打开Instagram", exact: true })).toBeVisible();
   await page.getByRole("button", { name: "打开Instagram", exact: true }).click();
