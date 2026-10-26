@@ -73,6 +73,7 @@ import { advanceScene24, scene24Choices, sendScene24Choice, blockScene24Kakao, u
 import { advanceScene25Incoming, advanceScene25Dialogue, rejectScene25Incoming, answerScene25Incoming, scene25Transcript, chooseScene25Reply, speakScene25Final } from "./story-engine/unpublishedLoverScene25";
 import scene25Data from "../stories/unpublished-lover/data/scene25.json";
 import { advanceScene26, manuallyOpenScene27X } from "./story-engine/unpublishedLoverScene26";
+import scene28Data from "../stories/unpublished-lover/data/scene28.json";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -1203,6 +1204,18 @@ function AppContent({
               <Folder size={12} />
               {detail.folder}
             </span>
+          )}
+          {work.id === "unpublished-lover-ep01" && app.id === "twitter" && detail.id === "scene27-public-post" && (
+            <section className="ep01-x-comments" aria-label="公开恋爱帖评论">
+              <h3>评论 · 12.8万</h3>
+              {scene28Data.comments.map((comment) => (
+                <article className="ep01-x-comment" key={comment.id}>
+                  <strong>{comment.author}</strong>
+                  <p>{comment.ko}</p>
+                  <p className="ep01-x-comment-zh">{comment.zh}</p>
+                </article>
+              ))}
+            </section>
           )}
           {detail.comments.map((c, i) => (
             <p key={i} className="comment">
