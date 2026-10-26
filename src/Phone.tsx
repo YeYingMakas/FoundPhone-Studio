@@ -1027,6 +1027,11 @@ function AppContent({
     setDetail(i);
     if (!i.password || unlocks.includes(i.id)) onRead(i.id);
   };
+  useEffect(() => {
+    if (work.id !== "unpublished-lover-ep01" || app.id !== "kakao" || !thread || creator) return;
+    const unread = items.filter((item) => item.title === thread && !item.read && !item.outgoing);
+    unread.forEach((item) => onRead(item.id));
+  }, [work.id, app.id, thread, creator, items, onRead]);
   const chats = [...new Set(shown.map((i) => i.title))];
   const back = () => {
     if (detail) setDetail(null);
