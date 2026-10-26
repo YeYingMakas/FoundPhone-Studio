@@ -301,6 +301,25 @@ function PhoneRuntime({
     }, 3000);
     return () => clearTimeout(timer);
   }, [work.id, creator, locked, ready]);
+  useEffect(() => {
+    if (work.id !== "unpublished-lover-ep01" || creator || locked || !ready) return;
+    if (!s.variables.ep01OpeningDelivered || s.variables.ep01FriendOpeningDelivered) return;
+    const timer = setTimeout(() => {
+      const current = runtimeRef.current;
+      if (current.variables.ep01FriendOpeningDelivered) return;
+      const friend: SceneDelivery = {
+        app: "kakao",
+        conversationId: "chat-friend",
+        sender: "闺蜜",
+        lines: [{ id: "friend-opening-01", ko: "야", zh: "喂" }],
+        delivered: 0,
+        blocked: false,
+      };
+      const next = appendStoryDelivery(current, friend, current.date || "2026-10-23", current.time);
+      update({ ...next.runtime, variables: { ...next.runtime.variables, ep01FriendOpeningDelivered: true } });
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [work.id, creator, locked, ready, s.variables.ep01OpeningDelivered, s.variables.ep01FriendOpeningDelivered]);
   const installedApps = work.apps.filter((a) => a.installed);
   const apps = installedApps.filter((a) => a.visible);
   const unlock = (pin = "") => {
