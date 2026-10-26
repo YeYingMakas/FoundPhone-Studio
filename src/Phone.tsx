@@ -417,7 +417,7 @@ function PhoneRuntime({
             event.preventDefault();
             const name = ep01PlayerName.trim();
             const year = Number(ep01BirthYear);
-            if (!name || name.length > 30 || !/^\\d{4}$/.test(ep01BirthYear) || year < 1900 || year > 2026) return;
+            if (!name || name.length > 30 || !/^\d{4}$/.test(ep01BirthYear) || year < 1900 || year > 2026) return;
             update({ ...runtimeRef.current, variables: { ...runtimeRef.current.variables, ep01PlayerName: name, ep01BirthYear: year, ep01PlayerSetupDone: true } });
           }}>
             <small>iPhone16pro Max</small>
