@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { initialRuntime, type Work } from "../schema";
+import { initialRuntime, type Runtime, type Work } from "../schema";
 import { scene21Choices, sendScene21Choice } from "./scene21Handoff";
 import { advanceScene22 } from "./unpublishedLoverScene22";
 
@@ -13,7 +13,7 @@ describe("scene 21 handoff", () => {
     expect(advanceScene22(state)).toBe(state);
   });
   it("requires both player sends in order before scene 22 can begin", () => {
-    let state = { ...initialRuntime(work), variables: { ep01Scene21Ready: true } };
+    let state: Runtime = { ...initialRuntime(work), variables: { ep01Scene21Ready: true } };
     expect(scene21Choices(state)[0].target).toBe("ep01-scene21-first");
     state = sendScene21Choice(state, "ep01-scene21-first");
     expect(state.variables.ep01Scene21FirstSent).toBe(true);
