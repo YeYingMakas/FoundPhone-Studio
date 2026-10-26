@@ -38,7 +38,6 @@ export function answerEp01FirstCall(runtime: Runtime): Runtime {
     ...runtime.variables,
     ep01FirstCallRinging: false,
     ep01FirstCallAnswered: true,
-    ep01FirstCallRinging: false,
   } };
 }
 export function endEp01FirstCall(runtime: Runtime): Runtime {
