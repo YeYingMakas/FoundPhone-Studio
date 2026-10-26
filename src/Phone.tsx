@@ -154,6 +154,8 @@ function PhoneRuntime({
 }) {
   const [app, setApp] = useState("");
   const [storyFocusedThread, setStoryFocusedThread] = useState("");
+  const [ep01PlayerName, setEp01PlayerName] = useState("");
+  const [ep01BirthYear, setEp01BirthYear] = useState("");
   const [homeRequest, setHomeRequest] = useState(0);
   const [locked, setLocked] = useState(!creator);
   const [pinOpen, setPinOpen] = useState(false);
@@ -409,6 +411,24 @@ function PhoneRuntime({
       style={{ "--phone-scale": deviceScale } as CSSProperties}
       className={`phone-shell ios18 ${work.phone.theme === "dark" ? "dark-phone" : ""}`}
     >
+      {work.id === "unpublished-lover-ep01" && !creator && s.variables.ep01PlayerSetupDone !== true && (
+        <div className="ep01-ending-overlay" role="dialog" aria-modal="true" aria-label="开始游戏">
+          <form className="ep01-ending-card" onSubmit={(event) => {
+            event.preventDefault();
+            const name = ep01PlayerName.trim();
+            const year = Number(ep01BirthYear);
+            if (!name || name.length > 30 || !/^\\d{4}$/.test(ep01BirthYear) || year < 1900 || year > 2026) return;
+            update({ ...runtimeRef.current, variables: { ...runtimeRef.current.variables, ep01PlayerName: name, ep01BirthYear: year, ep01PlayerSetupDone: true } });
+          }}>
+            <small>iPhone16pro Max</small>
+            <h2>开始之前</h2>
+            <p>请输入玩家姓名和出生年份。只需年份，不需要月日。</p>
+            <label>姓名<input aria-label="玩家姓名" maxLength={30} required value={ep01PlayerName} onChange={(event) => setEp01PlayerName(event.target.value)} /></label>
+            <label>出生年份<input aria-label="出生年份" type="number" min="1900" max="2026" required value={ep01BirthYear} onChange={(event) => setEp01BirthYear(event.target.value)} /></label>
+            <button type="submit">进入手机</button>
+          </form>
+        </div>
+      )}
       {work.id === "unpublished-lover-ep01" && s.variables.ep01Scene31Visible === true && (
         <div className="ep01-ending-overlay" role="dialog" aria-modal="true" aria-label="剧情结局">
           <section className="ep01-ending-card">
