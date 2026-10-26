@@ -6,13 +6,13 @@ describe("EP01 scene15 to scene16", () => {
   it("requires a selected call branch, automatically hangs up after two seconds, then sends 15 individual bilingual messages", () => {
     let s: Runtime = initialRuntime(work);
     expect(chooseScene15Reply(s)).toBe(s);
-    s = { ...s, elapsedMs: 1000, variables: { ep01FirstCallAnswered: true, ep01CallChoiceSent: true } };
+    s = { ...s, elapsedMs: 1000, variables: { ep01Scene14Answered: true, ep01Scene14RepliesFinished: true } };
     s = chooseScene15Reply(s);
     expect(s.variables.ep01Scene15HangupDueAt).toBe(3000);
     s = advanceScene15And16({ ...s, elapsedMs: 2999 });
-    expect(s.variables.ep01FirstCallAnswered).toBe(true);
+    expect(s.variables.ep01Scene14Answered).toBe(true);
     s = advanceScene15And16({ ...s, elapsedMs: 3000 });
-    expect(s.variables.ep01FirstCallEnded).toBe(true);
+    expect(s.variables.ep01Scene14Ended).toBe(true);
     expect(s.variables.ep01Scene16StartedAt).toBe(6000);
     expect(s.variables.ep01FirstCallRejectedCount).toBeUndefined();
     for (let i = 0; i < scene16Count; i++) {
