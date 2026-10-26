@@ -12,6 +12,7 @@ export function advanceScene30Opening(runtime: Runtime): Runtime {
   const nextDue = typeof due === "number" ? due : openedAt + 2000 + delivered * 2000;
   if ((runtime.elapsedMs ?? 0) < nextDue) return runtime;
   if (runtime.variables.ep01KakaoBlocked === true) {
+    if (runtime.variables.ep01Scene30WaitingForUnblock === true) return runtime;
     return { ...runtime, variables: { ...runtime.variables, ep01Scene30WaitingForUnblock: true, ep01Scene30NextDueAt: runtime.elapsedMs ?? 0 } };
   }
   const scene: SceneDelivery = {
