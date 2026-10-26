@@ -1,0 +1,42 @@
+import type { Item, Runtime } from "../schema";
+import { countUnread, type SceneDelivery, deliverNext } from "./unpublishedLoverDelivery";
+
+export function appendStoryDelivery(
+  runtime: Runtime,
+  scene: SceneDelivery,
+  date: string,
+  time: string,
+): { runtime: Runtime; scene: SceneDelivery } {
+  const result = deliverNext(scene, date, time);
+  if (!result.item) return { runtime, scene: result.next };
+  return {
+    scene: result.next,
+    runtime: {
+      ...runtime,
+      messages: {
+        ...runtime.messages,
+        [scene.app]: [...(runtime.messages[scene.app] ?? []), result.item],
+      },
+      notifications: [
+        ...runtime.notifications,
+        scene.sender + ": " + result.item.body.split("\n")[0],
+      ],
+    },
+  };
+}
+
+export function readStoryMessage(runtime: Runtime, app: string, id: string): Runtime {
+  const items = runtime.messages[app];
+  if (!items?.some((item) => item.id === id && !item.read)) return runtime;
+  return {
+    ...runtime,
+    messages: {
+      ...runtime.messages,
+      [app]: items.map((item: Item) => item.id === id ? { ...item, read: true } : item),
+    },
+  };
+}
+
+export function storyAppUnread(runtime: Runtime, app: string): number {
+  return countUnread(runtime.messages[app] ?? []);
+}
