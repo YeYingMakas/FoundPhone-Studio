@@ -69,6 +69,7 @@ import { appendStoryDelivery, readStoryConversation, readStoryMessage, storyAppU
 import type { SceneDelivery } from "./story-engine/unpublishedLoverDelivery";
 import { advanceScene22, markScene22ListReturn, markScene23ManualOpen } from "./story-engine/unpublishedLoverScene22";
 import { advanceScene23, scene23Choices, sendScene23Choice } from "./story-engine/unpublishedLoverScene23";
+import { advanceScene24, scene24Choices, sendScene24Choice, blockScene24Kakao, unblockScene24Kakao } from "./story-engine/unpublishedLoverScene24";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -247,7 +248,7 @@ function PhoneRuntime({
     const interval = setInterval(() => {
       const previous = runtimeRef.current;
       const advanced = advance(work, previous, 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceScene23(advanceScene22(advanced)) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceScene24(advanceScene23(advanceScene22(advanced))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -584,6 +585,16 @@ function PhoneRuntime({
                     const next = readStoryConversation(current, "kakao", title);
                     if (next !== current) update(next);
                   }}
+                  onStoryBlock={() => {
+                    const current = runtimeRef.current;
+                    const next = blockScene24Kakao(current);
+                    if (next !== current) update(next);
+                  }}
+                  onStoryUnblock={() => {
+                    const current = runtimeRef.current;
+                    const next = unblockScene24Kakao(current);
+                    if (next !== current) update(next);
+                  }}
                   onStorySave={() => { void db.saves.put({ id: work.id, state: runtimeRef.current }); }}
                   onStoryReplay={() => {
                     if (!window.confirm("确定重玩《未公开恋人》？当前进度将被覆盖。")) return;
@@ -600,7 +611,9 @@ function PhoneRuntime({
                   }}
                   onStorySend={(threadTitle, label, target) => {
                     const current = runtimeRef.current;
-                    const special = threadTitle === "쩡쩡❤️" && scene23Choices(current).some((choice) => choice.target === target && choice.label === label);
+                    const special23 = threadTitle === "쩡쩡❤️" && scene23Choices(current).some((choice) => choice.target === target && choice.label === label);
+                    const special24 = threadTitle === "쩡쩡❤️" && scene24Choices(current).some((choice) => choice.target === target && choice.label === label);
+                    const special = special23 || special24;
                     if (!special && !current.choices.some((choice) => choice.target === target && choice.label === label)) return;
                     const message = makeItem({
                       title: threadTitle,
@@ -615,7 +628,7 @@ function PhoneRuntime({
                       ...current,
                       messages: { ...current.messages, kakao: [...(current.messages.kakao ?? []), message] },
                     };
-                    update(special ? sendScene23Choice(withMessage, target) : choose(work, withMessage, target));
+                    update(special23 ? sendScene23Choice(withMessage, target) : special24 ? sendScene24Choice(withMessage, target) : choose(work, withMessage, target));
                   }}
                 />
               </AppWindow>
@@ -1022,6 +1035,8 @@ function AppContent({
   onStoryReadThread,
   onStoryReturnToList,
   onStoryManualOpen,
+  onStoryBlock,
+  onStoryUnblock,
 }: {
   app: AppPlugin;
   name: string;
@@ -1042,6 +1057,8 @@ function AppContent({
   onStoryReadThread?: (title: string) => void;
   onStoryReturnToList?: () => void;
   onStoryManualOpen?: (title: string) => void;
+  onStoryBlock?: () => void;
+  onStoryUnblock?: () => void;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
@@ -1156,7 +1173,7 @@ function AppContent({
   if (work.id === "unpublished-lover-ep01" && app.id === "kakao" && !creator) {
     const conversations = [...new Set(["쩡쩡❤️", "闺蜜", "苏庭焕", "朴志焄", "尹材赫", ...shown.map((item) => item.title))];
     const threadItems = shown.filter((item) => item.title === thread);
-    const availableChoices = thread === "쩡쩡❤️" && state.variables.ep01Scene23Ready === true ? scene23Choices(state) : state.choices;
+    const availableChoices = thread === "쩡쩡❤️" ? [...scene23Choices(state), ...scene24Choices(state)] : state.choices;
     const openThread = (title: string) => {
       setThread(title);
       onStoryManualOpen?.(title);
@@ -1167,6 +1184,11 @@ function AppContent({
         <div className="ep01-kakao-header">
           {thread ? <button onClick={() => { setThread(""); onStoryReturnToList?.(); }} aria-label="返回聊天列表">‹</button> : null}
           <strong>{thread || "聊天"}</strong>
+          {thread === "쩡쩡❤️" && (state.variables.ep01Scene24Branch === "A" || state.variables.ep01KakaoBlocked === true) ? (
+            <button type="button" className="ep01-block-toggle" onClick={state.variables.ep01KakaoBlocked === true ? onStoryUnblock : onStoryBlock}>
+              {state.variables.ep01KakaoBlocked === true ? "解除拉黑" : "拉黑"}
+            </button>
+          ) : null}
         </div>
         {thread ? (
           <div className="ep01-kakao-thread">
