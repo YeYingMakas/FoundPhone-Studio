@@ -103,7 +103,8 @@ export function MyPhoneKakao({
     if (stayAtBottom && scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
   }, [visibleMessages.length, typing, stayAtBottom]);
   const options = REPLIES[stage] ?? [];
-  const enabled = canReply && options.length > 0;
+  const pendingIncoming = messages.some((item) => !item.outgoing && !revealed.has(item.id));
+  const enabled = canReply && options.length > 0 && !pendingIncoming && !typing;
   const selected = draft && options.some((o) => o.id === draft.id) ? draft : null;
   return (
     <div className="chat-content my-phone-kakao" ref={scrollRef} onScroll={(e) => { const el = e.currentTarget; setStayAtBottom(el.scrollHeight - el.scrollTop - el.clientHeight < 90); }} aria-label={title + " 聊天"}>
