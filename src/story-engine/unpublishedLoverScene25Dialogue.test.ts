@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { initialRuntime, type Runtime, type Work } from "../schema";
+import type { Runtime, Work } from "../schema";
+import { initialRuntime } from "../engine";
 import scene25 from "../../stories/unpublished-lover/data/scene25.json";
 import { advanceScene25Incoming, answerScene25Incoming, advanceScene25Dialogue, chooseScene25Reply, speakScene25Final, scene25Transcript } from "./unpublishedLoverScene25";
 
