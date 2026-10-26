@@ -98,7 +98,7 @@ export function MyPhoneKakao({
     <div className="chat-content my-phone-kakao" ref={scrollRef} onScroll={(e) => { const el = e.currentTarget; setStayAtBottom(el.scrollHeight - el.scrollTop - el.clientHeight < 90); }} aria-label={title + " 聊天"}>
       {visibleMessages.map((item, index) => (
         <div className="my-phone-message-block" key={item.id}>
-          {(index === 0 || visibleMessages[index - 1].time.slice(0, 10) !== item.time.slice(0, 10)) && <div className="chat-time">{/^\\d{4}-\\d{2}-\\d{2}$/.test(item.time.slice(0, 10)) ? item.time.slice(0, 10) : "今天"}</div>}
+          {(index === 0 || visibleMessages[index - 1].time.slice(0, 10) !== item.time.slice(0, 10)) && <div className="chat-time">{/^\d{4}-\d{2}-\d{2}$/.test(item.time.slice(0, 10)) ? item.time.slice(0, 10) : "今天"}</div>}
         <button
           className={`message-row ${item.outgoing ? "outgoing" : ""}`}
           onClick={() => onRead(item.id)}
