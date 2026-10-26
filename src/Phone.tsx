@@ -1,4 +1,5 @@
 import { StatusGlyph } from "./ios/StatusGlyph";
+import { ep01OpeningChoices, sendEp01OpeningChoice, advanceEp01OpeningChoice } from "./story-engine/ep01OpeningChoices";
 import { showEp01Sighting, dismissEp01Sighting, advanceEp01Opening } from "./story-engine/ep01Opening";
 import { completeEp01PlayerSetup } from "./story-engine/ep01PlayerSetup";
 import { SocialDetail, socialDetailApps } from "./skins/SocialDetails";
@@ -264,7 +265,7 @@ function PhoneRuntime({
       // The EP01 clock and incoming messages must not advance behind player setup.
       if (work.id === "unpublished-lover-ep01" && previous.variables.ep01PlayerSetupDone !== true) return;
       const advanced = advance(work, previous, work.id === "unpublished-lover-ep01" ? 200 : 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced))))))))))) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceEp01OpeningChoice(advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))))))))))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -686,11 +687,12 @@ function PhoneRuntime({
                   }}
                   onStorySend={(threadTitle, label, target) => {
                     const current = runtimeRef.current;
+                    const specialOpening = threadTitle === "쩡쩡❤️" && ep01OpeningChoices(current).some((choice) => choice.target === target && choice.label === label);
                     const special21 = threadTitle === "苏庭焕" && scene21Choices(current).some((choice) => choice.target === target && choice.label === label);
                     const special23 = threadTitle === "쩡쩡❤️" && scene23Choices(current).some((choice) => choice.target === target && choice.label === label);
                     const special24 = threadTitle === "쩡쩡❤️" && scene24Choices(current).some((choice) => choice.target === target && choice.label === label);
                     const special30 = threadTitle === "쩡쩡❤️" && scene30Choices(current).some((choice) => choice.target === target && choice.label === label);
-                    const special = special21 || special23 || special24 || special30;
+                    const special = specialOpening || special21 || special23 || special24 || special30;
                     if (!special && !current.choices.some((choice) => choice.target === target && choice.label === label)) return;
                     const message = makeItem({
                       title: threadTitle,
@@ -705,7 +707,7 @@ function PhoneRuntime({
                       ...current,
                       messages: { ...current.messages, kakao: [...(current.messages.kakao ?? []), message] },
                     };
-                    update(special21 ? sendScene21Choice(withMessage, target) : special23 ? sendScene23Choice(withMessage, target) : special24 ? sendScene24Choice(withMessage, target) : special30 ? sendScene30Choice(withMessage, target) : choose(work, withMessage, target));
+                    update(specialOpening ? sendEp01OpeningChoice(withMessage, target) : special21 ? sendScene21Choice(withMessage, target) : special23 ? sendScene23Choice(withMessage, target) : special24 ? sendScene24Choice(withMessage, target) : special30 ? sendScene30Choice(withMessage, target) : choose(work, withMessage, target));
                   }}
                 />
               </AppWindow>
@@ -1351,7 +1353,7 @@ function AppContent({
   if (work.id === "unpublished-lover-ep01" && app.id === "kakao" && !creator) {
     const conversations = [...new Set(["쩡쩡❤️", "闺蜜", "苏庭焕", "朴志焄", "尹材赫", ...shown.map((item) => item.title))];
     const threadItems = shown.filter((item) => item.title === thread);
-    const availableChoices = thread === "쩡쩡❤️" ? [...scene23Choices(state), ...scene24Choices(state), ...scene30Choices(state)] : thread === "苏庭焕" ? scene21Choices(state) : state.choices;
+    const availableChoices = thread === "쩡쩡❤️" ? [...ep01OpeningChoices(state), ...scene23Choices(state), ...scene24Choices(state), ...scene30Choices(state)] : thread === "苏庭焕" ? scene21Choices(state) : state.choices;
     const openThread = (title: string) => {
       setThread(title);
       onStoryManualOpen?.(title);
