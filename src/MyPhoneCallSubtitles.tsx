@@ -25,7 +25,12 @@ export function MyPhoneCallSubtitles({ second }: { second: boolean }) {
   }, [shown]);
   useEffect(() => {
     setShown(0);
-    const timer = window.setInterval(() => setShown((v) => Math.min(lines.length, v + 1)), 2200);
+    let nextLine = 0;
+    const timer = window.setInterval(() => {
+      nextLine += 1;
+      setShown(nextLine);
+      if (nextLine >= lines.length) window.clearInterval(timer);
+    }, 2200);
     return () => window.clearInterval(timer);
   }, [second, lines.length]);
   return (
