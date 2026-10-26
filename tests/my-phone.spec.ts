@@ -111,5 +111,9 @@ test("My Phone browser smoke: lock screen and home screen", async ({ page }) => 
   await expect(page.locator(".myphone-ig-request")).toHaveCount(120);
   await page.locator(".myphone-ig-request").first().click();
   await expect(page.locator(".myphone-ig-opened")).toBeVisible();
+  await page.getByRole("button", { name: "返回桌面", exact: true }).click();
+  await page.getByRole("button", { name: "打开KakaoTalk", exact: true }).click();
+  await page.locator(".contact-row").filter({ hasText: "쩡쩡❤️" }).click();
+  await expect(page.getByRole("button", { name: "选择回复内容" })).toBeVisible({ timeout: 15000 });
   expect(errors).toEqual([]);
 });
