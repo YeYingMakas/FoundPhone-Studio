@@ -15,7 +15,7 @@ export function MyPhoneX({ items, onRead, onBack }: {
     </header>
     {opened ? <article className="myphone-x-detail">
       <div className="myphone-x-author"><span className="myphone-x-avatar">{opened.sender.slice(1, 2).toUpperCase()}</span><span><strong>{opened.sender}</strong><small>{opened.time.slice(-5)} · X</small></span></div>
-      <div className="myphone-x-post-text">{opened.body.split("\n").map((line, i) => <p key={i}>{line || "\u00a0"}</p>)}</div>
+      <div className="myphone-x-post-text">{opened.body.includes("—— 中文翻译 ——") ? <><section lang="ko">{opened.body.split("—— 中文翻译 ——")[0].trim().split("\n").map((line, i) => <p key={i}>{line || "\u00a0"}</p>)}</section><section className="myphone-x-translation" lang="zh"><h3>中文翻译</h3>{opened.body.split("—— 中文翻译 ——")[1].trim().split("\n").map((line, i) => <p key={i}>{line || "\u00a0"}</p>)}</section></> : opened.body.split("\n").map((line, i) => <p key={i}>{line || "\u00a0"}</p>)}</div>
       <footer>♡　↻　▢　↗</footer>
     </article> : <section className="myphone-x-feed">
       <p className="myphone-x-feed-label">为你推荐 · For you</p>
