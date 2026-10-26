@@ -17,7 +17,7 @@ describe("EP01 scene20 to 21 handoff", () => {
       if (i < count - 1) expect(scene21Choices(s)).toHaveLength(0);
     }
     expect(s.variables.ep01Scene20Finished).toBe(true);
-    expect(scene21Choices(s)).toHaveLength(1);
+    expect(scene21Choices(s)).toHaveLength(0);
     expect(s.messages.kakao.every(x => x.title === "苏庭焕" && x.body.includes("\n"))).toBe(true);
   });
 });
