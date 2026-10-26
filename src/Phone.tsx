@@ -1038,7 +1038,7 @@ function AppContent({
     </div>
   ) : null;
   if (work.id === "my-phone-unlisted-love" && app.id === "instagram" && !creator)
-    return <MyPhoneInstagram items={shown} onRead={onRead} onBack={onBack} />;
+    return <MyPhoneInstagram items={shown} readIds={state.read} onRead={onRead} onBack={onBack} />;
   if (Skin)
     return (
       <>
