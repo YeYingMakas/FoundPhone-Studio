@@ -561,6 +561,20 @@ function PhoneRuntime({
                   }}
                   work={work}
                   storyFocusedThread={storyFocusedThread}
+                  onStorySave={() => { void db.saves.put({ id: work.id, state: runtimeRef.current }); }}
+                  onStoryReplay={() => {
+                    if (!window.confirm("确定重玩《未公开恋人》？当前进度将被覆盖。")) return;
+                    const fresh = dispatch(work, initialRuntime(work), "start");
+                    pendingBanners.current = [];
+                    noticesSeen.current = 0;
+                    setBanner("");
+                    update(fresh);
+                    setApp("");
+                    setStoryFocusedThread("");
+                    setLocked(true);
+                    setPinOpen(false);
+                    setWrongPinAttempts(0);
+                  }}
                   onStorySend={(threadTitle, label, target) => {
                     const current = runtimeRef.current;
                     if (!current.choices.some((choice) => choice.target === target && choice.label === label)) return;
@@ -979,6 +993,8 @@ function AppContent({
   work,
   onStorySend,
   storyFocusedThread,
+  onStorySave,
+  onStoryReplay,
 }: {
   app: AppPlugin;
   name: string;
@@ -994,6 +1010,8 @@ function AppContent({
   work: Work;
   onStorySend?: (thread: string, label: string, target: string) => void;
   storyFocusedThread?: string;
+  onStorySave?: () => void;
+  onStoryReplay?: () => void;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
@@ -1248,7 +1266,16 @@ function AppContent({
           {creator ? <Plus size={22} /> : <Search size={20} />}
         </button>
       </div>
-      {app.id === "settings" && !detail ? (
+      {app.id === "settings" && !detail && work.id === "unpublished-lover-ep01" && !creator ? (
+        <div className="ep01-settings">
+          <h2>设置</h2>
+          <p>《未公开恋人》EP01</p>
+          <button type="button" onClick={onStorySave}>保存当前进度</button>
+          <small>进度会自动保存在本设备浏览器中。</small>
+          <button type="button" className="ep01-replay" onClick={onStoryReplay}>重新开始游戏</button>
+          <small>重玩会覆盖当前存档，需要再次解锁手机。</small>
+        </div>
+      ) : app.id === "settings" && !detail ? (
         <NativeSettings
           work={work}
           items={items}
