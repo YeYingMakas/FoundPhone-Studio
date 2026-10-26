@@ -1,6 +1,6 @@
 import type { Runtime } from "../schema";
 import { appendStoryDelivery } from "./unpublishedLoverRuntime";
-import { ep01CallBranches } from "./ep01CallDialogue";
+import { ep01CallBranches, ep01CallOpening } from "./ep01CallDialogue";
 
 const rejectionLines = [
   ["자기야 전화 좀 받아 줘ㅠㅠ", "宝宝，接一下电话嘛ㅠㅠ"],
@@ -30,7 +30,7 @@ export function answerScene14Call(s:Runtime):Runtime {
  return {...s,variables:{...s.variables,ep01Scene14Ringing:false,ep01Scene14Answered:true,ep01Scene14AnsweredAt:s.elapsedMs??0,ep01Scene14OpeningDelivered:0}};
 }
 export function advanceScene14Opening(s:Runtime):Runtime {
- if(s.variables.ep01Scene14Answered!==true || s.variables.ep01Scene14Branch || Number(s.variables.ep01Scene14OpeningDelivered??0)>=5)return s;
+ if(s.variables.ep01Scene14Answered!==true || s.variables.ep01Scene14Branch || Number(s.variables.ep01Scene14OpeningDelivered??0)>=ep01CallOpening.length)return s;
  const started=s.variables.ep01Scene14AnsweredAt;
  if(typeof started!=="number")return s;
  const n=Number(s.variables.ep01Scene14OpeningDelivered??0);
@@ -38,7 +38,7 @@ export function advanceScene14Opening(s:Runtime):Runtime {
  return {...s,variables:{...s.variables,ep01Scene14OpeningDelivered:n+1}};
 }
 export function scene14CallChoices(s:Runtime){
- if(s.variables.ep01Scene14Answered!==true||s.variables.ep01Scene14Branch||Number(s.variables.ep01Scene14OpeningDelivered??0)<5)return [];
+ if(s.variables.ep01Scene14Answered!==true||s.variables.ep01Scene14Branch||Number(s.variables.ep01Scene14OpeningDelivered??0)<ep01CallOpening.length)return [];
  return ep01CallBranches.map(b=>({target:"ep01-scene14-"+b.id,label:b.player.ko+"\n"+b.player.zh}));
 }
 export function sendScene14CallChoice(s:Runtime,target:string):Runtime {
