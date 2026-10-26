@@ -2,8 +2,9 @@ import { useState } from "react";
 import type { Item } from "./schema";
 import "./my-phone-x.css";
 
-export function MyPhoneX({ items, onRead, onBack }: {
+export function MyPhoneX({ items, readIds, onRead, onBack }: {
   items: Item[];
+  readIds: string[];
   onRead: (id: string) => void;
   onBack: () => void;
 }) {
@@ -22,7 +23,7 @@ export function MyPhoneX({ items, onRead, onBack }: {
       {[...items].sort((a, b) => a.id === "x-jeongwoo-public" ? -1 : b.id === "x-jeongwoo-public" ? 1 : 0).map(item =>
         <button key={item.id} className="myphone-x-post" onClick={() => { setOpened(item); onRead(item.id); }}>
           <span className="myphone-x-avatar">{item.sender.slice(1, 2).toUpperCase()}</span>
-          <span className="myphone-x-preview"><strong>{item.sender}</strong><small>{item.time.slice(-5)}</small><b>{item.title}</b><span>{item.body.slice(0, 160)}{item.body.length > 160 ? "…" : ""}</span><em>♡　↻　▢　↗</em></span>
+          <span className="myphone-x-preview"><strong>{item.sender}</strong><small>{item.time.slice(-5)}</small><b>{item.title}{item.id === "x-jeongwoo-public" && <span className="myphone-x-pinned">公开声明</span>}{!readIds.includes(item.id) && <span className="myphone-x-new">未读</span>}</b><span>{item.body.slice(0, 160)}{item.body.length > 160 ? "…" : ""}</span><em>♡　↻　▢　↗</em></span>
         </button>
       )}
     </section>}
