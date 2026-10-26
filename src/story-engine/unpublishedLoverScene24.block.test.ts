@@ -12,7 +12,8 @@ describe("scene 24 blocked branch", () => {
       variables: { ep01Scene24Ready: true, ep01Scene24OpeningDelivered: scene24.opening.length,
         ep01Scene24Branch: "A", ep01Scene24ChoiceAt: 0, ep01Scene24ReplyDelivered: 0 },
     };
-    expect(advanceScene24({ ...runtime, elapsedMs: 50000 })).toBe(runtime);
+    const beforeBlock = { ...runtime, elapsedMs: 50000 };
+    expect(advanceScene24(beforeBlock)).toBe(beforeBlock);
     runtime = blockScene24Kakao(runtime);
     expect(runtime.variables.ep01KakaoBlocked).toBe(true);
     expect(runtime.variables.ep01Scene24WasBlocked).toBe(true);
