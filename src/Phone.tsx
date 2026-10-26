@@ -1375,7 +1375,7 @@ function AppContent({
     );
   }
   if (work.id === "unpublished-lover-ep01" && app.id === "kakao" && !creator) {
-    const conversations = [...new Set(["쩡쩡❤️", "闺蜜", "苏庭焕", "朴志焄", "尹材赫", ...shown.map((item) => item.title))];
+    const conversations = [...new Set(["쩡쩡❤️", "闺蜜", "苏庭焕", "朴志焄", "尹材赫", ...shown.map((item) => item.title)])];
     const threadItems = shown.filter((item) => item.title === thread);
     const availableChoices = thread === "쩡쩡❤️" ? [...ep01OpeningChoices(state), ...ep01SecondChoices(state), ...ep01FirstCallChoices(state), ...scene23Choices(state), ...scene24Choices(state), ...scene30Choices(state)] : thread === "苏庭焕" ? scene21Choices(state) : state.choices;
     const openThread = (title: string) => {
