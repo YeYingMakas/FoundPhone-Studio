@@ -3,6 +3,7 @@ export default defineConfig({
   testDir: "tests",
   testMatch: [
     "runtime.spec.ts",
+    "my-phone.spec.ts",
     "release.spec.ts",
     "launcher.spec.ts",
     "home-swipe.spec.ts",
