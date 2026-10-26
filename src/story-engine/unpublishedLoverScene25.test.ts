@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { initialRuntime, type Work } from "../schema";
+import type { Work } from "../schema";
+import { initialRuntime } from "../engine";
 import { advanceScene25Incoming, answerScene25Incoming, rejectScene25Incoming } from "./unpublishedLoverScene25";
 
 const work = { id: "unpublished-lover-ep01", updatedAt: 1, phone: { date: "2026-10-23", time: "22:00" }, variables: {} } as Work;
