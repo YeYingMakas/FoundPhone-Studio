@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "My Phone ·《未公开恋人》互动手机故事。KakaoTalk 手动回复、绯闻、两次来电、公开声明、Instagram 私信与 ENDING 01。开发版不包含未经授权的真人照片。",
-  "revision": 25,
+  "revision": 26,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -3691,8 +3691,8 @@
       "id": "ul-first-dm",
       "label": "首次阅读任意一条 Instagram 消息请求",
       "type": "event",
-      "event": "read",
-      "target": "ig-dm-001",
+      "event": "openedInstagramDM",
+      "target": "",
       "conditions": [
         {
           "key": "public_statement_seen",
@@ -4130,7 +4130,7 @@
           "target": "instagram"
         },
         {
-          "event": "read",
+          "event": "openedInstagramDM",
           "target": "ig-dm-001"
         },
         {
