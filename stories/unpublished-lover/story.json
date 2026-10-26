@@ -73,7 +73,7 @@
           "comments": "128000",
           "reposts": "84000"
         },
-        "hidden": true,
+        "hidden": false,
         "unlock": "ep01PublicPostUnlocked"
       }
     ]
