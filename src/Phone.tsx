@@ -147,7 +147,6 @@ function PhoneRuntime({
   const [recent, setRecent] = useState<string[]>([]);
   const appSnapshots = useRef(new Map<string, HTMLElement>());
   const [banner, setBanner] = useState("");
-  const [openingNoticeDismissed, setOpeningNoticeDismissed] = useState(false);
   const noticesSeen = useRef(0);
   const pendingBanners = useRef<string[]>([]);
   const [contextApp, setContextApp] = useState("");
@@ -285,7 +284,7 @@ function PhoneRuntime({
     event("openApp", id);
   };
   useEffect(() => {
-    if (work.id !== "unpublished-lover-ep01" || creator || locked || !ready || !openingNoticeDismissed) return;
+    if (work.id !== "unpublished-lover-ep01" || creator || locked || !ready || !s.variables.ep01XNoticeDismissed) return;
     const timer = setTimeout(() => {
       const current = runtimeRef.current;
       if (current.variables.ep01OpeningDelivered) return;
@@ -301,7 +300,7 @@ function PhoneRuntime({
       update({ ...next.runtime, variables: { ...next.runtime.variables, ep01OpeningDelivered: true } });
     }, 3000);
     return () => clearTimeout(timer);
-  }, [work.id, creator, locked, ready, openingNoticeDismissed]);
+  }, [work.id, creator, locked, ready, s.variables.ep01XNoticeDismissed]);
   useEffect(() => {
     if (work.id !== "unpublished-lover-ep01" || creator || locked || !ready) return;
     if (!s.variables.ep01OpeningDelivered || s.variables.ep01FriendOpeningDelivered) return;
@@ -480,12 +479,12 @@ function PhoneRuntime({
               </span>
             </button>
           </div>
-          {work.id === "unpublished-lover-ep01" && !creator && ready && !locked && !openingNoticeDismissed && !s.variables.ep01OpeningDelivered && (
+          {work.id === "unpublished-lover-ep01" && !creator && ready && !locked && !s.variables.ep01XNoticeDismissed && !s.variables.ep01OpeningDelivered && (
             <div className="ep01-opening-notice" role="dialog" aria-modal="true" aria-label="X 通知">
               <div className="ep01-opening-notice-card">
                 <strong>X · 通知</strong>
                 <p>你有一条新的 X 通知。</p>
-                <button type="button" onClick={() => setOpeningNoticeDismissed(true)}>关闭</button>
+                <button type="button" onClick={() => update({ ...runtimeRef.current, variables: { ...runtimeRef.current.variables, ep01XNoticeDismissed: true } })}>关闭</button>
               </div>
             </div>
           )}
