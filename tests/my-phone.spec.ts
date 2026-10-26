@@ -127,4 +127,6 @@ test("My Phone browser smoke: lock screen and home screen", async ({ page }) => 
   await expect(page.getByRole("dialog", { name: "故事结局" }).locator("h2")).toBeVisible();
   await page.getByRole("button", { name: "继续使用 My Phone" }).click();
   await expect(page.getByRole("dialog", { name: "故事结局" })).toHaveCount(0);
+  await page.reload();
+  await expect(page.locator(".device-lock")).toHaveCount(0);
 });
