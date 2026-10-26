@@ -320,6 +320,7 @@ function PhoneRuntime({
       <KeyboardContext.Provider value={setKeyboard}>
         <div
           className={`phone-screen wallpaper-${work.phone.wallpaper} ${locked ? "is-locked" : ""} ${app ? "in-app" : ""} ${keyboard ? "keyboard-open" : ""}`}
+          style={work.phone.wallpaper === "iphone16-custom" ? ({ "--iphone-home-wallpaper": `url("${import.meta.env.BASE_URL}wallpapers/iphone16-home.jpg")`, "--iphone-lock-wallpaper": `url("${import.meta.env.BASE_URL}wallpapers/iphone16-lock.jpg")` } as CSSProperties) : undefined}
           data-app={app}
           onDragStart={(e) => e.preventDefault()}
           onPointerDown={(e) => {
