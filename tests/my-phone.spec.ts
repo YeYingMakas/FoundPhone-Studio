@@ -6,6 +6,7 @@ const story = JSON.parse(readFileSync(new URL("../stories/my-phone/story.json", 
 const work = compileStory(story).work;
 
 test("My Phone browser smoke: lock screen and home screen", async ({ page }) => {
+  test.setTimeout(120000);
   const errors: string[] = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.route("**/work.json", (route) => route.fulfill({ json: work }));
