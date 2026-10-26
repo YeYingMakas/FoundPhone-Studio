@@ -50,3 +50,22 @@
   color: white;
   font: inherit;
 }
+
+.ep01-kakao { height: 100%; background: #fff; color: #191919; display: flex; flex-direction: column; overflow: hidden; }
+.ep01-kakao-header { height: 58px; flex: none; display: flex; align-items: center; gap: 12px; padding: 0 18px; font-size: 19px; }
+.ep01-kakao-header button { border: 0; background: transparent; font-size: 30px; color: inherit; }
+.ep01-kakao-list { flex: 1; overflow: auto; }
+.ep01-kakao-contact { width: 100%; display: flex; align-items: center; gap: 12px; padding: 12px 18px; border: 0; background: transparent; text-align: left; color: inherit; }
+.ep01-kakao-avatar { width: 48px; height: 48px; border-radius: 18px; background: #ece7de; display: grid; place-items: center; flex: none; font-size: 19px; }
+.ep01-kakao-contact-body { min-width: 0; flex: 1; display: flex; flex-direction: column; gap: 5px; }
+.ep01-kakao-contact-body small { color: #777; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ep01-kakao-contact-side { display: flex; flex-direction: column; align-items: flex-end; gap: 7px; color: #999; }
+.ep01-kakao-contact-side b { min-width: 19px; height: 19px; padding: 0 5px; border-radius: 11px; display: grid; place-items: center; background: #f33d35; color: white; font-size: 11px; }
+.ep01-kakao-thread { flex: 1; overflow-y: auto; background: #b2c7d9; padding: 18px 12px 24px; }
+.ep01-message { margin: 0 0 13px; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.ep01-message.sent { align-items: flex-end; }
+.ep01-message-sender { font-size: 12px; color: #444; }
+.ep01-message-bubble { max-width: 80%; padding: 10px 12px; border-radius: 10px; background: white; font-size: 14px; line-height: 1.55; white-space: pre-line; overflow-wrap: anywhere; }
+.ep01-message.sent .ep01-message-bubble { background: #fee500; }
+.ep01-message small { font-size: 10px; color: #555; }
+.ep01-kakao-compose { margin-top: 24px; background: #fff; padding: 13px; border-radius: 10px; font-size: 12px; color: #888; }
