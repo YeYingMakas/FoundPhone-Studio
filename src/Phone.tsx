@@ -1,4 +1,5 @@
 import { StatusGlyph } from "./ios/StatusGlyph";
+import { ep01CallOpening, ep01CallBranches, ep01CallChoices, chooseEp01CallBranch } from "./story-engine/ep01CallDialogue";
 import { ep01FirstCallChoices, sendEp01FirstCallRefusal, advanceEp01FirstCall, answerEp01FirstCall, endEp01FirstCall, rejectEp01FirstCall, advanceEp01FirstCallRetry } from "./story-engine/ep01FirstCall";
 import { ep01SecondChoices, sendEp01SecondChoice, advanceEp01SecondChoice } from "./story-engine/ep01SecondChoices";
 import { ep01OpeningChoices, sendEp01OpeningChoice, advanceEp01OpeningChoice } from "./story-engine/ep01OpeningChoices";
@@ -437,12 +438,23 @@ function PhoneRuntime({
             <h2>쩡쩡❤️</h2>
             {s.variables.ep01FirstCallAnswered === true ? (
               <div>
-                <p>자기야... 여보세요?ㅠㅠ — 宝宝……喂？ㅠㅠ</p>
-                <p>사진 봤지...? 나 진짜 설명하고 싶어 — 看到照片了吧……我真的想解释。</p>
-                <p>나 진짜 바람피운 거 아니야... — 我真的没有出轨……</p>
-                <p>숙소에 있다고 거짓말한 건 미안해 — 对不起，我骗你说我在宿舍。</p>
-                <p>자기야 내 말 좀 들어 줄래?ㅠㅠ — 宝宝，可以听我解释吗？ㅠㅠ</p>
-                <button type="button" onClick={() => update(endEp01FirstCall(runtimeRef.current))}>结束通话</button>
+                {ep01CallOpening.map((line, i) => (
+                  <p key={"call-opening-" + i}>{line.ko} — {line.zh}</p>
+                ))}
+                {ep01CallChoices(s).map((choice) => (
+                  <button type="button" key={choice.target} onClick={() => update(chooseEp01CallBranch(runtimeRef.current, choice.target))}>
+                    {choice.label}
+                  </button>
+                ))}
+                {ep01CallBranches.filter((branch) => branch.id === s.variables.ep01CallBranch).map((branch) => (
+                  <div key={branch.id}>
+                    <p>{branch.player.ko} — {branch.player.zh}</p>
+                    {branch.replies.map((line, i) => (
+                      <p key={branch.id + "-" + i}>{line.ko} — {line.zh}</p>
+                    ))}
+                  </div>
+                ))}
+                <button type="button" disabled={s.variables.ep01CallChoiceSent !== true} onClick={() => update(endEp01FirstCall(runtimeRef.current))}>结束通话</button>
               </div>
             ) : (
               <div>
