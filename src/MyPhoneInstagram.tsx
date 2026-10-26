@@ -2,8 +2,9 @@ import { useState } from "react";
 import type { Item } from "./schema";
 import "./my-phone-instagram.css";
 
-export function MyPhoneInstagram({ items, onRead, onBack }: {
+export function MyPhoneInstagram({ items, readIds, onRead, onBack }: {
   items: Item[];
+  readIds: string[];
   onRead: (id: string) => void;
   onBack: () => void;
 }) {
@@ -11,6 +12,7 @@ export function MyPhoneInstagram({ items, onRead, onBack }: {
   const [opened, setOpened] = useState<Item | null>(null);
   const requests = items.filter((item) => item.id.startsWith("ig-dm-"));
   const posts = items.filter((item) => !item.id.startsWith("ig-dm-"));
+  const unreadCount = requests.filter((item) => !readIds.includes(item.id)).length;
   return <div className="myphone-instagram">
     <header className="myphone-ig-header">
       <button onClick={opened ? () => setOpened(null) : onBack} aria-label="返回">‹</button>
@@ -25,14 +27,14 @@ export function MyPhoneInstagram({ items, onRead, onBack }: {
     </section> : <>
       <nav className="myphone-ig-tabs">
         <button className={tab === "profile" ? "active" : ""} onClick={() => setTab("profile")}>主页</button>
-        <button className={tab === "requests" ? "active" : ""} onClick={() => setTab("requests")}>消息请求 {requests.length ? <b>{requests.length}</b> : null}</button>
+        <button className={tab === "requests" ? "active" : ""} onClick={() => setTab("requests")}>消息请求 {unreadCount ? <b>{unreadCount}</b> : null}</button>
       </nav>
       {tab === "requests" ? <section className="myphone-ig-requests">
         <p>消息请求 · Message requests</p>
-        {requests.map((item) => <button key={item.id} className="myphone-ig-request" onClick={() => { setOpened(item); onRead(item.id); if (item.id !== "ig-dm-001") onRead("ig-dm-001"); }}>
+        {requests.map((item) => <button key={item.id} className={`myphone-ig-request ${readIds.includes(item.id) ? "is-read" : "is-unread"}`} onClick={() => { setOpened(item); onRead(item.id); if (item.id !== "ig-dm-001") onRead("ig-dm-001"); }}>
           <span className="myphone-ig-avatar">{item.sender.slice(1, 2).toUpperCase()}</span>
           <span><strong>{item.sender}</strong><small>{item.body.split("\n")[0]}</small></span>
-          <time>{item.time.slice(-5)}</time>
+          <time>{!readIds.includes(item.id) && <i className="myphone-ig-unread-dot" aria-label="未读" />}{item.time.slice(-5)}</time>
         </button>)}
       </section> : <section className="myphone-ig-profile">
         <div className="myphone-ig-avatar large">안</div>
@@ -41,7 +43,7 @@ export function MyPhoneInstagram({ items, onRead, onBack }: {
         <div className="myphone-ig-posts">{posts.map((item) => <article key={item.id}>
           <strong>{item.sender}</strong><p>{item.body}</p>
         </article>)}</div>
-        {requests.length > 0 && <button className="myphone-ig-view-requests" onClick={() => setTab("requests")}>查看 {requests.length} 条消息请求</button>}
+        {requests.length > 0 && <button className="myphone-ig-view-requests" onClick={() => setTab("requests")}>查看 {requests.length} 条消息请求 · {unreadCount} 条未读</button>}
       </section>}
     </>}
   </div>;
