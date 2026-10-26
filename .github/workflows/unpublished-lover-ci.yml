@@ -26,3 +26,13 @@ jobs:
         run: npm run story:validate -- stories/unpublished-lover/story.json
       - name: Typecheck
         run: npm run typecheck
+      - name: Build EP01 private test package
+        env:
+          STORY_FILE: stories/unpublished-lover/story.json
+        run: npm run build
+      - name: Store private test package
+        uses: actions/upload-artifact@v4
+        with:
+          name: unpublished-lover-ep01-test
+          path: dist/
+          retention-days: 7
