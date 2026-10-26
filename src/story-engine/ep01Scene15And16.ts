@@ -26,8 +26,8 @@ export const scene16Count = scene16Lines.length;
 
 export function chooseScene15Reply(runtime: Runtime): Runtime {
   if (runtime.workId !== "unpublished-lover-ep01" ||
-      runtime.variables.ep01FirstCallAnswered !== true ||
-      runtime.variables.ep01CallChoiceSent !== true ||
+      runtime.variables.ep01Scene14Answered !== true ||
+      runtime.variables.ep01Scene14RepliesFinished !== true ||
       runtime.variables.ep01Scene15ReplySent === true) return runtime;
   return { ...runtime, variables: {
     ...runtime.variables,
@@ -40,14 +40,14 @@ export function advanceScene15And16(runtime: Runtime): Runtime {
   if (runtime.workId !== "unpublished-lover-ep01") return runtime;
   const now = runtime.elapsedMs ?? 0;
   if (runtime.variables.ep01Scene15ReplySent !== true) return runtime;
-  if (runtime.variables.ep01FirstCallEnded !== true) {
+  if (runtime.variables.ep01Scene14Ended !== true) {
     const due = runtime.variables.ep01Scene15HangupDueAt;
     if (typeof due !== "number" || now < due) return runtime;
     return { ...runtime, variables: {
       ...runtime.variables,
-      ep01FirstCallAnswered: false,
-      ep01FirstCallRinging: false,
-      ep01FirstCallEnded: true,
+      ep01Scene14Answered: false,
+      ep01Scene14Ringing: false,
+      ep01Scene14Ended: true,
       ep01Scene16StartedAt: now + 3000,
     } };
   }
