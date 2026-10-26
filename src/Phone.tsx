@@ -213,9 +213,13 @@ function PhoneRuntime({
       .get(work.id)
       .then((saved) => {
         if (!active) return;
-        if (saved && saved.state.revision === work.updatedAt)
+        if (saved && saved.state.revision === work.updatedAt) {
+          if (work.id === "unpublished-lover-ep01") {
+            noticesSeen.current = saved.state.notifications.length;
+            pendingBanners.current = [];
+          }
           setOwn(saved.state);
-        else {
+        } else {
           setOwn(dispatch(work, initialRuntime(work), "start"));
           if (saved) setLoadError("作品已更新，已开始新的进度。");
         }
