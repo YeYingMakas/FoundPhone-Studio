@@ -1138,7 +1138,7 @@ function AppContent({
       ) : detail ? (
         detailView
       ) : app.id === "kakao" && thread && work.id === "my-phone-unlisted-love" && !creator ? (
-        <MyPhoneKakao title={thread} items={shown} onRead={onRead} onBack={() => setThread("")}
+        <MyPhoneKakao key={thread} title={thread} items={shown} onRead={onRead} onBack={() => setThread("")}
           stage={Number(state.variables.story_stage ?? 2)}
           canReply={thread === "쩡쩡❤️" && (
             (Number(state.variables.story_stage) === 2 && state.variables.x_rumor_seen === true) ||
