@@ -21,11 +21,12 @@ describe("EP01 scene 24", () => {
         runtime = blockScene24Kakao(runtime);
         expect(runtime.variables.ep01KakaoBlocked).toBe(true);
       }
-      for (let index = 1; index <= count; index++) runtime = tick(runtime, 14000 + index * 2000);
+      const replyStart = branch === "A" ? 16000 : 14000;
+      for (let index = 1; index <= count; index++) runtime = tick(runtime, replyStart + index * 2000);
       expect(runtime.messages.kakao).toHaveLength(branch === "A" ? 7 : 7 + count);
-      runtime = tick(runtime, 14000 + (count + 1) * 2000);
+      runtime = tick(runtime, replyStart + (count + 1) * 2000);
       expect(runtime.variables.ep01Scene24Finished).toBe(true);
-      runtime = tick(runtime, 14000 + (count + 1) * 2000 + 5000);
+      runtime = tick(runtime, replyStart + (count + 1) * 2000 + 5000);
       expect(runtime.variables.ep01Scene25Ready).toBe(true);
       if (branch === "A") {
         expect(runtime.variables.ep01KakaoBlocked).toBe(true);
