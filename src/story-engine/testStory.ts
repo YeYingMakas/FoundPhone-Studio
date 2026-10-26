@@ -50,9 +50,16 @@ export function testStory(story: Story, work: Work) {
             state.variables.public_statement_seen === true) {
           errors.push(at + ": 打开 X 不应自动视为阅读公开声明");
         }
-        if (step.event === "read" && step.target === "x-jeongwoo-public" &&
-            state.variables.public_statement_seen !== true) {
-          errors.push(at + ": 阅读公开声明后未触发 Instagram 私信阶段");
+        if (step.event === "openApp" && step.target === "twitter" &&
+            state.variables.public_statement_unlocked === true &&
+            state.unlocked.includes("ig-dm-001")) {
+          errors.push(at + ": 仅打开 X 就提前解锁了 Instagram 私信");
+        }
+        if (step.event === "read" && step.target === "x-jeongwoo-public") {
+          if (state.variables.public_statement_seen !== true)
+            errors.push(at + ": 阅读公开声明后未标记为已读");
+          if (!state.unlocked.includes("ig-dm-001") || !state.unlocked.includes("ig-dm-120"))
+            errors.push(at + ": 阅读公开声明后未完整解锁 Instagram 私信");
         }
       }
     }
