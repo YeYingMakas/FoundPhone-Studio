@@ -1,3 +1,4 @@
+import { scene15Reply, chooseScene15Reply, advanceScene15And16 } from "./story-engine/ep01Scene15And16";
 import { StatusGlyph } from "./ios/StatusGlyph";
 import { ep01CallOpening, ep01CallBranches, ep01CallChoices, chooseEp01CallBranch } from "./story-engine/ep01CallDialogue";
 import { ep01FirstCallChoices, sendEp01FirstCallRefusal, advanceEp01FirstCall, answerEp01FirstCall, endEp01FirstCall, rejectEp01FirstCall, advanceEp01FirstCallRetry } from "./story-engine/ep01FirstCall";
@@ -268,7 +269,7 @@ function PhoneRuntime({
       // The EP01 clock and incoming messages must not advance behind player setup.
       if (work.id === "unpublished-lover-ep01" && previous.variables.ep01PlayerSetupDone !== true) return;
       const advanced = advance(work, previous, work.id === "unpublished-lover-ep01" ? 200 : 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceEp01FirstCallRetry(advanceEp01FirstCall(advanceEp01SecondChoice(advanceEp01OpeningChoice(advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced))))))))))))))) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceScene15And16(advanceEp01FirstCallRetry(advanceEp01FirstCall(advanceEp01SecondChoice(advanceEp01OpeningChoice(advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))))))))))))))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -454,7 +455,14 @@ function PhoneRuntime({
                     ))}
                   </div>
                 ))}
-                <button type="button" disabled={s.variables.ep01CallChoiceSent !== true} onClick={() => update(endEp01FirstCall(runtimeRef.current))}>结束通话</button>
+                {s.variables.ep01CallChoiceSent === true && s.variables.ep01Scene15ReplySent !== true && (
+                  <button type="button" onClick={() => update(chooseScene15Reply(runtimeRef.current))}>
+                    {scene15Reply.ko} — {scene15Reply.zh}
+                  </button>
+                )}
+                {s.variables.ep01Scene15ReplySent === true && (
+                  <p>{scene15Reply.ko} — {scene15Reply.zh}</p>
+                )}
               </div>
             ) : (
               <div>
