@@ -1,0 +1,28 @@
+name: Unpublished Lover EP01 checks
+
+on:
+  push:
+    branches:
+      - story/unpublished-lover-ep01
+  workflow_dispatch:
+
+jobs:
+  story-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Audit imported bilingual scene data
+        run: node scripts/audit-unpublished-lover.mjs
+      - name: Test scene 25 and 30-31 state machines
+        run: npx vitest run src/story-engine/unpublishedLoverCall.test.ts src/story-engine/unpublishedLoverEnding.test.ts
+      - name: Validate partial story schema
+        run: npm run story:validate -- stories/unpublished-lover/story.json
+      - name: Typecheck
+        run: npm run typecheck
