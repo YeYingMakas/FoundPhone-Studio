@@ -108,3 +108,12 @@
 .ep01-call-options { display: grid; gap: 7px; margin-top: 12px; }
 .ep01-call-options button, .ep01-call-final { width: 100%; border: 1px solid rgba(255,255,255,.32); border-radius: 12px; background: rgba(255,255,255,.17); color: inherit; padding: 10px; text-align: left; font-size: 12px; }
 .ep01-call-options button span, .ep01-call-final span { display: block; margin-top: 3px; opacity: .7; }
+
+
+/* EP01: comments are only visible after opening the public X post. */
+.ep01-x-comments { margin-top: 20px; padding-top: 12px; border-top: 1px solid rgba(128,128,128,.28); }
+.ep01-x-comments h3 { margin: 0 0 12px; font-size: 15px; font-weight: 700; }
+.ep01-x-comment { padding: 11px 0; border-bottom: 1px solid rgba(128,128,128,.2); }
+.ep01-x-comment strong { font-size: 12px; }
+.ep01-x-comment p { margin: 5px 0 0; font-size: 13px; line-height: 1.5; white-space: pre-wrap; }
+.ep01-x-comment .ep01-x-comment-zh { opacity: .67; font-size: 12px; }
