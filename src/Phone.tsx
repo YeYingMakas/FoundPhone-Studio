@@ -278,7 +278,37 @@ function PhoneRuntime({
       // The EP01 clock and incoming messages must not advance behind player setup.
       if (work.id === "unpublished-lover-ep01" && previous.variables.ep01PlayerSetupDone !== true) return;
       const advanced = advance(work, previous, work.id === "unpublished-lover-ep01" ? 200 : 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceScene14Replies(advanceScene14Opening(advanceScene14Call(advanceScene13(advanceScene12(advanceEp01EarlyCallAftermath(advanceScene21OpeningReplies(advanceScene20(advanceScene19(advanceScene18(advanceEp01Scene17(advanceScene15And16(advanceEp01FirstCallRetry(advanceEp01FirstCall(advanceEp01SecondChoice(advanceEp01OpeningChoice(advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced))))))))))))))))))))))))))) : advanced;
+      const next = work.id === "unpublished-lover-ep01"
+        ? [
+            advanceScene22,
+            advanceScene23,
+            advanceScene24,
+            advanceScene25Incoming,
+            advanceScene25Dialogue,
+            advanceScene26,
+            advanceInstagramDMs,
+            advanceScene30Opening,
+            advanceScene30Replies,
+            advanceScene31,
+            advanceEp01Opening,
+            advanceEp01OpeningChoice,
+            advanceEp01SecondChoice,
+            advanceEp01FirstCall,
+            advanceEp01FirstCallRetry,
+            advanceScene15And16,
+            advanceEp01Scene17,
+            advanceScene18,
+            advanceScene19,
+            advanceScene20,
+            advanceScene21OpeningReplies,
+            advanceEp01EarlyCallAftermath,
+            advanceScene12,
+            advanceScene13,
+            advanceScene14Call,
+            advanceScene14Opening,
+            advanceScene14Replies,
+          ].reduce((state, step) => step(state), advanced)
+        : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
