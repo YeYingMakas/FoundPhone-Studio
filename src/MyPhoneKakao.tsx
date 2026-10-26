@@ -69,6 +69,7 @@ export function MyPhoneKakao({
   const scrollRef = useRef<HTMLDivElement>(null);
   const [stayAtBottom, setStayAtBottom] = useState(true);
   const pendingTimers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const typingUntil = useRef(0);
   useEffect(() => () => pendingTimers.current.forEach(clearTimeout), []);
   useEffect(() => {
     const incoming = messages.filter((item) => !knownIds.current.has(item.id));
@@ -84,11 +85,13 @@ export function MyPhoneKakao({
       }
     });
     if (incomingOnly.length) {
+      const lastArrival = Date.now() + 3000 + (incomingOnly.length - 1) * 1000;
+      typingUntil.current = Math.max(typingUntil.current, lastArrival);
       timers.push(setTimeout(() => setTyping(true), 1000));
       incomingOnly.forEach((item, index) => {
         timers.push(setTimeout(() => {
           setRevealed((prev) => new Set([...prev, item.id]));
-          if (index === incomingOnly.length - 1) setTyping(false);
+          if (index === incomingOnly.length - 1 && Date.now() >= typingUntil.current - 50) setTyping(false);
         }, 3000 + index * 1000));
       });
     }
