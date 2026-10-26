@@ -65,7 +65,7 @@ import {
 } from "./schema";
 import { dispatch, choose, visible, advance } from "./engine";
 import { db } from "./persistence";
-import { appendStoryDelivery, readStoryMessage, storyAppUnread } from "./story-engine/unpublishedLoverRuntime";
+import { appendStoryDelivery, readStoryConversation, readStoryMessage, storyAppUnread } from "./story-engine/unpublishedLoverRuntime";
 import type { SceneDelivery } from "./story-engine/unpublishedLoverDelivery";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
@@ -561,6 +561,11 @@ function PhoneRuntime({
                   }}
                   work={work}
                   storyFocusedThread={storyFocusedThread}
+                  onStoryReadThread={(title) => {
+                    const current = runtimeRef.current;
+                    const next = readStoryConversation(current, "kakao", title);
+                    if (next !== current) update(next);
+                  }}
                   onStorySave={() => { void db.saves.put({ id: work.id, state: runtimeRef.current }); }}
                   onStoryReplay={() => {
                     if (!window.confirm("确定重玩《未公开恋人》？当前进度将被覆盖。")) return;
@@ -995,6 +1000,7 @@ function AppContent({
   storyFocusedThread,
   onStorySave,
   onStoryReplay,
+  onStoryReadThread,
 }: {
   app: AppPlugin;
   name: string;
@@ -1012,6 +1018,7 @@ function AppContent({
   storyFocusedThread?: string;
   onStorySave?: () => void;
   onStoryReplay?: () => void;
+  onStoryReadThread?: (title: string) => void;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
@@ -1047,9 +1054,10 @@ function AppContent({
   };
   useEffect(() => {
     if (work.id !== "unpublished-lover-ep01" || app.id !== "kakao" || !thread || creator) return;
-    const unread = items.filter((item) => item.title === thread && !item.read && !item.outgoing);
-    unread.forEach((item) => onRead(item.id));
-  }, [work.id, app.id, thread, creator, items, onRead]);
+    if (items.some((item) => item.title === thread && !item.read && !item.outgoing)) {
+      onStoryReadThread?.(thread);
+    }
+  }, [work.id, app.id, thread, creator, items, onStoryReadThread]);
   const chats = [...new Set(shown.map((i) => i.title))];
   const back = () => {
     if (detail) setDetail(null);
@@ -1127,7 +1135,7 @@ function AppContent({
     const threadItems = shown.filter((item) => item.title === thread);
     const openThread = (title: string) => {
       setThread(title);
-      shown.filter((item) => item.title === title && !item.read).forEach((item) => onRead(item.id));
+      onStoryReadThread?.(title);
     };
     return (
       <div className="ep01-kakao">
