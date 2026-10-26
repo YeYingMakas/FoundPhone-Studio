@@ -41,3 +41,17 @@ export function readStoryMessage(runtime: Runtime, app: string, id: string): Run
 export function storyAppUnread(runtime: Runtime, app: string): number {
   return countUnread(runtime.messages[app] ?? []);
 }
+
+export function readStoryConversation(runtime: Runtime, app: string, title: string): Runtime {
+  const items = runtime.messages[app];
+  if (!items?.some((item) => item.title === title && !item.read && !item.outgoing)) return runtime;
+  return {
+    ...runtime,
+    messages: {
+      ...runtime.messages,
+      [app]: items.map((item: Item) =>
+        item.title === title && !item.outgoing ? { ...item, read: true } : item,
+      ),
+    },
+  };
+}
