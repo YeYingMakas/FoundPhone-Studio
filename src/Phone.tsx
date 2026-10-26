@@ -70,6 +70,7 @@ import type { SceneDelivery } from "./story-engine/unpublishedLoverDelivery";
 import { advanceScene22, markScene22ListReturn, markScene23ManualOpen } from "./story-engine/unpublishedLoverScene22";
 import { advanceScene23, scene23Choices, sendScene23Choice } from "./story-engine/unpublishedLoverScene23";
 import { advanceScene24, scene24Choices, sendScene24Choice, blockScene24Kakao, unblockScene24Kakao } from "./story-engine/unpublishedLoverScene24";
+import { advanceScene25Incoming, rejectScene25Incoming, answerScene25Incoming } from "./story-engine/unpublishedLoverScene25";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -248,7 +249,7 @@ function PhoneRuntime({
     const interval = setInterval(() => {
       const previous = runtimeRef.current;
       const advanced = advance(work, previous, 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceScene24(advanceScene23(advanceScene22(advanced))) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -790,6 +791,7 @@ function PhoneRuntime({
                   className="decline-call"
                   onClick={() => {
                     const call = runtimeRef.current.incomingCall;
+                    if (call?.target === "ep01-scene25" && call.status === "ringing") { update(rejectScene25Incoming(runtimeRef.current)); return; }
                     if (call)
                       update(
                         dispatch(
@@ -813,6 +815,7 @@ function PhoneRuntime({
                     className="accept-call"
                     onClick={() => {
                       const call = runtimeRef.current.incomingCall;
+                      if (call?.target === "ep01-scene25") { update(answerScene25Incoming(runtimeRef.current)); return; }
                       if (call)
                         update(
                           dispatch(
