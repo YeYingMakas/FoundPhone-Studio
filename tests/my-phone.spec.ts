@@ -125,4 +125,6 @@ test("My Phone browser smoke: lock screen and home screen", async ({ page }) => 
   await page.getByRole("button", { name: "发送消息" }).click();
   await expect(page.getByRole("dialog", { name: "故事结局" })).toBeVisible({ timeout: 15000 });
   await expect(page.getByRole("dialog", { name: "故事结局" }).locator("h2")).toBeVisible();
+  await page.getByRole("button", { name: "继续使用 My Phone" }).click();
+  await expect(page.getByRole("dialog", { name: "故事结局" })).toHaveCount(0);
 });
