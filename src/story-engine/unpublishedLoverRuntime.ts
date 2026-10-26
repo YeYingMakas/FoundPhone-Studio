@@ -9,13 +9,14 @@ export function appendStoryDelivery(
 ): { runtime: Runtime; scene: SceneDelivery } {
   const result = deliverNext(scene, date, time);
   if (!result.item) return { runtime, scene: result.next };
+  const item = { ...result.item, title: scene.conversationId === "chat-jeongwoo" ? "쩡쩡❤️" : scene.conversationId === "chat-friend" ? "闺蜜" : result.item.title };
   return {
     scene: result.next,
     runtime: {
       ...runtime,
       messages: {
         ...runtime.messages,
-        [scene.app]: [...(runtime.messages[scene.app] ?? []), result.item],
+        [scene.app]: [...(runtime.messages[scene.app] ?? []), item],
       },
       notifications: [
         ...runtime.notifications,
