@@ -1,0 +1,36 @@
+{
+  "scene": 31,
+  "status": "approved",
+  "trigger": {
+    "event": "scene30_last_reply_delivered",
+    "delayMs": 3000,
+    "once": true
+  },
+  "endingId": "ENDING_01",
+  "title": "公开的秘密",
+  "subtitleByBranch": {
+    "A": "爱意公开，风暴降临",
+    "B": "藏了三年的名字",
+    "C": "差一点失去的恋人"
+  },
+  "summaryByBranch": {
+    "A": "你质问他为什么敢在身为爱豆的情况下公开恋情。他知道自己闯了祸，也知道那些陌生人的恶意正涌向你。但比起失去你，他选择了一个冲动而无法收回的决定。三年的秘密终于曝光，真正需要面对的考验却才刚刚开始。",
+    "B": "你没有想到，那个一直小心翼翼隐藏恋情的人，会突然向全世界承认自己已经爱了三年。他也在害怕，发帖时甚至双手发抖。秘密终于不再是秘密，可你们还没有来得及讨论公开之后的生活。",
+    "C": "你终于告诉他，那句分手并不是真正的决定。他却早已被失去你的恐惧击溃，甚至擅自向全世界公开了恋情。三年的隐瞒，在一个晚上彻底结束。你们还相爱，但信任、公开的代价和那些尚未说清的误会，仍等待着你们共同面对。"
+  },
+  "footer": "EP01 · THE END",
+  "notice": "主线剧情已结束，但手机中的故事还没有结束。你可以继续查看KakaoTalk、Instagram、X及其他内容，自由探索公开恋情之后留下的痕迹。",
+  "button": "继续查看手机",
+  "behavior": {
+    "modal": true,
+    "overlayCurrentApp": true,
+    "allowDismiss": true,
+    "keepAppState": true,
+    "keepUnread": true,
+    "keepUserReplies": true,
+    "persistEnding": true,
+    "replayInSettings": true,
+    "noAutoReconcile": true
+  },
+  "implementation": "staged structured data; runtime hookup pending"
+}
