@@ -13,7 +13,7 @@ export function advanceScene22(runtime: Runtime): Runtime {
   if (typeof started !== "number") {
     return {
       ...runtime,
-      variables: { ...runtime.variables, ep01Scene22StartedAt: runtime.elapsedMs },
+      variables: { ...runtime.variables, ep01Scene22StartedAt: runtime.elapsedMs ?? 0 },
     };
   }
   const delivered = typeof runtime.variables.ep01Scene22Delivered === "number"
@@ -23,7 +23,7 @@ export function advanceScene22(runtime: Runtime): Runtime {
     return { ...runtime, variables: { ...runtime.variables, ep01Scene22Finished: true } };
   }
   const dueAt = started + START_DELAY_MS + delivered * INTER_MESSAGE_MS;
-  if (runtime.elapsedMs < dueAt) return runtime;
+  if ((runtime.elapsedMs ?? 0) < dueAt) return runtime;
   const scene: SceneDelivery = {
     app: "kakao",
     conversationId: "chat-junghwan",
