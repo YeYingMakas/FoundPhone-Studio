@@ -20,8 +20,8 @@ jobs:
         run: npm ci
       - name: Audit imported bilingual scene data
         run: node scripts/audit-unpublished-lover.mjs
-      - name: Test scene 25 and 30-31 state machines
-        run: npx vitest run src/story-engine/unpublishedLoverCall.test.ts src/story-engine/unpublishedLoverEnding.test.ts
+      - name: Test scene 24, 25 and 30-31 state machines
+        run: npx vitest run src/story-engine/unpublishedLoverBlock.test.ts src/story-engine/unpublishedLoverCall.test.ts src/story-engine/unpublishedLoverEnding.test.ts
       - name: Validate partial story schema
         run: npm run story:validate -- stories/unpublished-lover/story.json
       - name: Typecheck
