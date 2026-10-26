@@ -59,6 +59,5 @@ export function advanceScene20(runtime: Runtime): Runtime {
   return { ...delivered, variables: {
     ...delivered.variables, ep01Scene20Delivered: index + 1,
     ep01Scene20Finished: index + 1 === branch.replies.length,
-    ep01Scene21Ready: index + 1 === branch.replies.length,
   } };
 }
