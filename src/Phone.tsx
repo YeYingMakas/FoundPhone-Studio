@@ -74,7 +74,7 @@ import { advanceScene25Incoming, advanceScene25Dialogue, rejectScene25Incoming, 
 import scene25Data from "../stories/unpublished-lover/data/scene25.json";
 import { advanceScene26, manuallyOpenScene27X } from "./story-engine/unpublishedLoverScene26";
 import scene28Data from "../stories/unpublished-lover/data/scene28.json";
-import { openPublicPost, advanceInstagramDMs } from "./story-engine/scene29Gate";
+import { openPublicPost, advanceInstagramDMs, openInstagramThread, sendInstagramReply } from "./story-engine/scene29Gate";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -590,6 +590,12 @@ function PhoneRuntime({
                     const next = markScene23ManualOpen(current, title);
                     if (next !== current) update(next);
                   }}
+                  onStoryInstagramOpen={(title) => {
+                    update(openInstagramThread(runtimeRef.current, title));
+                  }}
+                  onStoryInstagramSend={(title, body) => {
+                    update(sendInstagramReply(runtimeRef.current, title, body));
+                  }}
                   onStoryPostOpen={(id) => {
                     const current = runtimeRef.current;
                     const next = openPublicPost(current, id);
@@ -1086,6 +1092,8 @@ function AppContent({
   onStoryReturnToList,
   onStoryManualOpen,
   onStoryPostOpen,
+  onStoryInstagramOpen,
+  onStoryInstagramSend,
   onStoryBlock,
   onStoryUnblock,
 }: {
@@ -1109,11 +1117,14 @@ function AppContent({
   onStoryReturnToList?: () => void;
   onStoryManualOpen?: (title: string) => void;
   onStoryPostOpen?: (id: string) => void;
+  onStoryInstagramOpen?: (title: string) => void;
+  onStoryInstagramSend?: (title: string, body: string) => void;
   onStoryBlock?: () => void;
   onStoryUnblock?: () => void;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
+  const [instagramDraft, setInstagramDraft] = useState("");
   const [storyDraft, setStoryDraft] = useState<{ label: string; target: string } | null>(null);
   const [showStoryChoices, setShowStoryChoices] = useState(false);
   useEffect(() => {
