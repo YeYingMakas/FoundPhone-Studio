@@ -56,6 +56,7 @@ import {
 import { getApp, type AppPlugin } from "./registry";
 import {
   initialRuntime,
+  makeItem,
   safeMedia,
   type Work,
   type Item,
@@ -557,6 +558,24 @@ function PhoneRuntime({
                     );
                   }}
                   work={work}
+                  onStorySend={(threadTitle, label, target) => {
+                    const current = runtimeRef.current;
+                    if (!current.choices.some((choice) => choice.target === target && choice.label === label)) return;
+                    const message = makeItem({
+                      title: threadTitle,
+                      body: label,
+                      sender: work.phone.owner,
+                      outgoing: true,
+                      read: true,
+                      time: (current.date || work.phone.date) + " " + current.time,
+                      meta: { conversationId: threadTitle, source: "unpublished-lover" },
+                    });
+                    const withMessage = {
+                      ...current,
+                      messages: { ...current.messages, kakao: [...(current.messages.kakao ?? []), message] },
+                    };
+                    update(choose(work, withMessage, target));
+                  }}
                 />
               </AppWindow>
             ) : (
@@ -954,6 +973,7 @@ function AppContent({
   onSettings,
   onUi,
   work,
+  onStorySend,
 }: {
   app: AppPlugin;
   name: string;
@@ -967,9 +987,12 @@ function AppContent({
   onSettings?: () => void;
   onUi?: (key: string, value: UiValue) => void;
   work: Work;
+  onStorySend?: (thread: string, label: string, target: string) => void;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
+  const [storyDraft, setStoryDraft] = useState<{ label: string; target: string } | null>(null);
+  const [showStoryChoices, setShowStoryChoices] = useState(false);
   const [tab, setTab] = useState(app.tabs[0]);
   const [q, setQ] = useState("");
   const [pw, setPw] = useState("");
@@ -1089,7 +1112,28 @@ function AppContent({
                 <small>{item.time.slice(-5)}</small>
               </div>
             ))}
-            <div className="ep01-kakao-compose">点击输入框选择回复（后续剧情接入中）</div>
+            <div className="ep01-kakao-compose">
+              {showStoryChoices && state.choices.length > 0 && (
+                <div className="ep01-reply-options">
+                  {state.choices.map((choice) => (
+                    <button type="button" key={choice.target} onClick={() => { setStoryDraft(choice); setShowStoryChoices(false); }}>
+                      {choice.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+              <div className="ep01-compose-controls">
+                <button type="button" className="ep01-compose-input" onClick={() => setShowStoryChoices((value) => !value)} disabled={state.choices.length === 0}>
+                  {storyDraft?.label || (state.choices.length ? "点击选择回复" : "等待剧情回复选项")}
+                </button>
+                <button type="button" className="ep01-compose-send" disabled={!storyDraft || !onStorySend} onClick={() => {
+                  if (!storyDraft) return;
+                  onStorySend?.(thread, storyDraft.label, storyDraft.target);
+                  setStoryDraft(null);
+                  setShowStoryChoices(false);
+                }}>发送</button>
+              </div>
+            </div>
           </div>
         ) : (
           <div className="ep01-kakao-list">
