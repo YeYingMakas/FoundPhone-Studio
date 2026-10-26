@@ -42,6 +42,19 @@ export function testStory(story: Story, work: Work) {
       if (step.advanceMs !== undefined)
         state = advance(work, state, step.advanceMs);
       if (step.event) state = dispatch(work, state, step.event, step.target);
+      // Regression guard: opening X must not count as reading the confession.
+      // The Instagram DM wave only begins after the player opens the post.
+      if (work.id === "my-phone-unlisted-love" && t.name.includes("完整主线")) {
+        if (step.event === "openApp" && step.target === "twitter" &&
+            state.variables.public_statement_unlocked === true &&
+            state.variables.public_statement_seen === true) {
+          errors.push(at + ": 打开 X 不应自动视为阅读公开声明");
+        }
+        if (step.event === "read" && step.target === "x-jeongwoo-public" &&
+            state.variables.public_statement_seen !== true) {
+          errors.push(at + ": 阅读公开声明后未触发 Instagram 私信阶段");
+        }
+      }
     }
     if (!state.endings.includes(t.ending))
       errors.push(t.name + ": 未到达结局 " + t.ending);
