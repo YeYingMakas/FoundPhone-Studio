@@ -1,4 +1,5 @@
 import { StatusGlyph } from "./ios/StatusGlyph";
+import { showEp01Sighting, dismissEp01Sighting, advanceEp01Opening } from "./story-engine/ep01Opening";
 import { completeEp01PlayerSetup } from "./story-engine/ep01PlayerSetup";
 import { SocialDetail, socialDetailApps } from "./skins/SocialDetails";
 import { NativeCalculator } from "./ios/Calculator";
@@ -263,7 +264,7 @@ function PhoneRuntime({
       // The EP01 clock and incoming messages must not advance behind player setup.
       if (work.id === "unpublished-lover-ep01" && previous.variables.ep01PlayerSetupDone !== true) return;
       const advanced = advance(work, previous, work.id === "unpublished-lover-ep01" ? 200 : 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))))))))) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced))))))))))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -357,6 +358,10 @@ function PhoneRuntime({
   const unlock = (pin = "") => {
     if (!work.phone.passcode || pin === work.phone.passcode) {
       setLocked(false);
+      if (work.id === "unpublished-lover-ep01") {
+        const next = showEp01Sighting(runtimeRef.current);
+        if (next !== runtimeRef.current) update(next);
+      }
       setPinOpen(false);
       setWrongPinAttempts(0);
       event("password", pin);
@@ -428,6 +433,16 @@ function PhoneRuntime({
             <label>出生年份<input aria-label="出生年份" type="number" min="1900" max="2026" required value={ep01BirthYear} onChange={(event) => setEp01BirthYear(event.target.value)} /></label>
             <button type="submit">进入手机</button>
           </form>
+        </div>
+      )}
+      {work.id === "unpublished-lover-ep01" && s.variables.ep01SightingShown === true && (
+        <div className="ep01-ending-overlay" role="dialog" aria-modal="true" aria-label="X偶遇帖提示">
+          <section className="ep01-ending-card">
+            <button type="button" aria-label="关闭X偶遇帖弹窗" onClick={() => update(dismissEp01Sighting(runtimeRef.current))}>×</button>
+            <h2>X · 偶遇帖</h2>
+            <p>网上出现了朴炡禹与韩瑞允同行的照片，引起讨论。</p>
+            <p>原帖逐字内容与照片仍待核对；这里暂不使用未经确认的图片或伪造帖子。</p>
+          </section>
         </div>
       )}
       {work.id === "unpublished-lover-ep01" && s.variables.ep01Scene31Visible === true && (
