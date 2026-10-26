@@ -68,6 +68,7 @@ import { db } from "./persistence";
 import { appendStoryDelivery, readStoryConversation, readStoryMessage, storyAppUnread } from "./story-engine/unpublishedLoverRuntime";
 import type { SceneDelivery } from "./story-engine/unpublishedLoverDelivery";
 import { advanceScene22, markScene22ListReturn, markScene23ManualOpen } from "./story-engine/unpublishedLoverScene22";
+import { advanceScene23, scene23Choices, sendScene23Choice } from "./story-engine/unpublishedLoverScene23";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -246,7 +247,7 @@ function PhoneRuntime({
     const interval = setInterval(() => {
       const previous = runtimeRef.current;
       const advanced = advance(work, previous, 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceScene22(advanced) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceScene23(advanceScene22(advanced)) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -599,7 +600,8 @@ function PhoneRuntime({
                   }}
                   onStorySend={(threadTitle, label, target) => {
                     const current = runtimeRef.current;
-                    if (!current.choices.some((choice) => choice.target === target && choice.label === label)) return;
+                    const special = threadTitle === "쩡쩡❤️" && scene23Choices(current).some((choice) => choice.target === target && choice.label === label);
+                    if (!special && !current.choices.some((choice) => choice.target === target && choice.label === label)) return;
                     const message = makeItem({
                       title: threadTitle,
                       body: label,
@@ -613,7 +615,7 @@ function PhoneRuntime({
                       ...current,
                       messages: { ...current.messages, kakao: [...(current.messages.kakao ?? []), message] },
                     };
-                    update(choose(work, withMessage, target));
+                    update(special ? sendScene23Choice(withMessage, target) : choose(work, withMessage, target));
                   }}
                 />
               </AppWindow>
@@ -1154,6 +1156,7 @@ function AppContent({
   if (work.id === "unpublished-lover-ep01" && app.id === "kakao" && !creator) {
     const conversations = [...new Set(["쩡쩡❤️", "闺蜜", "苏庭焕", "朴志焄", "尹材赫", ...shown.map((item) => item.title))];
     const threadItems = shown.filter((item) => item.title === thread);
+    const availableChoices = thread === "쩡쩡❤️" && state.variables.ep01Scene23Ready === true ? scene23Choices(state) : state.choices;
     const openThread = (title: string) => {
       setThread(title);
       onStoryManualOpen?.(title);
@@ -1175,9 +1178,9 @@ function AppContent({
               </div>
             ))}
             <div className="ep01-kakao-compose">
-              {showStoryChoices && state.choices.length > 0 && (
+              {showStoryChoices && availableChoices.length > 0 && (
                 <div className="ep01-reply-options">
-                  {state.choices.map((choice) => (
+                  {availableChoices.map((choice) => (
                     <button type="button" key={choice.target} onClick={() => { setStoryDraft(choice); setShowStoryChoices(false); }}>
                       {choice.label}
                     </button>
@@ -1185,10 +1188,10 @@ function AppContent({
                 </div>
               )}
               <div className="ep01-compose-controls">
-                <button type="button" className="ep01-compose-input" onClick={() => setShowStoryChoices((value) => !value)} disabled={state.choices.length === 0}>
-                  {storyDraft?.label || (state.choices.length ? "点击选择回复" : "等待剧情回复选项")}
+                <button type="button" className="ep01-compose-input" onClick={() => setShowStoryChoices((value) => !value)} disabled={availableChoices.length === 0}>
+                  {storyDraft?.label || (availableChoices.length ? "点击选择回复" : "等待剧情回复选项")}
                 </button>
-                <button type="button" className="ep01-compose-send" disabled={!storyDraft || !onStorySend || !state.choices.some((choice) => choice.target === storyDraft.target && choice.label === storyDraft.label)} onClick={() => {
+                <button type="button" className="ep01-compose-send" disabled={!storyDraft || !onStorySend || !availableChoices.some((choice) => choice.target === storyDraft.target && choice.label === storyDraft.label)} onClick={() => {
                   if (!storyDraft) return;
                   onStorySend?.(thread, storyDraft.label, storyDraft.target);
                   setStoryDraft(null);
