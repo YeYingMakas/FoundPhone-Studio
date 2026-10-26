@@ -10,9 +10,12 @@ export function MyPhoneInstagram({ items, readIds, onRead, onBack }: {
 }) {
   const [tab, setTab] = useState<"profile" | "requests">("profile");
   const [opened, setOpened] = useState<Item | null>(null);
+  const [search, setSearch] = useState("");
+  const [unreadOnly, setUnreadOnly] = useState(false);
   const requests = items.filter((item) => item.id.startsWith("ig-dm-"));
   const posts = items.filter((item) => !item.id.startsWith("ig-dm-"));
   const unreadCount = requests.filter((item) => !readIds.includes(item.id)).length;
+  const filteredRequests = requests.filter((item) => (!unreadOnly || !readIds.includes(item.id)) && `${item.sender} ${item.body}`.toLowerCase().includes(search.toLowerCase()));
   return <div className="myphone-instagram">
     <header className="myphone-ig-header">
       <button onClick={opened ? () => setOpened(null) : onBack} aria-label="返回">‹</button>
@@ -31,7 +34,9 @@ export function MyPhoneInstagram({ items, readIds, onRead, onBack }: {
       </nav>
       {tab === "requests" ? <section className="myphone-ig-requests">
         <p>消息请求 · Message requests</p>
-        {requests.map((item) => <button key={item.id} className={`myphone-ig-request ${readIds.includes(item.id) ? "is-read" : "is-unread"}`} onClick={() => { setOpened(item); onRead(item.id); if (item.id !== "ig-dm-001") onRead("ig-dm-001"); }}>
+        <div className="myphone-ig-filter"><input aria-label="搜索私信" placeholder="搜索消息或账号" value={search} onChange={(e) => setSearch(e.target.value)} /><button className={unreadOnly ? "active" : ""} onClick={() => setUnreadOnly((v) => !v)}>{unreadOnly ? "显示全部" : "仅看未读"}</button></div>
+        {filteredRequests.length === 0 && <p className="myphone-ig-empty">没有符合条件的消息</p>}
+        {filteredRequests.map((item) => <button key={item.id} className={`myphone-ig-request ${readIds.includes(item.id) ? "is-read" : "is-unread"}`} onClick={() => { setOpened(item); onRead(item.id); if (item.id !== "ig-dm-001") onRead("ig-dm-001"); }}>
           <span className="myphone-ig-avatar">{item.sender.slice(1, 2).toUpperCase()}</span>
           <span><strong>{item.sender}</strong><small>{item.body.split("\n")[0]}</small></span>
           <time>{!readIds.includes(item.id) && <i className="myphone-ig-unread-dot" aria-label="未读" />}{item.time.slice(-5)}</time>
