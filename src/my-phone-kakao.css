@@ -91,3 +91,5 @@
   font-weight: 700;
 }
 .my-phone-kakao .my-phone-reply button:disabled { opacity: .4; cursor: default; }
+
+.my-phone-kakao .my-phone-message-block{display:flex;flex-direction:column;gap:12px;width:100%}.my-phone-kakao .my-phone-message-block>.chat-time{margin:10px auto 12px;align-self:center}
