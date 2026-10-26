@@ -1,0 +1,54 @@
+{
+  "status": "awaiting-binary-upload",
+  "publicReleaseAuthorized": false,
+  "assets": [
+    {
+      "order": 1,
+      "role": "kakao-avatar",
+      "contact": "朴炡禹",
+      "displayName": "쩡쩡❤️",
+      "source": "IMG_4337(4).jpeg",
+      "target": "public/story-assets/unpublished-lover/kakao-jeongwoo.jpeg"
+    },
+    {
+      "order": 2,
+      "role": "kakao-avatar",
+      "contact": "苏庭焕",
+      "source": "IMG_4584(3).jpeg",
+      "target": "public/story-assets/unpublished-lover/kakao-junghwan.jpeg"
+    },
+    {
+      "order": 3,
+      "role": "kakao-avatar",
+      "contact": "朴志焄",
+      "source": "IMG_8667(2).jpeg",
+      "target": "public/story-assets/unpublished-lover/kakao-jihoon.jpeg"
+    },
+    {
+      "order": 4,
+      "role": "kakao-avatar",
+      "contact": "尹材赫",
+      "source": "IMG_7012(2).jpeg",
+      "target": "public/story-assets/unpublished-lover/kakao-jaehyuk.jpeg"
+    },
+    {
+      "order": 5,
+      "role": "kakao-avatar",
+      "contact": "闺蜜",
+      "source": "IMG_3063(2).jpeg",
+      "target": "public/story-assets/unpublished-lover/kakao-friend.jpeg"
+    },
+    {
+      "order": 6,
+      "role": "lock-wallpaper",
+      "source": "IMG_6893(3).jpeg",
+      "target": "public/story-assets/unpublished-lover/lock-wallpaper.jpeg"
+    },
+    {
+      "order": 7,
+      "role": "home-wallpaper",
+      "source": "IMG_6900(1).jpeg",
+      "target": "public/story-assets/unpublished-lover/home-wallpaper.jpeg"
+    }
+  ]
+}
