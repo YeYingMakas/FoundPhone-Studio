@@ -100,5 +100,10 @@ test("My Phone browser smoke: lock screen and home screen", async ({ page }) => 
   await expect(page.getByRole("log", { name: "通话实时字幕" })).toContainText("아... 받아 줬다. 고마워ㅠㅠ", { timeout: 10000 });
   await page.locator(".incoming-call-screen").getByRole("button", { name: "挂断" }).click();
   await expect(page.locator(".incoming-call-screen")).toHaveCount(0);
+  await page.getByRole("button", { name: "返回桌面", exact: true }).click();
+  await page.getByRole("button", { name: "打开X", exact: true }).click();
+  await expect(page.locator(".myphone-x-post").filter({ hasText: "公开声明" })).toBeVisible({ timeout: 15000 });
+  await page.locator(".myphone-x-post").filter({ hasText: "公开声明" }).click();
+  await expect(page.locator(".myphone-x-detail")).toBeVisible();
   expect(errors).toEqual([]);
 });
