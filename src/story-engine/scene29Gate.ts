@@ -59,3 +59,17 @@ export function openInstagramThread(runtime: Runtime, title: string): Runtime {
     variables: first ? { ...runtime.variables, ep01FirstInstagramThreadOpenedAt: runtime.elapsedMs ?? 0 } : runtime.variables,
   };
 }
+
+export function sendInstagramReply(runtime: Runtime, title: string, body: string): Runtime {
+  if (!body.trim() || !(runtime.messages.instagram ?? []).some((item) => item.title === title)) return runtime;
+  const item = makeItem({
+    title,
+    body: body.trim(),
+    sender: "玩家",
+    outgoing: true,
+    read: true,
+    time: (runtime.date ?? "2026-10-23") + " " + runtime.time,
+    meta: { source: "ep01-scene29-player", conversationId: title },
+  });
+  return { ...runtime, messages: { ...runtime.messages, instagram: [...(runtime.messages.instagram ?? []), item] } };
+}
