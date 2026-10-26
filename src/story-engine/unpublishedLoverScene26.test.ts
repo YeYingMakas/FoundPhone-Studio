@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Runtime, Work } from "../schema";
-import { initialRuntime } from "../engine";
+import { initialRuntime } from "../schema";
 import { advanceScene26, manuallyOpenScene27X } from "./unpublishedLoverScene26";
 
 const work = { id: "unpublished-lover-ep01", updatedAt: 1, phone: { date: "2026-10-23", time: "22:00" }, variables: {} } as Work;
