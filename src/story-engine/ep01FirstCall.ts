@@ -37,6 +37,7 @@ export function answerEp01FirstCall(runtime: Runtime): Runtime {
     ...runtime.variables,
     ep01FirstCallRinging: false,
     ep01FirstCallAnswered: true,
+    ep01FirstCallRinging: false,
   } };
 }
 export function endEp01FirstCall(runtime: Runtime): Runtime {
@@ -46,5 +47,27 @@ export function endEp01FirstCall(runtime: Runtime): Runtime {
     ...runtime.variables,
     ep01FirstCallAnswered: false,
     ep01FirstCallEnded: true,
+  } };
+}
+
+/** Rejecting the incoming call never skips the scene. Repeated attempts
+ * are allowed; only the first three rejections produce distinct messages. */
+export function rejectEp01FirstCall(runtime: Runtime): Runtime {
+  if (runtime.variables.ep01FirstCallRinging !== true || runtime.variables.ep01FirstCallAnswered === true) return runtime;
+  const attempts = Number(runtime.variables.ep01FirstCallRejectedCount ?? 0) + 1;
+  return { ...runtime, variables: {
+    ...runtime.variables,
+    ep01FirstCallRinging: false,
+    ep01FirstCallRejectedCount: attempts,
+    ep01FirstCallRetryDueAt: (runtime.elapsedMs ?? 0) + 3000,
+    ep01FirstCallRejectionNoticePending: Math.min(attempts, 3),
+  } };
+}
+export function advanceEp01FirstCallRetry(runtime: Runtime): Runtime {
+  const due = runtime.variables.ep01FirstCallRetryDueAt;
+  if (typeof due !== "number" || runtime.variables.ep01FirstCallAnswered === true ||
+      runtime.variables.ep01FirstCallEnded === true || (runtime.elapsedMs ?? 0) < due) return runtime;
+  return { ...runtime, variables: {
+    ...runtime.variables, ep01FirstCallRetryDueAt: -1, ep01FirstCallRinging: true,
   } };
 }
