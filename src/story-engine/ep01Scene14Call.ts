@@ -27,10 +27,18 @@ export function rejectScene14Call(s:Runtime):Runtime {
 }
 export function answerScene14Call(s:Runtime):Runtime {
  if(s.variables.ep01Scene14Ringing!==true)return s;
- return {...s,variables:{...s.variables,ep01Scene14Ringing:false,ep01Scene14Answered:true}};
+ return {...s,variables:{...s.variables,ep01Scene14Ringing:false,ep01Scene14Answered:true,ep01Scene14AnsweredAt:s.elapsedMs??0,ep01Scene14OpeningDelivered:0}};
+}
+export function advanceScene14Opening(s:Runtime):Runtime {
+ if(s.variables.ep01Scene14Answered!==true || s.variables.ep01Scene14Branch || Number(s.variables.ep01Scene14OpeningDelivered??0)>=5)return s;
+ const started=s.variables.ep01Scene14AnsweredAt;
+ if(typeof started!=="number")return s;
+ const n=Number(s.variables.ep01Scene14OpeningDelivered??0);
+ if((s.elapsedMs??0)<started+(n+1)*2000)return s;
+ return {...s,variables:{...s.variables,ep01Scene14OpeningDelivered:n+1}};
 }
 export function scene14CallChoices(s:Runtime){
- if(s.variables.ep01Scene14Answered!==true||s.variables.ep01Scene14Branch)return [];
+ if(s.variables.ep01Scene14Answered!==true||s.variables.ep01Scene14Branch||Number(s.variables.ep01Scene14OpeningDelivered??0)<5)return [];
  return ep01CallBranches.map(b=>({target:"ep01-scene14-"+b.id,label:b.player.ko+"\n"+b.player.zh}));
 }
 export function sendScene14CallChoice(s:Runtime,target:string):Runtime {
