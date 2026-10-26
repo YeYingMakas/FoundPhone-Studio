@@ -21,3 +21,20 @@
     background: #000;
   }
 }
+
+.ep01-profile {
+  width: min(360px, calc(100vw - 40px));
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 30px 25px;
+  border-radius: 28px;
+  background: #1b1b20;
+  color: #fff;
+}
+.ep01-profile h1 { margin: 0; font-size: 25px; }
+.ep01-profile p { margin: 0 0 8px; opacity: .8; font-size: 14px; }
+.ep01-profile label { display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+.ep01-profile input { border: 1px solid #5d5d63; border-radius: 12px; background: #303037; color: white; padding: 13px; font: inherit; }
+.ep01-profile button { border: 0; border-radius: 13px; padding: 14px; font-weight: 600; background: #fff; color: #111; }
+.ep01-profile button:disabled { opacity: .4; }
