@@ -70,7 +70,8 @@ import type { SceneDelivery } from "./story-engine/unpublishedLoverDelivery";
 import { advanceScene22, markScene22ListReturn, markScene23ManualOpen } from "./story-engine/unpublishedLoverScene22";
 import { advanceScene23, scene23Choices, sendScene23Choice } from "./story-engine/unpublishedLoverScene23";
 import { advanceScene24, scene24Choices, sendScene24Choice, blockScene24Kakao, unblockScene24Kakao } from "./story-engine/unpublishedLoverScene24";
-import { advanceScene25Incoming, rejectScene25Incoming, answerScene25Incoming } from "./story-engine/unpublishedLoverScene25";
+import { advanceScene25Incoming, advanceScene25Dialogue, rejectScene25Incoming, answerScene25Incoming, scene25Transcript, chooseScene25Reply, speakScene25Final } from "./story-engine/unpublishedLoverScene25";
+import scene25Data from "../stories/unpublished-lover/data/scene25.json";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -249,7 +250,7 @@ function PhoneRuntime({
     const interval = setInterval(() => {
       const previous = runtimeRef.current;
       const advanced = advance(work, previous, 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced))))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -786,12 +787,45 @@ function PhoneRuntime({
                     <p>这是一通虚构来电。</p>
                   );
                 })()}
+              {s.incomingCall.target === "ep01-scene25" && s.incomingCall.status === "answered" ? (
+                <div className="ep01-call-dialogue">
+                  <div className="ep01-call-transcript" aria-live="polite">
+                    {scene25Transcript(s).map((line, index) => (
+                      <p key={index}><strong>{line.speaker}</strong>：{line.ko}<span className="ep01-call-translation">{line.zh}</span></p>
+                    ))}
+                  </div>
+                  {(() => {
+                    const route = s.variables.ep01Scene25Route;
+                    const openingDone = scene25Transcript(s).filter((line) => line.speaker === "朴炡禹").length ===
+                      (route === "A" ? 9 : route === "B" ? 8 : 10);
+                    const choice = Number(s.variables.ep01Scene25Choice ?? 0);
+                    if (openingDone && !choice) return (
+                      <div className="ep01-call-options">
+                        {scene25Data.choices.map((option, index) => (
+                          <button type="button" key={index} onClick={() => update(chooseScene25Reply(runtimeRef.current, index + 1))}>
+                            {option.ko}<span>{option.zh}</span>
+                          </button>
+                        ))}
+                      </div>
+                    );
+                    if (choice && s.variables.ep01Scene25FinalSpoken !== true &&
+                        Number(s.variables.ep01Scene25ReplyDelivered ?? 0) ===
+                        (route === "C" && choice === 3 ? 6 : 5)) return (
+                      <button type="button" className="ep01-call-final" onClick={() => update(speakScene25Final(runtimeRef.current))}>
+                        {scene25Data.final.ko}<span>{scene25Data.final.zh}</span>
+                      </button>
+                    );
+                    return null;
+                  })()}
+                </div>
+              ) : null}
               <div className="incoming-actions">
                 <button
                   className="decline-call"
                   onClick={() => {
                     const call = runtimeRef.current.incomingCall;
                     if (call?.target === "ep01-scene25" && call.status === "ringing") { update(rejectScene25Incoming(runtimeRef.current)); return; }
+                    if (call?.target === "ep01-scene25") return;
                     if (call)
                       update(
                         dispatch(
