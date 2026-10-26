@@ -52,5 +52,12 @@ test("My Phone browser smoke: lock screen and home screen", async ({ page }) => 
   await page.getByRole("button", { name: "返回聊天列表" }).click();
   await page.locator(".contact-row").filter({ hasText: "쩡쩡❤️" }).click();
   await expect(page.locator(".my-phone-message-block .outgoing").filter({ hasText: "오빠 지금 어디야?" })).toHaveCount(1);
-  expect(errors).toEqual([]);
+  await expect(page.getByRole("button", { name: "选择回复内容" })).toHaveCount(0);
+  await page.waitForTimeout(2100);
+  await expect(page.getByRole("button", { name: "选择回复内容" })).toBeVisible();
+  await page.getByRole("button", { name: "选择回复内容" }).click();
+  await page.getByRole("group", { name: "选择回复" }).getByRole("button").first().click();
+  await page.getByRole("button", { name: "发送消息" }).click();
+  await expect(page.locator(".my-phone-message-block .outgoing").filter({ hasText: "왜 숙소라고 했어?" })).toHaveCount(1);
+    expect(errors).toEqual([]);
 });
