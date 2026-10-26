@@ -15,6 +15,6 @@ export function sendScene21Choice(runtime: Runtime, target: string): Runtime {
   if (!scene21Choices(runtime).some((choice) => choice.target === target)) return runtime;
   return { ...runtime, variables: {
     ...runtime.variables,
-    ...(target === "ep01-scene21-first" ? { ep01Scene21FirstSent: true } : { ep01Scene21SecondSent: true }),
+    ...(target === "ep01-scene21-first" ? { ep01Scene21FirstSent: true } : { ep01Scene21SecondSent: true, ep01Scene22StartedAt: runtime.elapsedMs ?? 0 }),
   } };
 }
