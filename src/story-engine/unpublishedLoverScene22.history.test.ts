@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { initialRuntime, makeItem, type Work } from "../schema";
+import { initialRuntime, makeItem, type Runtime, type Work } from "../schema";
 import scene22 from "../../stories/unpublished-lover/data/scene22.json";
 import { advanceScene22, scene22AllRead, markScene22ListReturn, markScene23ManualOpen } from "./unpublishedLoverScene22";
 
@@ -8,7 +8,7 @@ const work = { id: "unpublished-lover-ep01", updatedAt: 1, phone: { date: "2026-
 describe("scene 22 existing chat history", () => {
   it("keeps older Junghwan messages without blocking the manual scene 23 gate", () => {
     const old = makeItem({ title: "苏庭焕", sender: "苏庭焕", body: "old", read: false, meta: { conversationId: "chat-junghwan" } });
-    let state = { ...initialRuntime(work), elapsedMs: 3000, messages: { kakao: [old] }, variables: { ep01Scene21SecondSent: true, ep01Scene22StartedAt: 0 } };
+    let state: Runtime = { ...initialRuntime(work), elapsedMs: 3000, messages: { kakao: [old] }, variables: { ep01Scene21SecondSent: true, ep01Scene22StartedAt: 0 } };
     for (let i = 0; i < scene22.messages.length; i++) {
       state = advanceScene22({ ...state, elapsedMs: 3000 + i * scene22.typingBeforeEachMs });
     }
