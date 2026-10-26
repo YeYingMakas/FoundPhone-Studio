@@ -3,14 +3,15 @@
   "id": "iphone16-pro-max",
   "title": "iPhone16 pro Max",
   "description": "iPhone16 pro Max 互动手机模拟器（剧情待配置）",
-  "revision": 1,
+  "revision": 2,
   "phone": {
     "owner": "机主",
     "date": "2026-10-25",
     "time": "09:41",
     "battery": 94,
     "network": "5G",
-    "wallpaper": "apple-wwdc26"
+    "wallpaper": "iphone16-custom",
+    "passcode": "040928"
   },
   "installedApps": [
     "appstore",
