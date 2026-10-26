@@ -1,3 +1,4 @@
+import { advanceScene14Call, rejectScene14Call, answerScene14Call, scene14CallChoices, sendScene14CallChoice, advanceScene14Replies } from "./story-engine/ep01Scene14Call";
 import { scene12Choices, sendScene12Choice, advanceScene12 } from "./story-engine/ep01Scene12";
 import { scene13Choices, sendScene13Choice, advanceScene13 } from "./story-engine/ep01Scene13";
 import { ep01EarlyCallOpening, ep01EarlyCallChoices, sendEp01EarlyCallChoice, advanceEp01EarlyCallAftermath } from "./story-engine/ep01EarlyCall";
@@ -277,7 +278,7 @@ function PhoneRuntime({
       // The EP01 clock and incoming messages must not advance behind player setup.
       if (work.id === "unpublished-lover-ep01" && previous.variables.ep01PlayerSetupDone !== true) return;
       const advanced = advance(work, previous, work.id === "unpublished-lover-ep01" ? 200 : 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceScene13(advanceScene12(advanceEp01EarlyCallAftermath(advanceScene21OpeningReplies(advanceScene20(advanceScene19(advanceScene18(advanceEp01Scene17(advanceScene15And16(advanceEp01FirstCallRetry(advanceEp01FirstCall(advanceEp01SecondChoice(advanceEp01OpeningChoice(advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))))))))))))))))))))))) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceScene14Replies(advanceScene14Call(advanceScene13(advanceScene12(advanceEp01EarlyCallAftermath(advanceScene21OpeningReplies(advanceScene20(advanceScene19(advanceScene18(advanceEp01Scene17(advanceScene15And16(advanceEp01FirstCallRetry(advanceEp01FirstCall(advanceEp01SecondChoice(advanceEp01OpeningChoice(advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))))))))))))))))))))))))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -461,6 +462,35 @@ function PhoneRuntime({
               <div>
                 <button type="button" onClick={() => update(answerEp01FirstCall(runtimeRef.current))}>接听</button>
                 <button type="button" onClick={() => update(rejectEp01FirstCall(runtimeRef.current))}>挂断</button>
+              </div>
+            )}
+          </section>
+        </div>
+      )}
+      {work.id === "unpublished-lover-ep01" && (s.variables.ep01Scene14Ringing === true || s.variables.ep01Scene14Answered === true) && (
+        <div className="ep01-ending-overlay" role="dialog" aria-modal="true" aria-label="场景14 朴炡禹深夜来电">
+          <section className="ep01-ending-card">
+            <small>KakaoTalk · {s.variables.ep01Scene14Answered === true ? "通话中" : "语音来电"}</small>
+            <h2>쩡쩡❤️</h2>
+            {s.variables.ep01Scene14Answered === true ? (
+              <div>
+                {ep01CallOpening.map((line,i) => <p key={"scene14-opening-"+i}>{line.ko} — {line.zh}</p>)}
+                {scene14CallChoices(s).map(choice => <button type="button" key={choice.target} onClick={() => update(sendScene14CallChoice(runtimeRef.current,choice.target))}>{choice.label}</button>)}
+                {ep01CallBranches.filter(b=>b.id===s.variables.ep01Scene14Branch).map(b=>(
+                  <div key={b.id}>
+                    <p>{b.player.ko} — {b.player.zh}</p>
+                    {b.replies.slice(0,Number(s.variables.ep01Scene14Delivered??0)).map((line,i)=><p key={"scene14-reply-"+i}>{line.ko} — {line.zh}</p>)}
+                  </div>
+                ))}
+                {s.variables.ep01Scene14RepliesFinished===true && s.variables.ep01Scene15ReplySent!==true && (
+                  <button type="button" onClick={()=>update(chooseScene15Reply(runtimeRef.current))}>{scene15Reply.ko} — {scene15Reply.zh}</button>
+                )}
+                {s.variables.ep01Scene15ReplySent===true && <p>{scene15Reply.ko} — {scene15Reply.zh}</p>}
+              </div>
+            ) : (
+              <div>
+                <button type="button" onClick={()=>update(answerScene14Call(runtimeRef.current))}>接听</button>
+                <button type="button" onClick={()=>update(rejectScene14Call(runtimeRef.current))}>挂断</button>
               </div>
             )}
           </section>
