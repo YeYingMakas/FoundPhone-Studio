@@ -1152,7 +1152,7 @@ function AppContent({
     </div>
   ) : null;
   if (work.id === "unpublished-lover-ep01" && app.id === "kakao" && !creator) {
-    const conversations = [...new Set(shown.map((item) => item.title))];
+    const conversations = [...new Set(["쩡쩡❤️", "闺蜜", "苏庭焕", "朴志焄", "尹材赫", ...shown.map((item) => item.title))];
     const threadItems = shown.filter((item) => item.title === thread);
     const openThread = (title: string) => {
       setThread(title);
@@ -1211,8 +1211,8 @@ function AppContent({
                     ) : null}
                     <span>{title.slice(0, 1)}</span>
                   </span>
-                  <span className="ep01-kakao-contact-body"><strong>{title}</strong><small>{last.body.split("\n")[0]}</small></span>
-                  <span className="ep01-kakao-contact-side"><small>{last.time.slice(-5)}</small>{unread > 0 && <b>{unread > 99 ? "99+" : unread}</b>}</span>
+                  <span className="ep01-kakao-contact-body"><strong>{title}</strong><small>{last?.body.split("\n")[0] ?? "暂无消息"}</small></span>
+                  <span className="ep01-kakao-contact-side"><small>{last?.time.slice(-5) ?? ""}</small>{unread > 0 && <b>{unread > 99 ? "99+" : unread}</b>}</span>
                 </button>
               );
             })}
