@@ -23,5 +23,15 @@ test("My Phone browser smoke: lock screen and home screen", async ({ page }) => 
     await page.getByRole("button", { name: "密码键" + digit }).click();
   }
   await expect(page.locator(".device-lock")).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "打开KakaoTalk", exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "打开KakaoTalk", exact: true }).click();
+  await expect(page.locator(".app-screen:not([inert])")).toBeVisible();
+  await page.getByRole("button", { name: "返回桌面", exact: true }).click();
+  await expect(page.getByRole("button", { name: "打开Instagram", exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "打开Instagram", exact: true }).click();
+  await expect(page.locator(".myphone-instagram")).toBeVisible();
+  await page.getByRole("button", { name: "返回桌面", exact: true }).click();
+  await page.getByRole("button", { name: "打开X", exact: true }).click();
+  await expect(page.locator(".myphone-x")).toBeVisible();
   expect(errors).toEqual([]);
 });
