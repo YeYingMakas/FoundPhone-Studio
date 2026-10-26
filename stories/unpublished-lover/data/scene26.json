@@ -1,0 +1,43 @@
+{
+  "scene": 26,
+  "status": "approved",
+  "trigger": {
+    "event": "scene25_call_ended",
+    "delayMs": 2000
+  },
+  "target": "kakao:friend",
+  "messages": [
+    {
+      "id": "friend-1",
+      "ko": "야!!!!!!!!",
+      "zh": "呀！！！！！！！！"
+    },
+    {
+      "id": "friend-2",
+      "ko": "박정우 미쳤어????",
+      "zh": "朴炡禹疯了吗？？？？"
+    },
+    {
+      "id": "friend-3",
+      "ko": "아니 갑자기 연애 공개를 왜 해????",
+      "zh": "不是，他怎么突然公开恋爱了？？？？"
+    },
+    {
+      "id": "friend-4",
+      "ko": "너네 무슨 얘기 했는데???",
+      "zh": "你们到底聊了什么？？？"
+    },
+    {
+      "id": "friend-5",
+      "ko": "정우가 뭐래???",
+      "zh": "炡禹跟你说什么了？？？"
+    },
+    {
+      "id": "friend-6",
+      "ko": "아 됐고 일단 트위터부터 봐 빨리!!!!",
+      "zh": "啊算了，你先赶紧去看推特！！！！"
+    }
+  ],
+  "next": "player_manually_opens_x",
+  "noPlayerChoices": true
+}
