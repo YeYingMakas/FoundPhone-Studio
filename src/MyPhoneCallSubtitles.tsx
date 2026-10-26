@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const FIRST: [string, string][] = [
   ["자기야... 여보세요?ㅠㅠ", "亲爱的……喂？ㅠㅠ"],
@@ -19,13 +19,17 @@ const SECOND: [string, string][] = [
 export function MyPhoneCallSubtitles({ second }: { second: boolean }) {
   const lines = second ? SECOND : FIRST;
   const [shown, setShown] = useState(0);
+  const transcriptRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (transcriptRef.current) transcriptRef.current.scrollTop = transcriptRef.current.scrollHeight;
+  }, [shown]);
   useEffect(() => {
     setShown(0);
     const timer = window.setInterval(() => setShown((v) => Math.min(lines.length, v + 1)), 2200);
     return () => window.clearInterval(timer);
   }, [second, lines.length]);
   return (
-    <div aria-live="polite" style={{ maxHeight: 210, overflowY: "auto", padding: "12px 20px", width: "100%", textAlign: "left" }}>
+    <div ref={transcriptRef} role="log" aria-live="polite" aria-label="通话实时字幕" style={{ maxHeight: 210, overflowY: "auto", padding: "12px 20px", width: "100%", textAlign: "left" }}>
       {shown === 0 && <p style={{ opacity: .7 }}>연결 중... · 正在接通……</p>}
       {lines.slice(0, shown).map(([ko, zh], i) => (
         <p key={i} style={{ marginBottom: 10, lineHeight: 1.45 }}>
