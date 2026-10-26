@@ -64,6 +64,7 @@ import {
 } from "./schema";
 import { dispatch, choose, visible, advance } from "./engine";
 import { db } from "./persistence";
+import { readStoryMessage } from "./story-engine/unpublishedLoverRuntime";
 export function AppIcon({
   id,
   name,
@@ -452,7 +453,14 @@ function PhoneRuntime({
                   ]}
                   creator={creator}
                   state={s}
-                  onRead={(id) => event("read", id)}
+                  onRead={(id) => {
+                    if (work.id === "unpublished-lover-ep01") {
+                      const next = dispatch(work, runtimeRef.current, "read", id);
+                      update(readStoryMessage(next, app, id));
+                    } else {
+                      event("read", id);
+                    }
+                  }}
                   onEdit={(item) => onEdit?.(app, item)}
                   onAdd={() => onAdd?.(app)}
                   onBack={() => setApp("")}
