@@ -15,7 +15,7 @@ describe("EP01 scene17 three independent contacts", () => {
     expect(items.filter(x => x.title === "尹材赫")).toHaveLength(4);
     expect(items.filter(x => x.title === "朴志焄")).toHaveLength(4);
     expect(items.filter(x => x.title === "苏庭焕")).toHaveLength(4);
-    expect(items[0].body).toContain("安安 누나");
+    expect(items[0].body).toContain("安安 괜찮아");
     expect(items.find(x => x.title === "苏庭焕")?.body).toContain("安安 누나");
     expect(items.every(x => !x.read && x.body.includes("\n"))).toBe(true);
     expect(s.variables.ep01Scene17Finished).toBe(true);
