@@ -1,3 +1,4 @@
+import { ep01EarlyCallOpening, ep01EarlyCallChoices, sendEp01EarlyCallChoice, advanceEp01EarlyCallAftermath } from "./story-engine/ep01EarlyCall";
 import { scene21OpeningChoices, sendScene21Opening, advanceScene21OpeningReplies } from "./story-engine/ep01Scene21Opening";
 import { scene20Choices, sendScene20Choice, advanceScene20 } from "./story-engine/ep01Scene20";
 import { scene19Choices, sendScene19Choice, advanceScene19 } from "./story-engine/ep01Scene19";
@@ -274,7 +275,7 @@ function PhoneRuntime({
       // The EP01 clock and incoming messages must not advance behind player setup.
       if (work.id === "unpublished-lover-ep01" && previous.variables.ep01PlayerSetupDone !== true) return;
       const advanced = advance(work, previous, work.id === "unpublished-lover-ep01" ? 200 : 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceScene21OpeningReplies(advanceScene20(advanceScene19(advanceScene18(advanceEp01Scene17(advanceScene15And16(advanceEp01FirstCallRetry(advanceEp01FirstCall(advanceEp01SecondChoice(advanceEp01OpeningChoice(advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced))))))))))))))))))))) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceEp01EarlyCallAftermath(advanceScene21OpeningReplies(advanceScene20(advanceScene19(advanceScene18(advanceEp01Scene17(advanceScene15And16(advanceEp01FirstCallRetry(advanceEp01FirstCall(advanceEp01SecondChoice(advanceEp01OpeningChoice(advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))))))))))))))))))))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -444,30 +445,15 @@ function PhoneRuntime({
             <h2>쩡쩡❤️</h2>
             {s.variables.ep01FirstCallAnswered === true ? (
               <div>
-                {ep01CallOpening.map((line, i) => (
+                {ep01EarlyCallOpening.map((line, i) => (
                   <p key={"call-opening-" + i}>{line.ko} — {line.zh}</p>
                 ))}
-                {ep01CallChoices(s).map((choice) => (
-                  <button type="button" key={choice.target} onClick={() => update(chooseEp01CallBranch(runtimeRef.current, choice.target))}>
+                {ep01EarlyCallChoices(s).map((choice) => (
+                  <button type="button" key={choice.target} onClick={() => update(sendEp01EarlyCallChoice(runtimeRef.current, choice.target))}>
                     {choice.label}
                   </button>
                 ))}
-                {ep01CallBranches.filter((branch) => branch.id === s.variables.ep01CallBranch).map((branch) => (
-                  <div key={branch.id}>
-                    <p>{branch.player.ko} — {branch.player.zh}</p>
-                    {branch.replies.map((line, i) => (
-                      <p key={branch.id + "-" + i}>{line.ko} — {line.zh}</p>
-                    ))}
-                  </div>
-                ))}
-                {s.variables.ep01CallChoiceSent === true && s.variables.ep01Scene15ReplySent !== true && (
-                  <button type="button" onClick={() => update(chooseScene15Reply(runtimeRef.current))}>
-                    {scene15Reply.ko} — {scene15Reply.zh}
-                  </button>
-                )}
-                {s.variables.ep01Scene15ReplySent === true && (
-                  <p>{scene15Reply.ko} — {scene15Reply.zh}</p>
-                )}
+
               </div>
             ) : (
               <div>
