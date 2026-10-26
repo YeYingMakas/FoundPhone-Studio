@@ -3,7 +3,7 @@
   "id": "my-phone-unlisted-love",
   "title": "My Phone",
   "description": "My Phone ·《未公开恋人》互动手机故事。KakaoTalk 手动回复、绯闻、两次来电、公开声明、Instagram 私信与 ENDING 01。开发版不包含未经授权的真人照片。",
-  "revision": 22,
+  "revision": 23,
   "phone": {
     "owner": "안안",
     "date": "2026-10-23",
@@ -948,9 +948,9 @@
       {
         "id": "ig-dm-037",
         "title": "DM 요청 37",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "왜 이제야 공개한 거야? 솔직히 좀 놀랐어.\n为什么现在才公开？说真的，我有点震惊。",
         "time": "23:26",
-        "sender": "@fan_037",
+        "sender": "@nightletter_037",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -958,9 +958,9 @@
       {
         "id": "ig-dm-038",
         "title": "DM 요청 38",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "정우가 직접 올린 글 봤어. 솔직히 좀 놀랐어.\n我看到了炡禹亲自发的声明。说真的，我有点震惊。",
         "time": "23:26",
-        "sender": "@fan_038",
+        "sender": "@bluewave_038",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -968,9 +968,9 @@
       {
         "id": "ig-dm-039",
         "title": "DM 요청 39",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "두 사람이 행복하면 좋겠어. 솔직히 좀 놀랐어.\n希望你们两个人幸福。说真的，我有点震惊。",
         "time": "23:26",
-        "sender": "@fan_039",
+        "sender": "@quietroom_039",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -978,9 +978,9 @@
       {
         "id": "ig-dm-040",
         "title": "DM 요청 40",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "아직도 믿기지가 않아. 솔직히 좀 놀랐어.\n我到现在都不敢相信。说真的，我有点震惊。",
         "time": "23:26",
-        "sender": "@fan_040",
+        "sender": "@mintday_040",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -988,9 +988,9 @@
       {
         "id": "ig-dm-041",
         "title": "DM 요청 41",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "3년 동안 비밀로 한 이유가 뭐야? 솔직히 좀 놀랐어.\n为什么要隐瞒三年？说真的，我有点震惊。",
         "time": "23:26",
-        "sender": "@fan_041",
+        "sender": "@honeybee_041",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -998,9 +998,9 @@
       {
         "id": "ig-dm-042",
         "title": "DM 요청 42",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "악플은 너무 신경 쓰지 마. 솔직히 좀 놀랐어.\n别太在意恶评。说真的，我有点震惊。",
         "time": "23:26",
-        "sender": "@fan_042",
+        "sender": "@rainyday_042",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1008,9 +1008,9 @@
       {
         "id": "ig-dm-043",
         "title": "DM 요청 43",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "팬으로서 마음이 복잡해. 솔직히 좀 놀랐어.\n作为粉丝心情很复杂。说真的，我有点震惊。",
         "time": "23:26",
-        "sender": "@fan_043",
+        "sender": "@silverstar_043",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1018,9 +1018,9 @@
       {
         "id": "ig-dm-044",
         "title": "DM 요청 44",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "기사 보고 바로 들어왔어. 솔직히 좀 놀랐어.\n我看完新闻就点进来了。说真的，我有点震惊。",
         "time": "23:26",
-        "sender": "@fan_044",
+        "sender": "@citylight_044",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1028,9 +1028,9 @@
       {
         "id": "ig-dm-045",
         "title": "DM 요청 45",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "정우가 너를 많이 좋아하나 봐. 솔직히 좀 놀랐어.\n看来炡禹真的很喜欢你。说真的，我有点震惊。",
         "time": "23:26",
-        "sender": "@fan_045",
+        "sender": "@cloudnote_045",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1038,9 +1038,9 @@
       {
         "id": "ig-dm-046",
         "title": "DM 요청 46",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "오늘은 SNS 쉬는 게 어때? 솔직히 좀 놀랐어.\n今天要不要先休息一下别看社交平台？说真的，我有点震惊。",
         "time": "23:26",
-        "sender": "@fan_046",
+        "sender": "@peachmoon_046",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1048,9 +1048,9 @@
       {
         "id": "ig-dm-047",
         "title": "DM 요청 47",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "정말 본인 계정 맞아? 솔직히 좀 놀랐어.\n这真的是你本人的账号吗？说真的，我有点震惊。",
         "time": "23:26",
-        "sender": "@fan_047",
+        "sender": "@winterfilm_047",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1058,9 +1058,9 @@
       {
         "id": "ig-dm-048",
         "title": "DM 요청 48",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "어떤 말부터 해야 할지 모르겠다. 솔직히 좀 놀랐어.\n我都不知道该从何说起。说真的，我有点震惊。",
         "time": "23:26",
-        "sender": "@fan_048",
+        "sender": "@softsignal_048",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1068,9 +1068,9 @@
       {
         "id": "ig-dm-049",
         "title": "DM 요청 49",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "왜 이제야 공개한 거야? 답장 안 해도 괜찮아.\n为什么现在才公开？不用回复我也没关系。",
         "time": "23:27",
-        "sender": "@fan_049",
+        "sender": "@nightletter_049",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1078,9 +1078,9 @@
       {
         "id": "ig-dm-050",
         "title": "DM 요청 50",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "정우가 직접 올린 글 봤어. 답장 안 해도 괜찮아.\n我看到了炡禹亲自发的声明。不用回复我也没关系。",
         "time": "23:27",
-        "sender": "@fan_050",
+        "sender": "@bluewave_050",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1088,9 +1088,9 @@
       {
         "id": "ig-dm-051",
         "title": "DM 요청 51",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "두 사람이 행복하면 좋겠어. 답장 안 해도 괜찮아.\n希望你们两个人幸福。不用回复我也没关系。",
         "time": "23:27",
-        "sender": "@fan_051",
+        "sender": "@quietroom_051",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1098,9 +1098,9 @@
       {
         "id": "ig-dm-052",
         "title": "DM 요청 52",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "아직도 믿기지가 않아. 답장 안 해도 괜찮아.\n我到现在都不敢相信。不用回复我也没关系。",
         "time": "23:27",
-        "sender": "@fan_052",
+        "sender": "@mintday_052",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1108,9 +1108,9 @@
       {
         "id": "ig-dm-053",
         "title": "DM 요청 53",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "3년 동안 비밀로 한 이유가 뭐야? 답장 안 해도 괜찮아.\n为什么要隐瞒三年？不用回复我也没关系。",
         "time": "23:27",
-        "sender": "@fan_053",
+        "sender": "@honeybee_053",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1118,9 +1118,9 @@
       {
         "id": "ig-dm-054",
         "title": "DM 요청 54",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "악플은 너무 신경 쓰지 마. 답장 안 해도 괜찮아.\n别太在意恶评。不用回复我也没关系。",
         "time": "23:27",
-        "sender": "@fan_054",
+        "sender": "@rainyday_054",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1128,9 +1128,9 @@
       {
         "id": "ig-dm-055",
         "title": "DM 요청 55",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "팬으로서 마음이 복잡해. 답장 안 해도 괜찮아.\n作为粉丝心情很复杂。不用回复我也没关系。",
         "time": "23:27",
-        "sender": "@fan_055",
+        "sender": "@silverstar_055",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1138,9 +1138,9 @@
       {
         "id": "ig-dm-056",
         "title": "DM 요청 56",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "기사 보고 바로 들어왔어. 답장 안 해도 괜찮아.\n我看完新闻就点进来了。不用回复我也没关系。",
         "time": "23:27",
-        "sender": "@fan_056",
+        "sender": "@citylight_056",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1148,9 +1148,9 @@
       {
         "id": "ig-dm-057",
         "title": "DM 요청 57",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "정우가 너를 많이 좋아하나 봐. 답장 안 해도 괜찮아.\n看来炡禹真的很喜欢你。不用回复我也没关系。",
         "time": "23:27",
-        "sender": "@fan_057",
+        "sender": "@cloudnote_057",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1158,9 +1158,9 @@
       {
         "id": "ig-dm-058",
         "title": "DM 요청 58",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "오늘은 SNS 쉬는 게 어때? 답장 안 해도 괜찮아.\n今天要不要先休息一下别看社交平台？不用回复我也没关系。",
         "time": "23:27",
-        "sender": "@fan_058",
+        "sender": "@peachmoon_058",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1168,9 +1168,9 @@
       {
         "id": "ig-dm-059",
         "title": "DM 요청 59",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "정말 본인 계정 맞아? 답장 안 해도 괜찮아.\n这真的是你本人的账号吗？不用回复我也没关系。",
         "time": "23:27",
-        "sender": "@fan_059",
+        "sender": "@winterfilm_059",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1178,9 +1178,9 @@
       {
         "id": "ig-dm-060",
         "title": "DM 요청 60",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "어떤 말부터 해야 할지 모르겠다. 답장 안 해도 괜찮아.\n我都不知道该从何说起。不用回复我也没关系。",
         "time": "23:27",
-        "sender": "@fan_060",
+        "sender": "@softsignal_060",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1188,9 +1188,9 @@
       {
         "id": "ig-dm-061",
         "title": "DM 요청 61",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "왜 이제야 공개한 거야? 앞으로 어떻게 될지 궁금해.\n为什么现在才公开？很好奇以后会怎么样。",
         "time": "23:27",
-        "sender": "@fan_061",
+        "sender": "@nightletter_061",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1198,9 +1198,9 @@
       {
         "id": "ig-dm-062",
         "title": "DM 요청 62",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "정우가 직접 올린 글 봤어. 앞으로 어떻게 될지 궁금해.\n我看到了炡禹亲自发的声明。很好奇以后会怎么样。",
         "time": "23:27",
-        "sender": "@fan_062",
+        "sender": "@bluewave_062",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1208,9 +1208,9 @@
       {
         "id": "ig-dm-063",
         "title": "DM 요청 63",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "두 사람이 행복하면 좋겠어. 앞으로 어떻게 될지 궁금해.\n希望你们两个人幸福。很好奇以后会怎么样。",
         "time": "23:27",
-        "sender": "@fan_063",
+        "sender": "@quietroom_063",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1218,9 +1218,9 @@
       {
         "id": "ig-dm-064",
         "title": "DM 요청 64",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "아직도 믿기지가 않아. 앞으로 어떻게 될지 궁금해.\n我到现在都不敢相信。很好奇以后会怎么样。",
         "time": "23:27",
-        "sender": "@fan_064",
+        "sender": "@mintday_064",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1228,9 +1228,9 @@
       {
         "id": "ig-dm-065",
         "title": "DM 요청 65",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "3년 동안 비밀로 한 이유가 뭐야? 앞으로 어떻게 될지 궁금해.\n为什么要隐瞒三年？很好奇以后会怎么样。",
         "time": "23:27",
-        "sender": "@fan_065",
+        "sender": "@honeybee_065",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1238,9 +1238,9 @@
       {
         "id": "ig-dm-066",
         "title": "DM 요청 66",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "악플은 너무 신경 쓰지 마. 앞으로 어떻게 될지 궁금해.\n别太在意恶评。很好奇以后会怎么样。",
         "time": "23:27",
-        "sender": "@fan_066",
+        "sender": "@rainyday_066",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1248,9 +1248,9 @@
       {
         "id": "ig-dm-067",
         "title": "DM 요청 67",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "팬으로서 마음이 복잡해. 앞으로 어떻게 될지 궁금해.\n作为粉丝心情很复杂。很好奇以后会怎么样。",
         "time": "23:27",
-        "sender": "@fan_067",
+        "sender": "@silverstar_067",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1258,9 +1258,9 @@
       {
         "id": "ig-dm-068",
         "title": "DM 요청 68",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "기사 보고 바로 들어왔어. 앞으로 어떻게 될지 궁금해.\n我看完新闻就点进来了。很好奇以后会怎么样。",
         "time": "23:27",
-        "sender": "@fan_068",
+        "sender": "@citylight_068",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1268,9 +1268,9 @@
       {
         "id": "ig-dm-069",
         "title": "DM 요청 69",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "정우가 너를 많이 좋아하나 봐. 앞으로 어떻게 될지 궁금해.\n看来炡禹真的很喜欢你。很好奇以后会怎么样。",
         "time": "23:27",
-        "sender": "@fan_069",
+        "sender": "@cloudnote_069",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1278,9 +1278,9 @@
       {
         "id": "ig-dm-070",
         "title": "DM 요청 70",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "오늘은 SNS 쉬는 게 어때? 앞으로 어떻게 될지 궁금해.\n今天要不要先休息一下别看社交平台？很好奇以后会怎么样。",
         "time": "23:27",
-        "sender": "@fan_070",
+        "sender": "@peachmoon_070",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1288,9 +1288,9 @@
       {
         "id": "ig-dm-071",
         "title": "DM 요청 71",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "정말 본인 계정 맞아? 앞으로 어떻게 될지 궁금해.\n这真的是你本人的账号吗？很好奇以后会怎么样。",
         "time": "23:27",
-        "sender": "@fan_071",
+        "sender": "@winterfilm_071",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1298,9 +1298,9 @@
       {
         "id": "ig-dm-072",
         "title": "DM 요청 72",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "어떤 말부터 해야 할지 모르겠다. 앞으로 어떻게 될지 궁금해.\n我都不知道该从何说起。很好奇以后会怎么样。",
         "time": "23:27",
-        "sender": "@fan_072",
+        "sender": "@softsignal_072",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1308,9 +1308,9 @@
       {
         "id": "ig-dm-073",
         "title": "DM 요청 73",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "왜 이제야 공개한 거야? 너무 상처받지 않았으면 좋겠어.\n为什么现在才公开？希望你不要受到太多伤害。",
         "time": "23:28",
-        "sender": "@fan_073",
+        "sender": "@nightletter_073",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1318,9 +1318,9 @@
       {
         "id": "ig-dm-074",
         "title": "DM 요청 74",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "정우가 직접 올린 글 봤어. 너무 상처받지 않았으면 좋겠어.\n我看到了炡禹亲自发的声明。希望你不要受到太多伤害。",
         "time": "23:28",
-        "sender": "@fan_074",
+        "sender": "@bluewave_074",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1328,9 +1328,9 @@
       {
         "id": "ig-dm-075",
         "title": "DM 요청 75",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "두 사람이 행복하면 좋겠어. 너무 상처받지 않았으면 좋겠어.\n希望你们两个人幸福。希望你不要受到太多伤害。",
         "time": "23:28",
-        "sender": "@fan_075",
+        "sender": "@quietroom_075",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1338,9 +1338,9 @@
       {
         "id": "ig-dm-076",
         "title": "DM 요청 76",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "아직도 믿기지가 않아. 너무 상처받지 않았으면 좋겠어.\n我到现在都不敢相信。希望你不要受到太多伤害。",
         "time": "23:28",
-        "sender": "@fan_076",
+        "sender": "@mintday_076",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1348,9 +1348,9 @@
       {
         "id": "ig-dm-077",
         "title": "DM 요청 77",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "3년 동안 비밀로 한 이유가 뭐야? 너무 상처받지 않았으면 좋겠어.\n为什么要隐瞒三年？希望你不要受到太多伤害。",
         "time": "23:28",
-        "sender": "@fan_077",
+        "sender": "@honeybee_077",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1358,9 +1358,9 @@
       {
         "id": "ig-dm-078",
         "title": "DM 요청 78",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "악플은 너무 신경 쓰지 마. 너무 상처받지 않았으면 좋겠어.\n别太在意恶评。希望你不要受到太多伤害。",
         "time": "23:28",
-        "sender": "@fan_078",
+        "sender": "@rainyday_078",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1368,9 +1368,9 @@
       {
         "id": "ig-dm-079",
         "title": "DM 요청 79",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "팬으로서 마음이 복잡해. 너무 상처받지 않았으면 좋겠어.\n作为粉丝心情很复杂。希望你不要受到太多伤害。",
         "time": "23:28",
-        "sender": "@fan_079",
+        "sender": "@silverstar_079",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1378,9 +1378,9 @@
       {
         "id": "ig-dm-080",
         "title": "DM 요청 80",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "기사 보고 바로 들어왔어. 너무 상처받지 않았으면 좋겠어.\n我看完新闻就点进来了。希望你不要受到太多伤害。",
         "time": "23:28",
-        "sender": "@fan_080",
+        "sender": "@citylight_080",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1388,9 +1388,9 @@
       {
         "id": "ig-dm-081",
         "title": "DM 요청 81",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "정우가 너를 많이 좋아하나 봐. 너무 상처받지 않았으면 좋겠어.\n看来炡禹真的很喜欢你。希望你不要受到太多伤害。",
         "time": "23:28",
-        "sender": "@fan_081",
+        "sender": "@cloudnote_081",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1398,9 +1398,9 @@
       {
         "id": "ig-dm-082",
         "title": "DM 요청 82",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "오늘은 SNS 쉬는 게 어때? 너무 상처받지 않았으면 좋겠어.\n今天要不要先休息一下别看社交平台？希望你不要受到太多伤害。",
         "time": "23:28",
-        "sender": "@fan_082",
+        "sender": "@peachmoon_082",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1408,9 +1408,9 @@
       {
         "id": "ig-dm-083",
         "title": "DM 요청 83",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "정말 본인 계정 맞아? 너무 상처받지 않았으면 좋겠어.\n这真的是你本人的账号吗？希望你不要受到太多伤害。",
         "time": "23:28",
-        "sender": "@fan_083",
+        "sender": "@winterfilm_083",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1418,9 +1418,9 @@
       {
         "id": "ig-dm-084",
         "title": "DM 요청 84",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "어떤 말부터 해야 할지 모르겠다. 너무 상처받지 않았으면 좋겠어.\n我都不知道该从何说起。希望你不要受到太多伤害。",
         "time": "23:28",
-        "sender": "@fan_084",
+        "sender": "@softsignal_084",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1428,9 +1428,9 @@
       {
         "id": "ig-dm-085",
         "title": "DM 요청 85",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "왜 이제야 공개한 거야? 이런 소식은 처음이라 당황스럽네.\n为什么现在才公开？第一次看到这种消息，有点不知所措。",
         "time": "23:28",
-        "sender": "@fan_085",
+        "sender": "@nightletter_085",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1438,9 +1438,9 @@
       {
         "id": "ig-dm-086",
         "title": "DM 요청 86",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "정우가 직접 올린 글 봤어. 이런 소식은 처음이라 당황스럽네.\n我看到了炡禹亲自发的声明。第一次看到这种消息，有点不知所措。",
         "time": "23:28",
-        "sender": "@fan_086",
+        "sender": "@bluewave_086",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1448,9 +1448,9 @@
       {
         "id": "ig-dm-087",
         "title": "DM 요청 87",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "두 사람이 행복하면 좋겠어. 이런 소식은 처음이라 당황스럽네.\n希望你们两个人幸福。第一次看到这种消息，有点不知所措。",
         "time": "23:28",
-        "sender": "@fan_087",
+        "sender": "@quietroom_087",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1458,9 +1458,9 @@
       {
         "id": "ig-dm-088",
         "title": "DM 요청 88",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "아직도 믿기지가 않아. 이런 소식은 처음이라 당황스럽네.\n我到现在都不敢相信。第一次看到这种消息，有点不知所措。",
         "time": "23:28",
-        "sender": "@fan_088",
+        "sender": "@mintday_088",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1468,9 +1468,9 @@
       {
         "id": "ig-dm-089",
         "title": "DM 요청 89",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "3년 동안 비밀로 한 이유가 뭐야? 이런 소식은 처음이라 당황스럽네.\n为什么要隐瞒三年？第一次看到这种消息，有点不知所措。",
         "time": "23:28",
-        "sender": "@fan_089",
+        "sender": "@honeybee_089",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1478,9 +1478,9 @@
       {
         "id": "ig-dm-090",
         "title": "DM 요청 90",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "악플은 너무 신경 쓰지 마. 이런 소식은 처음이라 당황스럽네.\n别太在意恶评。第一次看到这种消息，有点不知所措。",
         "time": "23:28",
-        "sender": "@fan_090",
+        "sender": "@rainyday_090",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1488,9 +1488,9 @@
       {
         "id": "ig-dm-091",
         "title": "DM 요청 91",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "팬으로서 마음이 복잡해. 이런 소식은 처음이라 당황스럽네.\n作为粉丝心情很复杂。第一次看到这种消息，有点不知所措。",
         "time": "23:28",
-        "sender": "@fan_091",
+        "sender": "@silverstar_091",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1498,9 +1498,9 @@
       {
         "id": "ig-dm-092",
         "title": "DM 요청 92",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "기사 보고 바로 들어왔어. 이런 소식은 처음이라 당황스럽네.\n我看完新闻就点进来了。第一次看到这种消息，有点不知所措。",
         "time": "23:28",
-        "sender": "@fan_092",
+        "sender": "@citylight_092",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1508,9 +1508,9 @@
       {
         "id": "ig-dm-093",
         "title": "DM 요청 93",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "정우가 너를 많이 좋아하나 봐. 이런 소식은 처음이라 당황스럽네.\n看来炡禹真的很喜欢你。第一次看到这种消息，有点不知所措。",
         "time": "23:28",
-        "sender": "@fan_093",
+        "sender": "@cloudnote_093",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1518,9 +1518,9 @@
       {
         "id": "ig-dm-094",
         "title": "DM 요청 94",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "오늘은 SNS 쉬는 게 어때? 이런 소식은 처음이라 당황스럽네.\n今天要不要先休息一下别看社交平台？第一次看到这种消息，有点不知所措。",
         "time": "23:28",
-        "sender": "@fan_094",
+        "sender": "@peachmoon_094",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1528,9 +1528,9 @@
       {
         "id": "ig-dm-095",
         "title": "DM 요청 95",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "정말 본인 계정 맞아? 이런 소식은 처음이라 당황스럽네.\n这真的是你本人的账号吗？第一次看到这种消息，有点不知所措。",
         "time": "23:28",
-        "sender": "@fan_095",
+        "sender": "@winterfilm_095",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1538,9 +1538,9 @@
       {
         "id": "ig-dm-096",
         "title": "DM 요청 96",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "어떤 말부터 해야 할지 모르겠다. 이런 소식은 처음이라 당황스럽네.\n我都不知道该从何说起。第一次看到这种消息，有点不知所措。",
         "time": "23:28",
-        "sender": "@fan_096",
+        "sender": "@softsignal_096",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1548,9 +1548,9 @@
       {
         "id": "ig-dm-097",
         "title": "DM 요청 97",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "왜 이제야 공개한 거야? 그래도 서로를 존중했으면 해.\n为什么现在才公开？但还是希望大家互相尊重。",
         "time": "23:29",
-        "sender": "@fan_097",
+        "sender": "@nightletter_097",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1558,9 +1558,9 @@
       {
         "id": "ig-dm-098",
         "title": "DM 요청 98",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "정우가 직접 올린 글 봤어. 그래도 서로를 존중했으면 해.\n我看到了炡禹亲自发的声明。但还是希望大家互相尊重。",
         "time": "23:29",
-        "sender": "@fan_098",
+        "sender": "@bluewave_098",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1568,9 +1568,9 @@
       {
         "id": "ig-dm-099",
         "title": "DM 요청 99",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "두 사람이 행복하면 좋겠어. 그래도 서로를 존중했으면 해.\n希望你们两个人幸福。但还是希望大家互相尊重。",
         "time": "23:29",
-        "sender": "@fan_099",
+        "sender": "@quietroom_099",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1578,9 +1578,9 @@
       {
         "id": "ig-dm-100",
         "title": "DM 요청 100",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "아직도 믿기지가 않아. 그래도 서로를 존중했으면 해.\n我到现在都不敢相信。但还是希望大家互相尊重。",
         "time": "23:29",
-        "sender": "@fan_100",
+        "sender": "@mintday_100",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1588,9 +1588,9 @@
       {
         "id": "ig-dm-101",
         "title": "DM 요청 101",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "3년 동안 비밀로 한 이유가 뭐야? 그래도 서로를 존중했으면 해.\n为什么要隐瞒三年？但还是希望大家互相尊重。",
         "time": "23:29",
-        "sender": "@fan_101",
+        "sender": "@honeybee_101",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1598,9 +1598,9 @@
       {
         "id": "ig-dm-102",
         "title": "DM 요청 102",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "악플은 너무 신경 쓰지 마. 그래도 서로를 존중했으면 해.\n别太在意恶评。但还是希望大家互相尊重。",
         "time": "23:29",
-        "sender": "@fan_102",
+        "sender": "@rainyday_102",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1608,9 +1608,9 @@
       {
         "id": "ig-dm-103",
         "title": "DM 요청 103",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "팬으로서 마음이 복잡해. 그래도 서로를 존중했으면 해.\n作为粉丝心情很复杂。但还是希望大家互相尊重。",
         "time": "23:29",
-        "sender": "@fan_103",
+        "sender": "@silverstar_103",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1618,9 +1618,9 @@
       {
         "id": "ig-dm-104",
         "title": "DM 요청 104",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "기사 보고 바로 들어왔어. 그래도 서로를 존중했으면 해.\n我看完新闻就点进来了。但还是希望大家互相尊重。",
         "time": "23:29",
-        "sender": "@fan_104",
+        "sender": "@citylight_104",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1628,9 +1628,9 @@
       {
         "id": "ig-dm-105",
         "title": "DM 요청 105",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "정우가 너를 많이 좋아하나 봐. 그래도 서로를 존중했으면 해.\n看来炡禹真的很喜欢你。但还是希望大家互相尊重。",
         "time": "23:29",
-        "sender": "@fan_105",
+        "sender": "@cloudnote_105",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1638,9 +1638,9 @@
       {
         "id": "ig-dm-106",
         "title": "DM 요청 106",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "오늘은 SNS 쉬는 게 어때? 그래도 서로를 존중했으면 해.\n今天要不要先休息一下别看社交平台？但还是希望大家互相尊重。",
         "time": "23:29",
-        "sender": "@fan_106",
+        "sender": "@peachmoon_106",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1648,9 +1648,9 @@
       {
         "id": "ig-dm-107",
         "title": "DM 요청 107",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "정말 본인 계정 맞아? 그래도 서로를 존중했으면 해.\n这真的是你本人的账号吗？但还是希望大家互相尊重。",
         "time": "23:29",
-        "sender": "@fan_107",
+        "sender": "@winterfilm_107",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1658,9 +1658,9 @@
       {
         "id": "ig-dm-108",
         "title": "DM 요청 108",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "어떤 말부터 해야 할지 모르겠다. 그래도 서로를 존중했으면 해.\n我都不知道该从何说起。但还是希望大家互相尊重。",
         "time": "23:29",
-        "sender": "@fan_108",
+        "sender": "@softsignal_108",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1668,9 +1668,9 @@
       {
         "id": "ig-dm-109",
         "title": "DM 요청 109",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "왜 이제야 공개한 거야? 오늘 밤은 정말 정신없겠다.\n为什么现在才公开？今晚肯定很混乱吧。",
         "time": "23:29",
-        "sender": "@fan_109",
+        "sender": "@nightletter_109",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1678,9 +1678,9 @@
       {
         "id": "ig-dm-110",
         "title": "DM 요청 110",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "정우가 직접 올린 글 봤어. 오늘 밤은 정말 정신없겠다.\n我看到了炡禹亲自发的声明。今晚肯定很混乱吧。",
         "time": "23:29",
-        "sender": "@fan_110",
+        "sender": "@bluewave_110",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1688,9 +1688,9 @@
       {
         "id": "ig-dm-111",
         "title": "DM 요청 111",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "두 사람이 행복하면 좋겠어. 오늘 밤은 정말 정신없겠다.\n希望你们两个人幸福。今晚肯定很混乱吧。",
         "time": "23:29",
-        "sender": "@fan_111",
+        "sender": "@quietroom_111",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1698,9 +1698,9 @@
       {
         "id": "ig-dm-112",
         "title": "DM 요청 112",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "아직도 믿기지가 않아. 오늘 밤은 정말 정신없겠다.\n我到现在都不敢相信。今晚肯定很混乱吧。",
         "time": "23:29",
-        "sender": "@fan_112",
+        "sender": "@mintday_112",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1708,9 +1708,9 @@
       {
         "id": "ig-dm-113",
         "title": "DM 요청 113",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "3년 동안 비밀로 한 이유가 뭐야? 오늘 밤은 정말 정신없겠다.\n为什么要隐瞒三年？今晚肯定很混乱吧。",
         "time": "23:29",
-        "sender": "@fan_113",
+        "sender": "@honeybee_113",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1718,9 +1718,9 @@
       {
         "id": "ig-dm-114",
         "title": "DM 요청 114",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "악플은 너무 신경 쓰지 마. 오늘 밤은 정말 정신없겠다.\n别太在意恶评。今晚肯定很混乱吧。",
         "time": "23:29",
-        "sender": "@fan_114",
+        "sender": "@rainyday_114",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1728,9 +1728,9 @@
       {
         "id": "ig-dm-115",
         "title": "DM 요청 115",
-        "body": "진짜 정우 여자친구야?\n你真的是炡禹女朋友吗？",
+        "body": "팬으로서 마음이 복잡해. 오늘 밤은 정말 정신없겠다.\n作为粉丝心情很复杂。今晚肯定很混乱吧。",
         "time": "23:29",
-        "sender": "@fan_115",
+        "sender": "@silverstar_115",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1738,9 +1738,9 @@
       {
         "id": "ig-dm-116",
         "title": "DM 요청 116",
-        "body": "3년이나 사귀었다고? 대박...\n交往三年了？天哪……",
+        "body": "기사 보고 바로 들어왔어. 오늘 밤은 정말 정신없겠다.\n我看完新闻就点进来了。今晚肯定很混乱吧。",
         "time": "23:29",
-        "sender": "@fan_116",
+        "sender": "@citylight_116",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1748,9 +1748,9 @@
       {
         "id": "ig-dm-117",
         "title": "DM 요청 117",
-        "body": "팬들 마음은 생각 안 해?\n你考虑过粉丝的心情吗？",
+        "body": "정우가 너를 많이 좋아하나 봐. 오늘 밤은 정말 정신없겠다.\n看来炡禹真的很喜欢你。今晚肯定很混乱吧。",
         "time": "23:29",
-        "sender": "@fan_117",
+        "sender": "@cloudnote_117",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1758,9 +1758,9 @@
       {
         "id": "ig-dm-118",
         "title": "DM 요청 118",
-        "body": "정우 행복하게 해 줘...\n请让炡禹幸福……",
+        "body": "오늘은 SNS 쉬는 게 어때? 오늘 밤은 정말 정신없겠다.\n今天要不要先休息一下别看社交平台？今晚肯定很混乱吧。",
         "time": "23:29",
-        "sender": "@fan_118",
+        "sender": "@peachmoon_118",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1768,9 +1768,9 @@
       {
         "id": "ig-dm-119",
         "title": "DM 요청 119",
-        "body": "정우랑 어떻게 만났어요?\n你们怎么认识的？",
+        "body": "정말 본인 계정 맞아? 오늘 밤은 정말 정신없겠다.\n这真的是你本人的账号吗？今晚肯定很混乱吧。",
         "time": "23:29",
-        "sender": "@fan_119",
+        "sender": "@winterfilm_119",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -1778,9 +1778,9 @@
       {
         "id": "ig-dm-120",
         "title": "DM 요청 120",
-        "body": "너 때문에 타임라인 난리 났어\n因为你，时间线都炸了。",
+        "body": "어떤 말부터 해야 할지 모르겠다. 오늘 밤은 정말 정신없겠다.\n我都不知道该从何说起。今晚肯定很混乱吧。",
         "time": "23:29",
-        "sender": "@fan_120",
+        "sender": "@softsignal_120",
         "likes": 0,
         "hidden": true,
         "kind": "text"
@@ -3689,10 +3689,10 @@
     },
     {
       "id": "ul-first-dm",
-      "label": "第一次打开公开后的 Instagram",
+      "label": "首次阅读任意一条 Instagram 消息请求",
       "type": "event",
       "event": "read",
-      "target": "ig-dm-001",
+      "target": "ig-dm-opened",
       "conditions": [
         {
           "key": "public_statement_seen",
@@ -4127,7 +4127,7 @@
         },
         {
           "event": "read",
-          "target": "ig-dm-001"
+          "target": "ig-dm-opened"
         },
         {
           "event": "sentMessage",
