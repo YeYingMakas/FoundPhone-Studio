@@ -6,6 +6,9 @@ import "../styles.css";
 import "./player.css";
 function StoryPlayer() {
   const [work, setWork] = useState<Work | null>(null),
+    [playerName, setPlayerName] = useState(""),
+    [birthYear, setBirthYear] = useState(""),
+    [profileConfirmed, setProfileConfirmed] = useState(false),
     [error, setError] = useState("");
   useEffect(() => {
     const abort = new AbortController();
@@ -32,10 +35,33 @@ function StoryPlayer() {
       });
     return () => abort.abort();
   }, []);
+  const needsProfile = work?.id === "unpublished-lover-ep01" && !profileConfirmed;
+  const yearValid = /^(19|20)\\d{2}$/.test(birthYear) && Number(birthYear) <= 2026;
+  const canEnter = playerName.trim().length > 0 && yearValid;
+  if (needsProfile) {
+    return (
+      <main className="story-runtime">
+        <form
+          className="ep01-profile"
+          onSubmit={(e) => { e.preventDefault(); if (canEnter) setProfileConfirmed(true); }}
+        >
+          <h1>iPhone16pro Max</h1>
+          <p>请输入玩家资料，随后进入手机锁屏。</p>
+          <label>姓名
+            <input autoComplete="off" maxLength={30} value={playerName} onChange={(e) => setPlayerName(e.target.value)} required />
+          </label>
+          <label>出生年份
+            <input inputMode="numeric" pattern="(19|20)[0-9]{2}" maxLength={4} placeholder="例如 2005" value={birthYear} onChange={(e) => setBirthYear(e.target.value)} required />
+          </label>
+          <button type="submit" disabled={!canEnter}>进入手机</button>
+        </form>
+      </main>
+    );
+  }
   return (
     <main className="story-runtime">
       {work ? (
-        <Phone work={work} />
+        <Phone work={work.id === "unpublished-lover-ep01" ? { ...work, phone: { ...work.phone, owner: playerName.trim() }, variables: { ...work.variables, playerName: playerName.trim(), birthYear: Number(birthYear) } } : work} />
       ) : (
         <p role="status">{error || "正在打开手机…"}</p>
       )}
