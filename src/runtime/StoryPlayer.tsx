@@ -35,6 +35,23 @@ function StoryPlayer() {
       });
     return () => abort.abort();
   }, []);
+  useEffect(() => {
+    if (work?.id !== "unpublished-lover-ep01") return;
+    try {
+      const saved = window.localStorage.getItem("unpublished-lover-ep01:profile");
+      if (!saved) return;
+      const profile: unknown = JSON.parse(saved);
+      if (!profile || typeof profile !== "object") return;
+      const data = profile as Record<string, unknown>;
+      if (typeof data.name !== "string" || typeof data.year !== "string") return;
+      if (!data.name.trim() || !/^(19|20)[0-9]{2}$/.test(data.year) || Number(data.year) > 2026) return;
+      setPlayerName(data.name);
+      setBirthYear(data.year);
+      setProfileConfirmed(true);
+    } catch {
+      // Browser storage can be unavailable; the form remains usable.
+    }
+  }, [work?.id]);
   const needsProfile = work?.id === "unpublished-lover-ep01" && !profileConfirmed;
   const yearValid = /^(19|20)\d{2}$/.test(birthYear) && Number(birthYear) <= 2026;
   const canEnter = playerName.trim().length > 0 && yearValid;
@@ -43,7 +60,16 @@ function StoryPlayer() {
       <main className="story-runtime">
         <form
           className="ep01-profile"
-          onSubmit={(e) => { e.preventDefault(); if (canEnter) setProfileConfirmed(true); }}
+          onSubmit={(e) => {
+            e.preventDefault();
+            if (!canEnter) return;
+            try {
+              window.localStorage.setItem("unpublished-lover-ep01:profile", JSON.stringify({ name: playerName.trim(), year: birthYear }));
+            } catch {
+              // Continue in this session even when storage is unavailable.
+            }
+            setProfileConfirmed(true);
+          }}
         >
           <h1>iPhone16pro Max</h1>
           <p>请输入玩家资料，随后进入手机锁屏。</p>
