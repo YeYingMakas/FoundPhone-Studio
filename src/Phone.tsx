@@ -1067,6 +1067,49 @@ function AppContent({
       )}
     </div>
   ) : null;
+  if (work.id === "unpublished-lover-ep01" && app.id === "kakao" && !creator) {
+    const conversations = [...new Set(shown.map((item) => item.title))];
+    const threadItems = shown.filter((item) => item.title === thread);
+    const openThread = (title: string) => {
+      setThread(title);
+      shown.filter((item) => item.title === title && !item.read).forEach((item) => onRead(item.id));
+    };
+    return (
+      <div className="ep01-kakao">
+        <div className="ep01-kakao-header">
+          {thread ? <button onClick={() => setThread("")} aria-label="返回聊天列表">‹</button> : null}
+          <strong>{thread || "聊天"}</strong>
+        </div>
+        {thread ? (
+          <div className="ep01-kakao-thread">
+            {threadItems.map((item) => (
+              <div className={item.outgoing ? "ep01-message sent" : "ep01-message"} key={item.id}>
+                <span className="ep01-message-sender">{item.sender}</span>
+                <div className="ep01-message-bubble">{item.body}</div>
+                <small>{item.time.slice(-5)}</small>
+              </div>
+            ))}
+            <div className="ep01-kakao-compose">点击输入框选择回复（后续剧情接入中）</div>
+          </div>
+        ) : (
+          <div className="ep01-kakao-list">
+            {conversations.map((title) => {
+              const messages = shown.filter((item) => item.title === title);
+              const last = messages[messages.length - 1];
+              const unread = messages.filter((item) => !item.read && !item.outgoing).length;
+              return (
+                <button key={title} className="ep01-kakao-contact" onClick={() => openThread(title)}>
+                  <span className="ep01-kakao-avatar">{title.slice(0, 1)}</span>
+                  <span className="ep01-kakao-contact-body"><strong>{title}</strong><small>{last.body.split("\n")[0]}</small></span>
+                  <span className="ep01-kakao-contact-side"><small>{last.time.slice(-5)}</small>{unread > 0 && <b>{unread > 99 ? "99+" : unread}</b>}</span>
+                </button>
+              );
+            })}
+          </div>
+        )}
+      </div>
+    );
+  }
   if (Skin)
     return (
       <>
