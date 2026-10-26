@@ -100,3 +100,11 @@
 .ep01-settings button { width: 100%; padding: 15px; border: 0; border-radius: 12px; background: white; color: #1476d4; text-align: left; font: inherit; }
 .ep01-settings button.ep01-replay { color: #df3434; margin-top: 20px; }
 .ep01-settings small { color: #7d7d83; line-height: 1.5; }
+
+
+.ep01-call-dialogue { width: 100%; max-width: 360px; margin: 12px auto; padding: 10px; max-height: 46vh; overflow-y: auto; border-radius: 18px; background: rgba(255,255,255,.12); text-align: left; }
+.ep01-call-transcript p { margin: 0 0 10px; font-size: 13px; line-height: 1.5; }
+.ep01-call-translation { display: block; opacity: .72; font-size: 12px; }
+.ep01-call-options { display: grid; gap: 7px; margin-top: 12px; }
+.ep01-call-options button, .ep01-call-final { width: 100%; border: 1px solid rgba(255,255,255,.32); border-radius: 12px; background: rgba(255,255,255,.17); color: inherit; padding: 10px; text-align: left; font-size: 12px; }
+.ep01-call-options button span, .ep01-call-final span { display: block; margin-top: 3px; opacity: .7; }
