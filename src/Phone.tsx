@@ -1,3 +1,4 @@
+import { advanceEp01Scene17 } from "./story-engine/ep01Scene17";
 import { scene15Reply, chooseScene15Reply, advanceScene15And16 } from "./story-engine/ep01Scene15And16";
 import { StatusGlyph } from "./ios/StatusGlyph";
 import { ep01CallOpening, ep01CallBranches, ep01CallChoices, chooseEp01CallBranch } from "./story-engine/ep01CallDialogue";
@@ -269,7 +270,7 @@ function PhoneRuntime({
       // The EP01 clock and incoming messages must not advance behind player setup.
       if (work.id === "unpublished-lover-ep01" && previous.variables.ep01PlayerSetupDone !== true) return;
       const advanced = advance(work, previous, work.id === "unpublished-lover-ep01" ? 200 : 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceScene15And16(advanceEp01FirstCallRetry(advanceEp01FirstCall(advanceEp01SecondChoice(advanceEp01OpeningChoice(advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))))))))))))))) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceEp01Scene17(advanceScene15And16(advanceEp01FirstCallRetry(advanceEp01FirstCall(advanceEp01SecondChoice(advanceEp01OpeningChoice(advanceEp01Opening(advanceScene31(advanceScene30Replies(advanceScene30Opening(advanceInstagramDMs(advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced))))))))))))))))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
