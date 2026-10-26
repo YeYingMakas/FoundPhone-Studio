@@ -64,7 +64,8 @@ import {
 } from "./schema";
 import { dispatch, choose, visible, advance } from "./engine";
 import { db } from "./persistence";
-import { readStoryMessage, storyAppUnread } from "./story-engine/unpublishedLoverRuntime";
+import { appendStoryDelivery, readStoryMessage, storyAppUnread } from "./story-engine/unpublishedLoverRuntime";
+import type { SceneDelivery } from "./story-engine/unpublishedLoverDelivery";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -282,6 +283,24 @@ function PhoneRuntime({
     onOpen?.(id);
     event("openApp", id);
   };
+  useEffect(() => {
+    if (work.id !== "unpublished-lover-ep01" || creator || locked || !ready) return;
+    const timer = setTimeout(() => {
+      const current = runtimeRef.current;
+      if (current.variables.ep01OpeningDelivered) return;
+      const jeongwoo: SceneDelivery = {
+        app: "kakao",
+        conversationId: "chat-jeongwoo",
+        sender: "朴炡禹",
+        lines: [{ id: "opening-01", ko: "자기야아", zh: "亲爱的呀" }],
+        delivered: 0,
+        blocked: false,
+      };
+      const next = appendStoryDelivery(current, jeongwoo, current.date || "2026-10-23", current.time);
+      update({ ...next.runtime, variables: { ...next.runtime.variables, ep01OpeningDelivered: true } });
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, [work.id, creator, locked, ready]);
   const installedApps = work.apps.filter((a) => a.installed);
   const apps = installedApps.filter((a) => a.visible);
   const unlock = (pin = "") => {
