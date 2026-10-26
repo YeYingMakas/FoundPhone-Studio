@@ -1,0 +1,89 @@
+{
+  "scene": 22,
+  "status": "approved",
+  "trigger": {
+    "event": "scene21_second_player_message_sent",
+    "delayMs": 3000
+  },
+  "sender": "junghwan",
+  "typingBeforeEachMs": 2000,
+  "messages": [
+    {
+      "id": "junghwan-1",
+      "ko": "네???",
+      "zh": "什么？？？"
+    },
+    {
+      "id": "junghwan-2",
+      "ko": "누나 잠깐만요ㅠㅠ",
+      "zh": "姐姐，等一下ㅠㅠ"
+    },
+    {
+      "id": "junghwan-3",
+      "ko": "헤어지는 건 너무 갑작스럽잖아요...",
+      "zh": "突然说分手也太突然了吧……"
+    },
+    {
+      "id": "junghwan-4",
+      "ko": "아니 정우 형이 잘못한 건 맞는데",
+      "zh": "不是，炡禹哥确实做错了"
+    },
+    {
+      "id": "junghwan-5",
+      "ko": "그렇다고 바로 헤어지시면 어떡해요ㅠㅠ",
+      "zh": "但也不能就这样直接分手呀ㅠㅠ"
+    },
+    {
+      "id": "junghwan-6",
+      "ko": "제가 이런 말 해도 되는지 모르겠는데...",
+      "zh": "虽然不知道我这样说合不合适……"
+    },
+    {
+      "id": "junghwan-7",
+      "ko": "정우 형이 누나 얼마나 좋아하는지 제가 알잖아요",
+      "zh": "但我知道炡禹哥有多喜欢姐姐啊。"
+    },
+    {
+      "id": "junghwan-8",
+      "ko": "형 진짜 누나 얘기 엄청 많이 해요ㅋㅋ",
+      "zh": "哥真的经常提起姐姐ㅋㅋ"
+    },
+    {
+      "id": "junghwan-9",
+      "ko": "맨날 누나 보고 싶다고 하고",
+      "zh": "天天说想姐姐"
+    },
+    {
+      "id": "junghwan-10",
+      "ko": "누나랑 통화하고 나면 혼자 실실 웃고ㅋㅋ",
+      "zh": "跟姐姐打完电话还会一个人傻笑ㅋㅋ"
+    },
+    {
+      "id": "junghwan-11",
+      "ko": "아무튼 제가 봤을 땐 형 진짜 누나밖에 없어요",
+      "zh": "反正以我看来，哥心里真的只有姐姐。"
+    },
+    {
+      "id": "junghwan-12",
+      "ko": "그러니까 누나...",
+      "zh": "所以姐姐……"
+    },
+    {
+      "id": "junghwan-13",
+      "ko": "지금 화나신 건 이해하는데",
+      "zh": "我理解姐姐现在很生气"
+    },
+    {
+      "id": "junghwan-14",
+      "ko": "헤어지는 건 조금만 더 생각해 보시면 안 돼요?ㅠㅠ",
+      "zh": "但分手这件事，能不能再考虑一下？ㅠㅠ"
+    },
+    {
+      "id": "junghwan-15",
+      "ko": "형이 직접 설명할 기회는 한 번만 주세요...",
+      "zh": "至少给哥一次亲自解释的机会吧……"
+    }
+  ],
+  "after": "player_reads_all_15_returns_to_kakao_list_and_manually_opens_jeongwoo",
+  "noPlayerReply": true
+}
