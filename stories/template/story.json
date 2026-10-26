@@ -1,9 +1,9 @@
 {
   "scriptVersion": 1,
-  "id": "ui-test-phone-v2",
-  "title": "捡手机",
-  "description": "仅用于界面测试，不含剧情",
-  "revision": 2,
+  "id": "iphone16-pro-max",
+  "title": "iPhone16 pro Max",
+  "description": "iPhone16 pro Max 互动手机模拟器（剧情待配置）",
+  "revision": 1,
   "phone": {
     "owner": "机主",
     "date": "2026-10-25",
