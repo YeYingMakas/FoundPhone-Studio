@@ -1,0 +1,88 @@
+{
+  "scriptVersion": 1,
+  "id": "unpublished-lover-ep01",
+  "title": "未公开恋人 EP01",
+  "description": "三年未公开的恋情与突如其来的公开。开发中：目前仅导入首批已确认内容，完整剧情和图片尚未接入。",
+  "revision": 1,
+  "phone": {
+    "owner": "玩家",
+    "date": "2026-10-23",
+    "time": "22:00",
+    "battery": 94,
+    "network": "5G",
+    "passcode": "040928",
+    "wallpaper": "apple-wwdc26"
+  },
+  "installedApps": [
+    "phone",
+    "kakao",
+    "instagram",
+    "twitter",
+    "photos",
+    "settings",
+    "notes",
+    "appstore"
+  ],
+  "contacts": [
+    {
+      "id": "jeongwoo",
+      "name": "쩡쩡❤️"
+    },
+    {
+      "id": "friend",
+      "name": "闺蜜"
+    },
+    {
+      "id": "junghwan",
+      "name": "苏庭焕"
+    },
+    {
+      "id": "jihoon",
+      "name": "朴志焄"
+    },
+    {
+      "id": "jaehyuk",
+      "name": "尹材赫"
+    }
+  ],
+  "chats": [
+    {
+      "id": "chat-jeongwoo",
+      "app": "kakao",
+      "title": "쩡쩡❤️",
+      "participants": [
+        "owner",
+        "jeongwoo"
+      ],
+      "messages": [
+        {
+          "id": "jeongwoo-opening",
+          "body": "자기야아\n亲爱的呀",
+          "senderId": "jeongwoo"
+        }
+      ]
+    }
+  ],
+  "content": {
+    "twitter": [
+      {
+        "id": "scene27-public-post",
+        "title": "박정우 @jeongwoo",
+        "sender": "박정우",
+        "kind": "text",
+        "time": "2026-10-23",
+        "body": "안녕하세요. TREASURE 박정우입니다.\n大家好，我是TREASURE的朴炡禹。\n\n갑작스럽게 이런 글을 올리게 돼서 많이 놀라셨을 것 같아요.\n突然发出这样的文章，大家应该都很惊讶吧。\n\n저에게는 3년 동안 만나 온 소중한 사람이 있습니다.\n我有一个已经交往三年、对我来说非常珍贵的人。\n\n그동안 여러 가지 이유로 저희 관계를 공개하지 못했습니다.\n这段时间因为各种原因，我们一直没能公开这段关系。\n\n그 과정에서 제가 사랑하는 사람이 혼자 감당해야 했던 것들이 너무 많았어요.\n在这个过程中，我爱的人独自承受了太多事情。\n\n오늘 올라온 사진 속 분은 제 연인이 아닙니다.\n今天照片里的那位，并不是我的恋人。\n\n제 연인은 따로 있고, 저는 그 사람을 정말 많이 사랑합니다.\n我真正的恋人另有其人，而我真的非常爱她。\n\n더 이상 그 사람이 혼자 숨어서 상처받게 하고 싶지 않습니다.\n我不想再让她独自躲在暗处受到伤害。\n\n갑작스러운 소식에 놀라셨을 팬분들께 죄송합니다.\n对于因为这个突然的消息而感到震惊的粉丝们，我很抱歉。\n\n하지만 제 마음만큼은 솔직하게 전하고 싶었습니다.\n但至少这一次，我想坦诚地表达自己的心意。\n\n앞으로도 TREASURE 박정우로서 최선을 다하겠습니다. 감사합니다.\n今后我也会作为TREASURE的朴炡禹继续全力以赴。谢谢大家。",
+        "meta": {
+          "story": "scene27",
+          "status": "staged-not-unlocked",
+          "likes": "316000",
+          "comments": "128000",
+          "reposts": "84000"
+        }
+      }
+    ]
+  },
+  "variables": {},
+  "events": [],
+  "tests": []
+}
