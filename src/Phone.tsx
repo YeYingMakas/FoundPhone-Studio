@@ -679,7 +679,7 @@ function PhoneRuntime({
               )}
             </div>
           )}
-          {!creator && s.choices.length > 0 && !locked && (
+          {!creator && work.id !== "unpublished-lover-ep01" && s.choices.length > 0 && !locked && (
             <div className="story-overlay">
               <span className="eyebrow">故事来到一个岔路口</span>
               <h3>你会如何选择？</h3>
@@ -1126,7 +1126,7 @@ function AppContent({
                 <button type="button" className="ep01-compose-input" onClick={() => setShowStoryChoices((value) => !value)} disabled={state.choices.length === 0}>
                   {storyDraft?.label || (state.choices.length ? "点击选择回复" : "等待剧情回复选项")}
                 </button>
-                <button type="button" className="ep01-compose-send" disabled={!storyDraft || !onStorySend} onClick={() => {
+                <button type="button" className="ep01-compose-send" disabled={!storyDraft || !onStorySend || !state.choices.some((choice) => choice.target === storyDraft.target && choice.label === storyDraft.label)} onClick={() => {
                   if (!storyDraft) return;
                   onStorySend?.(thread, storyDraft.label, storyDraft.target);
                   setStoryDraft(null);
