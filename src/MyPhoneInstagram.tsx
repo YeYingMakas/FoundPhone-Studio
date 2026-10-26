@@ -29,7 +29,7 @@ export function MyPhoneInstagram({ items, onRead, onBack }: {
       </nav>
       {tab === "requests" ? <section className="myphone-ig-requests">
         <p>消息请求 · Message requests</p>
-        {requests.map((item) => <button key={item.id} className="myphone-ig-request" onClick={() => { setOpened(item); onRead(item.id); onRead("ig-dm-opened"); }}>
+        {requests.map((item) => <button key={item.id} className="myphone-ig-request" onClick={() => { setOpened(item); onRead(item.id); if (item.id !== "ig-dm-001") onRead("ig-dm-001"); }}>
           <span className="myphone-ig-avatar">{item.sender.slice(1, 2).toUpperCase()}</span>
           <span><strong>{item.sender}</strong><small>{item.body.split("\n")[0]}</small></span>
           <time>{item.time.slice(-5)}</time>
