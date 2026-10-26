@@ -80,5 +80,6 @@ test("My Phone browser smoke: lock screen and home screen", async ({ page }) => 
   await page.getByRole("group", { name: "选择回复" }).getByRole("button").first().click();
   await page.getByRole("button", { name: "发送消息" }).click();
   await expect(page.locator(".my-phone-message-block .outgoing").filter({ hasText: "박정우. 나한테 할 말 없어?" })).toHaveCount(1);
+  await expect(page.locator(".my-phone-message-block .outgoing")).toHaveCount(4);
   expect(errors).toEqual([]);
 });
