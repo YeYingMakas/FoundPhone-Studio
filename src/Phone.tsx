@@ -72,6 +72,7 @@ import { advanceScene23, scene23Choices, sendScene23Choice } from "./story-engin
 import { advanceScene24, scene24Choices, sendScene24Choice, blockScene24Kakao, unblockScene24Kakao } from "./story-engine/unpublishedLoverScene24";
 import { advanceScene25Incoming, advanceScene25Dialogue, rejectScene25Incoming, answerScene25Incoming, scene25Transcript, chooseScene25Reply, speakScene25Final } from "./story-engine/unpublishedLoverScene25";
 import scene25Data from "../stories/unpublished-lover/data/scene25.json";
+import { advanceScene26, manuallyOpenScene27X } from "./story-engine/unpublishedLoverScene26";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -250,7 +251,7 @@ function PhoneRuntime({
     const interval = setInterval(() => {
       const previous = runtimeRef.current;
       const advanced = advance(work, previous, 1000);
-      const next = work.id === "unpublished-lover-ep01" ? advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced))))) : advanced;
+      const next = work.id === "unpublished-lover-ep01" ? advanceScene26(advanceScene25Dialogue(advanceScene25Incoming(advanceScene24(advanceScene23(advanceScene22(advanced)))))) : advanced;
       runtimeRef.current = next;
       const changed =
         next !== advanced ||
@@ -288,6 +289,11 @@ function PhoneRuntime({
   };
   const open = (id: string) => {
     if (!work.apps.some((a) => a.id === id && a.installed)) return;
+    if (work.id === "unpublished-lover-ep01" && (id === "twitter" || id === "x")) {
+      const current = runtimeRef.current;
+      const next = manuallyOpenScene27X(current);
+      if (next !== current) update(next);
+    }
     setApp(id);
     setStoryFocusedThread("");
     setKeyboard(false);
