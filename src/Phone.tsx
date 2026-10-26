@@ -67,6 +67,7 @@ import { dispatch, choose, visible, advance } from "./engine";
 import { db } from "./persistence";
 import { appendStoryDelivery, readStoryConversation, readStoryMessage, storyAppUnread } from "./story-engine/unpublishedLoverRuntime";
 import type { SceneDelivery } from "./story-engine/unpublishedLoverDelivery";
+import { advanceScene22 } from "./story-engine/unpublishedLoverScene22";
 import "./story-engine/unpublishedLoverBadges.css";
 export function AppIcon({
   id,
@@ -244,9 +245,11 @@ function PhoneRuntime({
     if (creator || !ready) return;
     const interval = setInterval(() => {
       const previous = runtimeRef.current;
-      const next = advance(work, previous, 1000);
+      const advanced = advance(work, previous, 1000);
+      const next = work.id === "unpublished-lover-ep01" ? advanceScene22(advanced) : advanced;
       runtimeRef.current = next;
       const changed =
+        next !== advanced ||
         next.time !== previous.time ||
         next.trace.join() !== previous.trace.join() ||
         (next.scheduled?.length ?? 0) !== (previous.scheduled?.length ?? 0) ||
