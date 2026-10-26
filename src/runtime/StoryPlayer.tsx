@@ -36,7 +36,7 @@ function StoryPlayer() {
     return () => abort.abort();
   }, []);
   const needsProfile = work?.id === "unpublished-lover-ep01" && !profileConfirmed;
-  const yearValid = /^(19|20)\\d{2}$/.test(birthYear) && Number(birthYear) <= 2026;
+  const yearValid = /^(19|20)\d{2}$/.test(birthYear) && Number(birthYear) <= 2026;
   const canEnter = playerName.trim().length > 0 && yearValid;
   if (needsProfile) {
     return (
