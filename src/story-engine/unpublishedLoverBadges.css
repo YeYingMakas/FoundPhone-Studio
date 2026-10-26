@@ -77,3 +77,19 @@
 .ep01-compose-send:disabled { opacity: .4; }
 .ep01-reply-options { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
 .ep01-reply-options button { border: 1px solid #e3e3e3; border-radius: 9px; padding: 10px; text-align: left; background: #fff; color: #222; font: inherit; }
+
+/* Image paths intentionally remain empty in the public repository until publication rights are cleared. */
+.phone-screen.ep01-custom-wallpaper {
+  background-image: url("/story-assets/unpublished-lover/home-wallpaper.jpeg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.phone-screen.ep01-custom-wallpaper.is-locked {
+  background-image: url("/story-assets/unpublished-lover/lock-wallpaper.jpeg");
+  background-position: center center;
+  background-size: cover;
+}
+.ep01-kakao-avatar { position: relative; overflow: hidden; }
+.ep01-kakao-avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+.ep01-kakao-avatar > span { position: relative; z-index: 0; }
