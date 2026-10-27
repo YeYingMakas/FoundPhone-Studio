@@ -11,7 +11,7 @@ describe("approved friend KKT and X unlock",()=>{
   expect(s.messages.kakao).toHaveLength(1);
   expect(s.messages.kakao[0].title).toBe("闺蜜");
   expect(ep01BestFriendChoices(s)).toHaveLength(3);
-  expect(openScene10XPost(s,"p1")).toBe(s);
+  expect(openScene10XPost(s,"ep01-rumor-1")).toBe(s);
   s=sendEp01BestFriendChoice(s,"ep01-friend-"+branch);
   for(let i=1;i<=count;i++)s=advanceEp01BestFriend({...s,elapsedMs:3000+i*2000});
   expect(s.messages.kakao).toHaveLength(1+count);
@@ -19,6 +19,6 @@ describe("approved friend KKT and X unlock",()=>{
   expect(s.variables.ep01XUnlocked).toBe(true);
   s=JSON.parse(JSON.stringify(s)) as Runtime;
   expect(advanceEp01BestFriend({...s,elapsedMs:999999}).messages.kakao).toHaveLength(1+count);
-  expect(openScene10XPost(s,"p1").variables.ep01Scene10XPostsSeen).toBe('["p1"]');
+  expect(openScene10XPost(s,"ep01-rumor-1").variables.ep01Scene10XPostsSeen).toBe('["ep01-rumor-1"]');
  });
 });
