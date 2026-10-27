@@ -15,6 +15,7 @@ describe("approved EP01 X detail threads",()=>{
    expect(post.comments.every((line:string)=>line.includes("\n"))).toBe(true);
    expect(post.body.length).toBeGreaterThan(20);
   }
+  expect(posts[0].comments.length).toBe(20);
   expect(posts.slice(1).map((p:{comments:string[]})=>p.comments.length)).toEqual([7,6,8,9,7]);
  });
 });
