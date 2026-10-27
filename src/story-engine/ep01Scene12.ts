@@ -14,7 +14,7 @@ const routes = [
 ] as const;
 export function scene12Choices(s:Runtime) {
  const prev = s.variables.ep01Scene11Branch;
- if(s.workId!=="unpublished-lover-ep01" || !["A","B","C"].includes(String(prev)) || s.variables.ep01Scene12Branch) return [];
+ if(s.workId!=="unpublished-lover-ep01" || !["A","B","C"].includes(String(prev)) || s.variables.ep01Scene11Finished!==true || s.variables.ep01Scene12Branch) return [];
  return routes.filter(r=>r[1]===prev).map(r=>({target:"ep01-scene12-"+r[0],label:r[2]+"\n"+r[3]}));
 }
 export function sendScene12Choice(s:Runtime,target:string):Runtime {
