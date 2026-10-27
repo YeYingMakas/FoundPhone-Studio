@@ -1416,6 +1416,16 @@ function AppContent({
       </div>
     );
   }
+  if (work.id === "unpublished-lover-ep01" && app.id === "twitter" && !creator && state.variables.ep01XUnlocked !== true) {
+    return (
+      <div className="phone-content ep01-x-locked" role="status">
+        <h2>아직 확인할 수 없어요</h2>
+        <p>친구의 메시지를 먼저 확인해 주세요.</p>
+        <p>请先查看闺蜜的KakaoTalk消息，完成回复后解锁X热搜。</p>
+        <button type="button" onClick={onBack}>돌아가기 · 返回</button>
+      </div>
+    );
+  }
   if (work.id === "unpublished-lover-ep01" && app.id === "kakao" && !creator) {
     const conversations = [...new Set(["쩡쩡❤️", "闺蜜", "苏庭焕", "朴志焄", "尹材赫", ...shown.map((item) => item.title)])];
     const threadItems = shown.filter((item) => item.title === thread);
