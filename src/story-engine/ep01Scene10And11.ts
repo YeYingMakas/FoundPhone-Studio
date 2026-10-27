@@ -17,7 +17,7 @@ export function openScene10XPost(s:Runtime, postId:string):Runtime {
  if(s.workId!=="unpublished-lover-ep01" || !postId || s.variables.ep01Scene10StartedAt!==undefined || s.variables.ep01Scene10Finished===true) return s;
  const seen=Array.isArray(s.variables.ep01Scene10XPostsSeen) ? (s.variables.ep01Scene10XPostsSeen as string[]) : [];
  if(seen.includes(postId))return s;
- const next={...s,variables:{...s.variables,ep01Scene10XPostsSeen:[...seen,postId]}};
+ const next:Runtime={...s,variables:{...s.variables,ep01Scene10XPostsSeen:[...seen,postId]}};
  return seen.length+1>=3 ? markScene10ThirdXPost(next) : next;
 }
 export function markScene10ThirdXPost(s:Runtime):Runtime {
