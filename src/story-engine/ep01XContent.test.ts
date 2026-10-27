@@ -16,6 +16,9 @@ describe("approved EP01 X detail threads",()=>{
    expect(post.body.length).toBeGreaterThan(20);
   }
   expect(posts[0].comments.length).toBe(20);
+  expect(posts[0].comments[0]).toContain("@fuckthis");
+  expect(posts[0].comments[19]).toContain("@realist");
+  expect(posts.reduce((n:number,p:{comments:string[]})=>n+p.comments.length,0)).toBe(57);
   expect(posts.slice(1).map((p:{comments:string[]})=>p.comments.length)).toEqual([7,6,8,9,7]);
  });
 });
