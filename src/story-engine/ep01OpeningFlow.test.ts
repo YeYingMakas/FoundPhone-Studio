@@ -22,7 +22,7 @@ describe("EP01 approved opening through second-round integration",()=>{
   expect(s.variables.ep01OpeningReplyFinished).toBe(true);
   expect(ep01SecondChoices(s)).toHaveLength(3);
   s=sendEp01SecondChoice(s,ep01SecondChoices(s)[2].target);
-  for(let i=1;i<=3;i++)s=advanceEp01SecondChoice(at(s,15000+i*2000));
+  for(let i=1;i<=3;i++)s=advanceEp01SecondChoice(at(s,20000+i*2000));
   expect(s.variables.ep01SecondReplyFinished).toBe(true);
   expect(s.messages.kakao).toHaveLength(5+count+3);
   s=JSON.parse(JSON.stringify(s)) as Runtime;
