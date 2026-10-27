@@ -364,25 +364,6 @@ function PhoneRuntime({
     onOpen?.(id);
     event("openApp", id);
   };
-  useEffect(() => {
-    if (work.id !== "unpublished-lover-ep01" || creator || locked || !ready) return;
-    if (s.variables.ep01OpeningFinished !== true || s.variables.ep01FriendOpeningDelivered) return;
-    const timer = setTimeout(() => {
-      const current = runtimeRef.current;
-      if (current.variables.ep01FriendOpeningDelivered) return;
-      const friend: SceneDelivery = {
-        app: "kakao",
-        conversationId: "chat-friend",
-        sender: "闺蜜",
-        lines: [{ id: "friend-opening-01", ko: "야", zh: "喂" }],
-        delivered: 0,
-        blocked: false,
-      };
-      const next = appendStoryDelivery(current, friend, current.date || "2026-10-23", current.time);
-      update({ ...next.runtime, variables: { ...next.runtime.variables, ep01FriendOpeningDelivered: true } });
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, [work.id, creator, locked, ready, s.variables.ep01OpeningFinished, s.variables.ep01FriendOpeningDelivered]);
   const installedApps = work.apps.filter((a) => a.installed);
   const apps = installedApps.filter((a) => a.visible);
   const unlock = (pin = "") => {
@@ -1438,7 +1419,7 @@ function AppContent({
   if (work.id === "unpublished-lover-ep01" && app.id === "kakao" && !creator) {
     const conversations = [...new Set(["쩡쩡❤️", "闺蜜", "苏庭焕", "朴志焄", "尹材赫", ...shown.map((item) => item.title)])];
     const threadItems = shown.filter((item) => item.title === thread);
-    const availableChoices = thread === "쩡쩡❤️" ? [...ep01OpeningChoices(state), ...ep01SecondChoices(state), ...ep01FirstCallChoices(state), ...ep01BestFriendChoices(state), ...scene10Choices(state), ...scene12Choices(state), ...scene13Choices(state), ...scene23Choices(state), ...scene24Choices(state), ...scene30Choices(state)] : thread === "苏庭焕" ? [...scene20Choices(state), ...scene21OpeningChoices(state), ...scene21Choices(state)] : thread === "尹材赫" ? scene18Choices(state) : thread === "朴志焄" ? scene19Choices(state) : state.choices;
+    const availableChoices = thread === "쩡쩡❤️" ? [...ep01OpeningChoices(state), ...ep01SecondChoices(state),  ...scene10Choices(state), ...scene12Choices(state), ...scene13Choices(state), ...scene23Choices(state), ...scene24Choices(state), ...scene30Choices(state)] : thread === "闺蜜" ? ep01BestFriendChoices(state) : thread === "苏庭焕" ? [...scene20Choices(state), ...scene21OpeningChoices(state), ...scene21Choices(state)] : thread === "尹材赫" ? scene18Choices(state) : thread === "朴志焄" ? scene19Choices(state) : state.choices;
     const openThread = (title: string) => {
       setThread(title);
       onStoryManualOpen?.(title);
