@@ -1,4 +1,4 @@
-import { advanceScene10And11, scene10Choices, sendScene10Choice } from "./story-engine/ep01Scene10And11";
+import { advanceScene10And11, openScene10XPost, scene10Choices, sendScene10Choice } from "./story-engine/ep01Scene10And11";
 import { advanceScene14Call, advanceScene14Opening, rejectScene14Call, answerScene14Call, scene14CallChoices, sendScene14CallChoice, advanceScene14Replies } from "./story-engine/ep01Scene14Call";
 import { scene12Choices, sendScene12Choice, advanceScene12 } from "./story-engine/ep01Scene12";
 import { scene13Choices, sendScene13Choice, advanceScene13 } from "./story-engine/ep01Scene13";
@@ -726,7 +726,7 @@ function PhoneRuntime({
                   }}
                   onStoryPostOpen={(id) => {
                     const current = runtimeRef.current;
-                    const next = openPublicPost(current, id);
+                    const next = openPublicPost(openScene10XPost(current, id), id);
                     if (next !== current) update(next);
                   }}
                   onStoryReadThread={(title) => {
@@ -1293,7 +1293,7 @@ function AppContent({
       return;
     }
     setDetail(i);
-    if (app.id === "twitter" && i.id === "scene27-public-post") onStoryPostOpen?.(i.id);
+    if (app.id === "twitter") onStoryPostOpen?.(i.id);
     if (!i.password || unlocks.includes(i.id)) onRead(i.id);
   };
   useEffect(() => {
