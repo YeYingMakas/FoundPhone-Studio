@@ -11,7 +11,7 @@ describe("approved EP01 X detail threads",()=>{
   expect(new Set(posts.map((p:{id:string})=>p.id)).size).toBe(6);
   for(const post of posts){
    expect(post.comments.length).toBeGreaterThanOrEqual(5);
-   expect(post.meta.commentCount).toBe(post.comments.length);
+   expect(Number(post.meta.commentCount)).toBe(post.comments.length);
    expect(post.comments.every((line:string)=>line.includes("\n"))).toBe(true);
    expect(post.body.length).toBeGreaterThan(20);
   }
