@@ -356,3 +356,12 @@
 .ep01-x-evidence-overlay h3 { font-size:19px; margin:0; }
 .ep01-x-evidence-overlay p { font-size:15px; line-height:1.8; max-width:320px; }
 .ep01-x-evidence-overlay small { color:#a9b2c0; }
+
+/* EP01 fictional X trending, scoped to the approved rumor feed. */
+.ep01-x-trends{margin:8px 12px 14px;border:1px solid #30343b;border-radius:16px;overflow:hidden;background:#14171c;color:#f4f5f7}
+.ep01-x-trends h3{margin:0;padding:15px 16px;font-size:18px;border-bottom:1px solid #30343b}
+.ep01-x-trends h3 small{display:block;font-size:11px;font-weight:400;color:#9ca3af;margin-top:4px}
+.ep01-x-trends button{display:flex;flex-direction:column;align-items:flex-start;gap:3px;width:100%;padding:12px 16px;background:transparent;color:inherit;border:0;border-bottom:1px solid #30343b;text-align:left}
+.ep01-x-trends button:last-child{border-bottom:0}
+.ep01-x-trends button small,.ep01-x-trends button span{font-size:12px;color:#a6aeb9}
+.ep01-x-trends button strong{font-size:15px}
