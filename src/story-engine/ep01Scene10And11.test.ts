@@ -6,7 +6,7 @@ const work={id:"unpublished-lover-ep01",updatedAt:1,phone:{date:"2026-10-23",tim
 describe("EP01 approved scene10/11",()=>{
  it("requires three unique X post details and survives reload",()=>{
   let s:Runtime=initialRuntime(work);
-  s={...s,elapsedMs:1000};
+  s={...s,elapsedMs:1000,variables:{ep01XUnlocked:true}};
   s=openScene10XPost(s,"post-a");
   s=openScene10XPost(s,"post-a");
   expect(s.variables.ep01Scene10XPostsSeen).toHaveLength(1);
