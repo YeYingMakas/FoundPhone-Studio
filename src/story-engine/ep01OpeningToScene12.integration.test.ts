@@ -29,7 +29,7 @@ describe("EP01 full opening-to-scene12 playable gates",()=>{
   s=openScene10XPost(s,"x-b");
   expect(s.variables.ep01Scene10StartedAt).toBeUndefined();
   s=openScene10XPost(s,"x-c");
-  for(let i=1;i<=4;i++)s=advanceScene10And11(at(s,28000+i*2000));
+  for(let i=1;i<=4;i++)s=advanceScene10And11(at(s,30000+i*2000));
   expect(scene10Choices(s)).toHaveLength(3);
   s=sendScene10Choice(s,scene10Choices(s)[1].target);
   expect(scene12Choices(s)).toHaveLength(0);
