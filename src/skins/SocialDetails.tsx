@@ -286,6 +286,7 @@ export function SocialDetail(p: {
           ))}
         </nav>
       )}
+      {attachment !== null && <div className="ep01-x-evidence-overlay" role="dialog" aria-modal="true"><button type="button" onClick={() => setAttachment(null)} aria-label="关闭预览">×</button><Camera size={40}/><h3>{attachment === 0 ? "사진 01 · 청담동 거리" : "사진 02 · 건물 입구"}</h3><p>{attachment === 0 ? "黑帽男性与长发女生在清潭洞街头并肩走，女生脸被遮挡。" : "两人先后进入同一建筑，只见背影，无法确认是否进入同一房间。"}</p><small>虚构剧情附件 · 非真实照片</small></div>}
       {menu && (
         <div className="post-options-menu">
           <button onClick={copy}>
