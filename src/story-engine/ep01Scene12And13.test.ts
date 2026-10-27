@@ -7,7 +7,7 @@ describe("EP01 approved scenes12 and 13",()=>{
  it.each([["A",["A1","A2","A3"],[4,4,3]],["B",["B1","B2","B3"],[3,3,5]],["C",["C1","C2","C3"],[3,3,3]]])("offers only scene11 branch %s choices",(parent,ids,counts)=>{
   for(let k=0;k<3;k++){
    let s:Runtime=initialRuntime(work);
-   s={...s,elapsedMs:1000,variables:{ep01Scene11Branch:parent}};
+   s={...s,elapsedMs:1000,variables:{ep01Scene11Branch:parent,ep01Scene11Finished:true}};
    const choices=scene12Choices(s);
    expect(choices.map(c=>c.target)).toEqual(ids.map(id=>"ep01-scene12-"+id));
    s=sendScene12Choice(s,"ep01-scene12-"+ids[k]);
