@@ -9,11 +9,13 @@ describe("approved friend KKT and X unlock",()=>{
   expect(advanceEp01BestFriend({...s,elapsedMs:2999}).messages.kakao).toBeUndefined();
   s=advanceEp01BestFriend({...s,elapsedMs:3000});
   expect(s.messages.kakao).toHaveLength(1);
+  expect(s.messages.kakao[0].title).toBe("闺蜜");
   expect(ep01BestFriendChoices(s)).toHaveLength(3);
   expect(openScene10XPost(s,"p1")).toBe(s);
   s=sendEp01BestFriendChoice(s,"ep01-friend-"+branch);
   for(let i=1;i<=count;i++)s=advanceEp01BestFriend({...s,elapsedMs:3000+i*2000});
   expect(s.messages.kakao).toHaveLength(1+count);
+  expect(s.messages.kakao.every(m=>m.title==="闺蜜")).toBe(true);
   expect(s.variables.ep01XUnlocked).toBe(true);
   s=JSON.parse(JSON.stringify(s)) as Runtime;
   expect(advanceEp01BestFriend({...s,elapsedMs:999999}).messages.kakao).toHaveLength(1+count);
