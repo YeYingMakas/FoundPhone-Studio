@@ -19,6 +19,6 @@ describe("approved friend KKT and X unlock",()=>{
   expect(s.variables.ep01XUnlocked).toBe(true);
   s=JSON.parse(JSON.stringify(s)) as Runtime;
   expect(advanceEp01BestFriend({...s,elapsedMs:999999}).messages.kakao).toHaveLength(1+count);
-  expect(openScene10XPost(s,"p1").variables.ep01Scene10XPostsSeen).toEqual(["p1"]);
+  expect(openScene10XPost(s,"p1").variables.ep01Scene10XPostsSeen).toBe('["p1"]');
  });
 });
