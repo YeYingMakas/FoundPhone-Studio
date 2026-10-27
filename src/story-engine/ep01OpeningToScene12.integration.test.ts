@@ -16,13 +16,13 @@ describe("EP01 full opening-to-scene12 playable gates",()=>{
   s=sendEp01OpeningChoice(s,ep01OpeningChoices(s)[0].target);
   for(let i=1;i<=4;i++)s=advanceEp01OpeningChoice(at(s,6000+i*2000));
   s=sendEp01SecondChoice(s,ep01SecondChoices(s)[0].target);
-  for(let i=1;i<=3;i++)s=advanceEp01SecondChoice(at(s,14000+i*2000));
+  for(let i=1;i<=3;i++)s=advanceEp01SecondChoice(at(s,16000+i*2000));
   expect(s.variables.ep01SecondReplyFinished).toBe(true);
   expect(openScene10XPost(s,"ep01-rumor-1")).toBe(s);
-  s=advanceEp01BestFriend(at(s,22000));
+  s=advanceEp01BestFriend(at(s,24000));
   expect(s.messages.kakao.at(-1)?.title).toBe("闺蜜");
   s=sendEp01BestFriendChoice(s,ep01BestFriendChoices(s)[0].target);
-  for(let i=1;i<=3;i++)s=advanceEp01BestFriend(at(s,22000+i*2000));
+  for(let i=1;i<=3;i++)s=advanceEp01BestFriend(at(s,24000+i*2000));
   expect(s.variables.ep01XUnlocked).toBe(true);
   s=JSON.parse(JSON.stringify(s)) as Runtime;
   s=openScene10XPost(s,"ep01-rumor-1");
