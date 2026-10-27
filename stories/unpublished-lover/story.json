@@ -3,7 +3,7 @@
   "id": "unpublished-lover-ep01",
   "title": "iPhone16pro Max",
   "description": "三年未公开的恋情与突如其来的公开。开发中：目前仅导入首批已确认内容，完整剧情和图片尚未接入。",
-  "revision": 1,
+  "revision": 2,
   "phone": {
     "owner": "玩家",
     "date": "2026-10-23",
@@ -59,6 +59,81 @@
   ],
   "content": {
     "twitter": [
+      {
+        "id": "ep01-rumor-1",
+        "title": "정우기록 @jwarchive",
+        "sender": "정우기록",
+        "kind": "text",
+        "time": "22:40",
+        "body": "정우가 연애를 하든 말든 상관없는데 왜 하필 이런 식으로 알게 되냐...\n炡禹谈不谈恋爱我都无所谓，但为什么偏偏要以这种方式知道……\n\n댓글 · 评论 (7)\n@reply1\n진짜 마음 복잡하다\n真的心情好复杂\n\n@reply2\n나도 이게 제일 속상함\n我也是最难受这个\n\n@reply3\n갑자기 눈물 나네\n突然想哭了\n\n@reply4\n그냥 행복했으면 했는데\n本来只希望他幸福\n\n@reply5\n나 아직도 안 믿겨\n我到现在还不敢信\n\n@reply6\n우리 좀 기다려 보자\n我们再等等吧\n\n@reply7\n오늘 잠 다 잤다\n今晚彻底睡不着了",
+        "meta": {
+          "story": "scene9",
+          "commentCount": 7,
+          "fictional": true
+        },
+        "hidden": false,
+        "unlock": "ep01XUnlocked"
+      },
+      {
+        "id": "ep01-rumor-2",
+        "title": "팩트만보자 @dontbelieveit",
+        "sender": "팩트만보자",
+        "kind": "text",
+        "time": "22:41",
+        "body": "모자 쓴 남자 뒷모습만 보고 박정우라고 확정 짓는 거 웃기네\n就凭一个戴帽子的男人背影认定是朴炡禹，真搞笑。\n\n댓글 · 评论 (6)\n@reply1\n그니까 증거가 뭐임\n就是啊证据呢\n\n@reply2\n얼굴도 안 보이는데ㅋㅋ\n脸都看不到ㅋㅋ\n\n@reply3\n근데 체형은 비슷함\n但身形确实很像\n\n@reply4\n확정은 너무 이르지\n现在实锤太早了\n\n@reply5\n팬들 또 싸우겠네\n粉丝又要吵起来了\n\n@reply6\n일단 공식 입장 기다림\n先等官方回应",
+        "meta": {
+          "story": "scene9",
+          "commentCount": 6,
+          "fictional": true
+        },
+        "hidden": false,
+        "unlock": "ep01XUnlocked"
+      },
+      {
+        "id": "ep01-rumor-3",
+        "title": "케이팝이슈 @kpopissue",
+        "sender": "케이팝이슈",
+        "kind": "text",
+        "time": "22:42",
+        "body": "박정우 열애설 관련해서 소속사 입장 아직 없음\n关于朴炡禹的恋爱传闻，经纪公司目前尚未回应。\n\n댓글 · 评论 (8)\n@reply1\n와 실검 1위네\n哇热搜第一了\n\n@reply2\n공식 입장 언제 나옴\n官方什么时候回应\n\n@reply3\n이 시간에 나오겠냐\n这时间能回应吗\n\n@reply4\n아침까지 기다려야 하나\n要等到早上吗\n\n@reply5\n그냥 사생활 아님?\n这不就是私生活吗\n\n@reply6\n기사 더 뜨겠네\n估计还有新闻\n\n@reply7\n제발 사실 확인부터\n求先核实事实\n\n@reply8\n소속사 전화 불나겠다\n公司电话要被打爆了",
+        "meta": {
+          "story": "scene9",
+          "commentCount": 8,
+          "fictional": true
+        },
+        "hidden": false,
+        "unlock": "ep01XUnlocked"
+      },
+      {
+        "id": "ep01-rumor-4",
+        "title": "정우바라기 @heartbrokenjw",
+        "sender": "정우바라기",
+        "kind": "text",
+        "time": "22:43",
+        "body": "아 오늘 진짜 잠 다 잤다...\n啊，今晚是真的睡不着了……\n\n댓글 · 评论 (9)\n@reply1\n나도 울고 있음\n我也在哭\n\n@reply2\n정우야 제발ㅠㅠ\n炡禹啊拜托ㅠㅠ\n\n@reply3\n마음이 너무 아프다\n心真的好痛\n\n@reply4\n왜 하필 오늘이냐\n为什么偏偏今天\n\n@reply5\n아직 확실한 거 아니야\n还没确定呢\n\n@reply6\n폰만 계속 보는 중\n一直盯着手机\n\n@reply7\n내일 눈 퉁퉁 붓겠다\n明天眼睛要肿了\n\n@reply8\n나 좀 위로해 줘\n谁来安慰安慰我\n\n@reply9\n같이 버티자ㅠㅠ\n一起撑住吧ㅠㅠ",
+        "meta": {
+          "story": "scene9",
+          "commentCount": 9,
+          "fictional": true
+        },
+        "hidden": false,
+        "unlock": "ep01XUnlocked"
+      },
+      {
+        "id": "ep01-rumor-5",
+        "title": "팩트체크 @factfirst",
+        "sender": "팩트체크",
+        "kind": "text",
+        "time": "22:44",
+        "body": "여자가 누구인지도 모르고 둘이 무슨 사이인지도 모르는데 너무 앞서가는 거 아님?\n连女生是谁、两人什么关系都不知道，是不是下结论太早了？\n\n댓글 · 评论 (7)\n@reply1\n맞말이지\n说得对\n\n@reply2\n친구일 수도 있잖아\n也可能是朋友啊\n\n@reply3\n근데 왜 밤에 둘이\n但为什么大晚上两个人\n\n@reply4\n추측 좀 그만해\n别乱猜了\n\n@reply5\n여자 신상 털지 마라\n别扒女生隐私\n\n@reply6\n일단 기다려 보자\n先等等看吧\n\n@reply7\n사생활 침해 심하네\n侵犯隐私太严重了",
+        "meta": {
+          "story": "scene9",
+          "commentCount": 7,
+          "fictional": true
+        },
+        "hidden": false,
+        "unlock": "ep01XUnlocked"
+      },
       {
         "id": "scene27-public-post",
         "title": "박정우 @jeongwoo",
