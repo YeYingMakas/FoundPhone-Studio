@@ -7,16 +7,16 @@ describe("EP01 approved scene10/11",()=>{
  it("requires three unique X post details and survives reload",()=>{
   let s:Runtime=initialRuntime(work);
   s={...s,elapsedMs:1000,variables:{ep01XUnlocked:true}};
-  s=openScene10XPost(s,"post-a");
-  s=openScene10XPost(s,"post-a");
-  expect(s.variables.ep01Scene10XPostsSeen).toBe('["post-a"]');
+  s=openScene10XPost(s,"ep01-rumor-1");
+  s=openScene10XPost(s,"ep01-rumor-1");
+  expect(s.variables.ep01Scene10XPostsSeen).toBe('["ep01-rumor-1"]');
   s=JSON.parse(JSON.stringify(s)) as Runtime;
-  s=openScene10XPost(s,"post-b");
+  s=openScene10XPost(s,"ep01-rumor-2");
   expect(s.variables.ep01Scene10StartedAt).toBeUndefined();
-  s=openScene10XPost(s,"post-c");
+  s=openScene10XPost(s,"ep01-rumor-3");
   expect(s.variables.ep01Scene10StartedAt).toBe(1000);
-  s=openScene10XPost(s,"post-d");
-  expect(s.variables.ep01Scene10XPostsSeen).toBe('["post-a","post-b","post-c"]');
+  s=openScene10XPost(s,"ep01-rumor-4");
+  expect(s.variables.ep01Scene10XPostsSeen).toBe('["ep01-rumor-1","ep01-rumor-2","ep01-rumor-3"]');
  });
  it.each([["A",5],["B",4],["C",5]])("plays %s branch and gates scene12 until finished",(branch,count)=>{
   let s:Runtime=initialRuntime(work);
