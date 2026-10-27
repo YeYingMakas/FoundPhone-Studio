@@ -349,3 +349,10 @@
   font-size: inherit;
   line-height: inherit;
 }
+
+/* EP01: in-world fictional evidence viewer; no external photo dependencies. */
+.ep01-x-evidence-overlay { position:absolute; inset:0; z-index:80; background:#070a0ff5; color:#f6f7f9; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; padding:34px; text-align:center; }
+.ep01-x-evidence-overlay > button { position:absolute; right:18px; top:18px; border:0; background:#343944; color:white; border-radius:50%; width:40px; height:40px; font-size:27px; }
+.ep01-x-evidence-overlay h3 { font-size:19px; margin:0; }
+.ep01-x-evidence-overlay p { font-size:15px; line-height:1.8; max-width:320px; }
+.ep01-x-evidence-overlay small { color:#a9b2c0; }
