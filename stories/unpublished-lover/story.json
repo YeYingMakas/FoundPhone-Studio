@@ -3,7 +3,7 @@
   "id": "unpublished-lover-ep01",
   "title": "iPhone16pro Max",
   "description": "三年未公开的恋情与突如其来的公开。开发中：目前仅导入首批已确认内容，完整剧情和图片尚未接入。",
-  "revision": 2,
+  "revision": 3,
   "phone": {
     "owner": "玩家",
     "date": "2026-10-23",
@@ -59,6 +59,24 @@
   ],
   "content": {
     "twitter": [
+      {
+        "id": "ep01-rumor-main",
+        "title": "연예계제보 @ent_spotlight",
+        "sender": "연예계제보",
+        "kind": "text",
+        "time": "22:39",
+        "body": "[속보] TREASURE 박정우, 청담동에서 여성과 심야 데이트 의혹\n【速报】TREASURE 朴炡禹被曝深夜与女性在清潭洞约会，引发恋爱猜测。\n\n청담동 인근에서 박정우로 추정되는 남성과 신원 미상의 여성이 함께 있는 모습이 포착됐습니다.\n有人拍到疑似朴炡禹的男性与一名身份不明的女性出现在清潭洞附近。\n\n두 사람이 나란히 걷는 모습과 건물로 들어가는 장면이 공개되면서 열애설이 확산 중입니다.\n两人并肩行走及进入建筑物的画面曝光后，恋爱传闻迅速传播。\n\n📎 사진 01 · 청담동 거리 / 照片01：清潭洞街头并肩行走（女生面部遮挡）\n📎 사진 02 · 건물 입구 / 照片02：一前一后进入同一建筑（仅见背影）\n\n댓글 · 评论\n@jwonly\n정우야 나 진짜 눈물 나\n炡禹啊我真的哭了\n\n@lovemyjw\n3년 좋아했는데 허무하다\n喜欢三年了，真空虚\n\n@crying\n나 지금 손 떨려...\n我现在手都在抖……\n\n@whatnow\n여친은 전생에 나라 구했냐\n女友上辈子救国了吧\n\n@bodytalk\n저 어깨랑 허리 차이 미쳤다\n那肩腰比简直疯了\n\n@delulu\n저 넓은 어깨 매일 안겠네\n每天都能抱那宽肩吧\n\n@hotjw\n하 저 여자 개부럽다\n哈真羡慕那女生\n\n@protectjw\n사생활 좀 냅둬라 제발\n求求别管人家私生活\n\n@skeptic\n얼굴도 안 보이는데 확정?\n脸都看不到就实锤？\n\n@rage\n연애할 거면 티나 내지 마\n要谈恋爱就别被发现\n\n@heart\n나 오늘 진짜 못 자겠어\n我今晚真的睡不着\n\n@anon03\n저 여자 진짜 부럽고 짜증 나\n真羡慕那女的又烦\n\n@fan\n좋아한 시간이 아깝다\n浪费了喜欢他的时间\n\n@realist\n사귀는지도 모르잖아\n都不知道是不是交往",
+        "meta": {
+          "story": "scene9",
+          "commentCount": 20,
+          "fictional": true,
+          "likes": "14.2K",
+          "reposts": "6,932",
+          "comments": "1,284"
+        },
+        "hidden": false,
+        "unlock": "ep01XUnlocked"
+      },
       {
         "id": "ep01-rumor-1",
         "title": "정우기록 @jwarchive",
