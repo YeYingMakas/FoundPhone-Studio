@@ -14,7 +14,7 @@ const branches = [
  {id:"C",player:["나 지금 기분이 별로 안 좋아... 오빠 나한테 할 말 없어?","我现在心情不太好……欧巴没有什么话要跟我说吗？"],replies:[["자기야 왜ㅠㅠ","宝宝怎么了ㅠㅠ"],["무슨 일 있었어?","发生什么事了吗？"],["내가 뭐 잘못했어...?","我做错什么了吗……？"],["자기야 말해 줘","宝宝，告诉我嘛"],["나 걱정되잖아ㅠㅠ","我会担心的呀ㅠㅠ"]]},
 ] as const;
 export function openScene10XPost(s:Runtime, postId:string):Runtime {
- if(s.workId!=="unpublished-lover-ep01" || !postId || s.variables.ep01Scene10StartedAt!==undefined || s.variables.ep01Scene10Finished===true) return s;
+ if(s.workId!=="unpublished-lover-ep01" || !postId || s.variables.ep01XUnlocked!==true || s.variables.ep01Scene10StartedAt!==undefined || s.variables.ep01Scene10Finished===true) return s;
  const seen=Array.isArray(s.variables.ep01Scene10XPostsSeen) ? (s.variables.ep01Scene10XPostsSeen as string[]) : [];
  if(seen.includes(postId))return s;
  const next:Runtime={...s,variables:{...s.variables,ep01Scene10XPostsSeen:[...seen,postId]}};
