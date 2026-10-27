@@ -171,7 +171,7 @@ export function XSkin(p: Props) {
               ["청담동 목격담", "清潭洞目击事件", "3,182"],
               ["트레저 정우", "TREASURE 炡禹", "2,617"],
             ].map(([ko, zh, volume], index) => (
-              <button type="button" key={ko} onClick={() => setQ("박정우")}>
+              <button type="button" key={ko} onClick={() => setQ("")}>
                 <small>엔터테인먼트 · {index + 1}위</small>
                 <strong>{ko}</strong>
                 <span>{zh} · {volume} posts</span>
@@ -188,7 +188,7 @@ export function XSkin(p: Props) {
                 <button className="x-byline" onClick={() => p.onItem(i)}>
                   <strong>{i.sender}</strong>
                   <span>
-                    @{meta(i, "handle", i.sender)} · {i.time.slice(5, 10)}
+                    {meta(i, "handle", "@" + i.sender)} · {i.time.slice(5, 10)}
                   </span>
                 </button>
                 <button className="social-body" onClick={() => p.onItem(i)}>
