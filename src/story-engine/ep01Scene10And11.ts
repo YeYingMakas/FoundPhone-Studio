@@ -13,6 +13,13 @@ const branches = [
  {id:"B",player:["오빠 나한테 거짓말한 거 없어?","欧巴，你没有什么事瞒着我吧？"],replies:[["응?","嗯？"],["갑자기 왜 그런 말을 해ㅠㅠ","怎么突然说这种话ㅠㅠ"],["자기야 무슨 일 있어?","宝宝，发生什么事了吗？"],["나한테 서운한 거 있어?","是不是有什么事让你对我不开心了？"]]},
  {id:"C",player:["나 지금 기분이 별로 안 좋아... 오빠 나한테 할 말 없어?","我现在心情不太好……欧巴没有什么话要跟我说吗？"],replies:[["자기야 왜ㅠㅠ","宝宝怎么了ㅠㅠ"],["무슨 일 있었어?","发生什么事了吗？"],["내가 뭐 잘못했어...?","我做错什么了吗……？"],["자기야 말해 줘","宝宝，告诉我嘛"],["나 걱정되잖아ㅠㅠ","我会担心的呀ㅠㅠ"]]},
 ] as const;
+export function openScene10XPost(s:Runtime, postId:string):Runtime {
+ if(s.workId!=="unpublished-lover-ep01" || !postId || s.variables.ep01Scene10StartedAt!==undefined || s.variables.ep01Scene10Finished===true) return s;
+ const seen=Array.isArray(s.variables.ep01Scene10XPostsSeen) ? (s.variables.ep01Scene10XPostsSeen as string[]) : [];
+ if(seen.includes(postId))return s;
+ const next={...s,variables:{...s.variables,ep01Scene10XPostsSeen:[...seen,postId]}};
+ return seen.length+1>=3 ? markScene10ThirdXPost(next) : next;
+}
 export function markScene10ThirdXPost(s:Runtime):Runtime {
  if(s.workId!=="unpublished-lover-ep01"||s.variables.ep01Scene10StartedAt!==undefined)return s;
  return {...s,variables:{...s.variables,ep01Scene10StartedAt:(s.elapsedMs??0)+2000,ep01Scene10Delivered:0}};
