@@ -19,6 +19,9 @@ describe("approved EP01 X detail threads",()=>{
   expect(posts[0].body).toContain("사진 01");
   expect(posts[0].body).toContain("사진 02");
   expect(posts[0].comments[0]).toContain("@fuckthis");
+  expect(posts[0].meta.likes).toBe("14.2K");
+  expect(posts[0].meta.reposts).toBe("6,932");
+  expect(posts[0].meta.comments).toBe("1,284");
   expect(posts[0].comments[19]).toContain("@realist");
   expect(posts.reduce((n:number,p:{comments:string[]})=>n+p.comments.length,0)).toBe(57);
   expect(posts.slice(1).map((p:{comments:string[]})=>p.comments.length)).toEqual([7,6,8,9,7]);
