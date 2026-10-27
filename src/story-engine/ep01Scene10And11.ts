@@ -15,14 +15,16 @@ const branches = [
 ] as const;
 export function openScene10XPost(s:Runtime, postId:string):Runtime {
  if(s.workId!=="unpublished-lover-ep01" || !postId || s.variables.ep01XUnlocked!==true || s.variables.ep01Scene10StartedAt!==undefined || s.variables.ep01Scene10Finished===true) return s;
- const seen=Array.isArray(s.variables.ep01Scene10XPostsSeen) ? (s.variables.ep01Scene10XPostsSeen as string[]) : [];
+ const raw=s.variables.ep01Scene10XPostsSeen;
+ let seen:string[]=[];
+ if(typeof raw==="string"){try{const parsed:unknown=JSON.parse(raw);if(Array.isArray(parsed))seen=parsed.filter((v):v is string=>typeof v==="string");}catch{seen=[];}}
  if(seen.includes(postId))return s;
- const next:Runtime={...s,variables:{...s.variables,ep01Scene10XPostsSeen:[...seen,postId]}};
+ const next:Runtime={...s,variables:{...s.variables,ep01Scene10XPostsSeen:JSON.stringify([...seen,postId])}};
  return seen.length+1>=3 ? markScene10ThirdXPost(next) : next;
 }
 export function markScene10ThirdXPost(s:Runtime):Runtime {
  if(s.workId!=="unpublished-lover-ep01"||s.variables.ep01Scene10StartedAt!==undefined)return s;
- return {...s,variables:{...s.variables,ep01Scene10StartedAt:(s.elapsedMs??0)+2000,ep01Scene10Delivered:0}};
+ return {...s,variables:{...s.variables,ep01Scene10StartedAt:s.elapsedMs??0,ep01Scene10Delivered:0}};
 }
 export function advanceScene10And11(s:Runtime):Runtime {
  if(s.workId!=="unpublished-lover-ep01")return s;
