@@ -450,9 +450,12 @@ function PhoneRuntime({
         <div className="ep01-ending-overlay" role="dialog" aria-modal="true" aria-label="X偶遇帖提示">
           <section className="ep01-ending-card">
             <button type="button" aria-label="关闭X偶遇帖弹窗" onClick={() => update(dismissEp01Sighting(runtimeRef.current))}>×</button>
-            <h2>X · 偶遇帖</h2>
-            <p>网上出现了朴炡禹与韩瑞允同行的照片，引起讨论。</p>
-            <p>原帖逐字内容与照片仍待核对；这里暂不使用未经确认的图片或伪造帖子。</p>
+            <h2>오늘도야근 <small>@seoul_nightlog · 8분 전</small></h2>
+            <p>청담동에서 방금 박정우 본 것 같은데...?</p>
+            <p>여자랑 같이 있던데 누구지</p>
+            <p>얼굴은 못 봤는데 분위기가 좀 묘했음</p>
+            <p>근데 진짜 정우 맞나? 모자 쓰고 있어서 확실하진 않음</p>
+            <p>刚刚好像在清潭洞看到朴炡禹了……？旁边还有个女生，是谁啊。没看清女生的脸，但感觉气氛有点微妙。不过真的是炡禹吗？戴着帽子也不太确定。</p>
           </section>
         </div>
       )}
