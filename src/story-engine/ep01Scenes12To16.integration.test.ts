@@ -10,7 +10,7 @@ const work = { id: "unpublished-lover-ep01", updatedAt: 1, phone: { date: "2026-
 const tick = (s: Runtime, ms: number) => ({ ...s, elapsedMs: ms });
 describe("EP01 scenes12-16 cross-scene integration", () => {
  it("retains choices, message indexes and unique IDs across JSON save/reload and app changes", () => {
-  let s: Runtime = { ...initialRuntime(work), elapsedMs: 1000, variables: { ep01Scene11Branch: "B" } };
+  let s: Runtime = { ...initialRuntime(work), elapsedMs: 1000, variables: { ep01Scene11Branch: "B", ep01Scene11Finished: true } };
   expect(scene12Choices(s)).toHaveLength(3);
   s = sendScene12Choice(s, "ep01-scene12-B3");
   for(let n=0;n<5;n++){
