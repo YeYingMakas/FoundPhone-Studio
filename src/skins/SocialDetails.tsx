@@ -44,7 +44,8 @@ export function SocialDetail(p: {
       false,
     ),
     [extra, setExtra] = useSkinState<string[]>(p, "replies-" + item.id, []);
-  const [tab, setTab] = useState("评论"),
+  const [attachment, setAttachment] = useState<number | null>(null),
+    [tab, setTab] = useState("评论"),
     [draft, setDraft] = useState(""),
     [target, setTarget] = useState(""),
     [menu, setMenu] = useState(false),
@@ -153,6 +154,8 @@ export function SocialDetail(p: {
         <div className="post-detail-body">
           <RichText value={item.richText} fallback={item.body} />
           {item.media && <Media item={item} />}
+          {!weibo && item.id === "ep01-rumor-main" && <button type="button" onClick={() => setAttachment(0)}>📎 사진 01 · 清潭洞街头</button>}
+          {!weibo && item.id === "ep01-rumor-main" && <button type="button" onClick={() => setAttachment(1)}>📎 사진 02 · 建筑入口</button>}
         </div>
         {weibo ? (
           <div className="weibo-share-options">
