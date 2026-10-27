@@ -163,6 +163,22 @@ export function XSkin(p: Props) {
       </div>
       <div className="catalog-scroll">
         <SearchBox value={q} set={setQ} />
+        {items.some((i) => i.id === "ep01-rumor-main") && (
+          <section className="ep01-x-trends" aria-label="한국 엔터테인먼트 실시간 트렌드">
+            <h3>실시간 트렌드 <small>韩国 · 娱乐趋势</small></h3>
+            {[
+              ["박정우 열애설", "朴炡禹恋爱传闻", "8,426"],
+              ["청담동 목격담", "清潭洞目击事件", "3,182"],
+              ["트레저 정우", "TREASURE 炡禹", "2,617"],
+            ].map(([ko, zh, volume], index) => (
+              <button type="button" key={ko} onClick={() => setQ("박정우")}>
+                <small>엔터테인먼트 · {index + 1}위</small>
+                <strong>{ko}</strong>
+                <span>{zh} · {volume} posts</span>
+              </button>
+            ))}
+          </section>
+        )}
         {items
           .filter((i) => tab === "为你推荐" || i.folder === "正在关注")
           .map((i) => (
