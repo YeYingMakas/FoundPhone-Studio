@@ -7,8 +7,10 @@ import type { SceneDelivery } from "./unpublishedLoverDelivery";
 // gate deliberately does not invent a screenshot or substitute post text.
 const opening = [
   { id: "opening-jeongwoo-1", ko: "자기야아", zh: "宝宝呀——" },
-  { id: "opening-jeongwoo-2", ko: "나 지금 숙소야", zh: "我现在在宿舍。" },
-  { id: "opening-jeongwoo-3", ko: "우리 자기 보고 싶다ㅠㅠ", zh: "好想我家宝宝ㅠㅠ" },
+  { id: "opening-jeongwoo-2", ko: "뭐 해 ㅎㅎ", zh: "在干嘛呢ㅎㅎ" },
+  { id: "opening-jeongwoo-3", ko: "나 이제 숙소 왔어", zh: "我刚回宿舍啦" },
+  { id: "opening-jeongwoo-4", ko: "오늘 진짜 피곤하다ㅠㅠ", zh: "今天真的好累ㅠㅠ" },
+  { id: "opening-jeongwoo-5", ko: "자기 보고 싶어...", zh: "想宝宝了……" },
 ];
 
 export function showEp01Sighting(runtime: Runtime): Runtime {
@@ -21,7 +23,7 @@ export function dismissEp01Sighting(runtime: Runtime): Runtime {
   if (runtime.variables.ep01SightingShown !== true || runtime.variables.ep01SightingDismissed === true) return runtime;
   return { ...runtime, variables: {
     ...runtime.variables, ep01SightingShown: false, ep01SightingDismissed: true,
-    ep01OpeningMessagesStartedAt: runtime.elapsedMs ?? 0,
+    ep01OpeningMessagesStartedAt: (runtime.elapsedMs ?? 0) + 2000,
   } };
 }
 
