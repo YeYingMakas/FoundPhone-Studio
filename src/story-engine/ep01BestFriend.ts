@@ -8,7 +8,7 @@ const branches=[
  {id:"C",player:["혹시 정우 오빠 때문에 그래...?","难道是因为炡禹欧巴……？"],replies:[["응...","嗯……"],["야 나 진짜 너무 화나","呀，我真的气死了"],["박정우 진짜 뭐 하는 새끼야?","朴炡禹这混蛋到底在干什么？"],["너 지금 빨리 실검 봐","你现在快去看热搜"]]}
 ] as const;
 function deliver(s:Runtime,id:string,ko:string,zh:string):Runtime{
- return appendStoryDelivery(s,{app:"kakao",conversationId:"chat-best-friend",sender:"闺蜜",lines:[{id,ko,zh}],delivered:0,blocked:false},s.date??"2026-10-23",s.time).runtime;
+ return appendStoryDelivery(s,{app:"kakao",conversationId:"chat-friend",sender:"闺蜜",lines:[{id,ko,zh}],delivered:0,blocked:false},s.date??"2026-10-23",s.time).runtime;
 }
 export function advanceEp01BestFriend(s:Runtime):Runtime{
  if(s.workId!=="unpublished-lover-ep01"||s.variables.ep01SecondReplyFinished!==true)return s;
